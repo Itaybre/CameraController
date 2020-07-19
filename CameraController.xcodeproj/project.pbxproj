@@ -20,6 +20,11 @@
 		F47D07FA24C4186C00E44A22 /* UVCCameraTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07F924C4186C00E44A22 /* UVCCameraTerminal.swift */; };
 		F47D07FC24C418B200E44A22 /* UVCProcessingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07FB24C418B200E44A22 /* UVCProcessingUnit.swift */; };
 		F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07FD24C418F200E44A22 /* UVCRequestCodes.swift */; };
+		F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080024C5078200E44A22 /* UVCDevice.swift */; };
+		F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080224C507F800E44A22 /* AVCaptureDevice+USB.swift */; };
+		F47D080624C50DCE00E44A22 /* String+CameraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080524C50DCE00E44A22 /* String+CameraInformation.swift */; };
+		F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080724C50DD700E44A22 /* CameraInformation.swift */; };
+		F47D080A24C50E1C00E44A22 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080924C50E1C00E44A22 /* StringTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		F47D07F924C4186C00E44A22 /* UVCCameraTerminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCCameraTerminal.swift; sourceTree = "<group>"; };
 		F47D07FB24C418B200E44A22 /* UVCProcessingUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCProcessingUnit.swift; sourceTree = "<group>"; };
 		F47D07FD24C418F200E44A22 /* UVCRequestCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCRequestCodes.swift; sourceTree = "<group>"; };
+		F47D080024C5078200E44A22 /* UVCDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDevice.swift; sourceTree = "<group>"; };
+		F47D080224C507F800E44A22 /* AVCaptureDevice+USB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+USB.swift"; sourceTree = "<group>"; };
+		F47D080524C50DCE00E44A22 /* String+CameraInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CameraInformation.swift"; sourceTree = "<group>"; };
+		F47D080724C50DD700E44A22 /* CameraInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInformation.swift; sourceTree = "<group>"; };
+		F47D080924C50E1C00E44A22 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +127,7 @@
 			children = (
 				F47D07E224C4104600E44A22 /* Info.plist */,
 				F47D07F324C412F800E44A22 /* DevicesManagerTests.swift */,
+				F47D080924C50E1C00E44A22 /* StringTests.swift */,
 			);
 			path = CameraControllerTests;
 			sourceTree = "<group>";
@@ -160,7 +171,11 @@
 		F47D07F524C4177400E44A22 /* UVC */ = {
 			isa = PBXGroup;
 			children = (
+				F47D080424C5091600E44A22 /* Models */,
 				F47D07F624C417A700E44A22 /* UVC Standard */,
+				F47D080024C5078200E44A22 /* UVCDevice.swift */,
+				F47D080224C507F800E44A22 /* AVCaptureDevice+USB.swift */,
+				F47D080524C50DCE00E44A22 /* String+CameraInformation.swift */,
 			);
 			path = UVC;
 			sourceTree = "<group>";
@@ -174,6 +189,14 @@
 				F47D07FD24C418F200E44A22 /* UVCRequestCodes.swift */,
 			);
 			path = "UVC Standard";
+			sourceTree = "<group>";
+		};
+		F47D080424C5091600E44A22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F47D080724C50DD700E44A22 /* CameraInformation.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +327,11 @@
 				F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */,
 				F47D07FC24C418B200E44A22 /* UVCProcessingUnit.swift in Sources */,
 				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
+				F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */,
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
+				F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */,
+				F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */,
+				F47D080624C50DCE00E44A22 /* String+CameraInformation.swift in Sources */,
 				F47D07F824C417B700E44A22 /* UVCConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47D080A24C50E1C00E44A22 /* StringTests.swift in Sources */,
 				F47D07F424C412F800E44A22 /* DevicesManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
