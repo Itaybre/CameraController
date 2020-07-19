@@ -11,16 +11,16 @@ import AVFoundation
 
 class DevicesManager {
     static let shared = DevicesManager()
-    
+
     var devices: [AVCaptureDevice] = []
-    
+
     private init() {
-        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.externalUnknown, .builtInWideAngleCamera],
+        let session = AVCaptureDevice.DiscoverySession(deviceTypes: [.externalUnknown, .builtInWideAngleCamera],
                                                                 mediaType: nil,
                                                                 position: .unspecified)
-        devices = discoverySession.devices
+        devices = session.devices
     }
-    
+
     func startMonitoring() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(deviceAdded(notif:)),
@@ -31,21 +31,21 @@ class DevicesManager {
                                                name: NSNotification.Name.AVCaptureDeviceWasDisconnected,
                                                object: nil)
     }
-    
+
     func stopMonitoring() {
         NotificationCenter.default.removeObserver(self,
                                                   name: NSNotification.Name.AVCaptureDeviceWasConnected,
                                                   object: nil)
     }
-    
+
     @objc func deviceAdded(notif: NSNotification) {
         guard let device = notif.object as? AVCaptureDevice else {
             return
         }
-        
+
         devices.append(device)
     }
-    
+
     @objc func deviceRemoved(notif: NSNotification) {
         guard let device = notif.object as? AVCaptureDevice,
             let index = devices.firstIndex(of: device) else {
