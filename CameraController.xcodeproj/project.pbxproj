@@ -81,12 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				F47D07C724C4104300E44A22 /* AppDelegate.swift */,
-				F47D07C924C4104300E44A22 /* ContentView.swift */,
-				F47D07CE24C4104600E44A22 /* Assets.xcassets */,
-				F47D07D324C4104600E44A22 /* Main.storyboard */,
-				F47D07D624C4104600E44A22 /* Info.plist */,
-				F47D07D724C4104600E44A22 /* CameraController.entitlements */,
-				F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */,
+				F47D07ED24C4119200E44A22 /* Resources */,
+				F47D07EC24C4118200E44A22 /* Devices */,
+				F47D07EB24C4117A00E44A22 /* Views */,
 				F47D07D024C4104600E44A22 /* Preview Content */,
 			);
 			path = CameraController;
@@ -107,6 +104,33 @@
 				F47D07E224C4104600E44A22 /* Info.plist */,
 			);
 			path = CameraControllerTests;
+			sourceTree = "<group>";
+		};
+		F47D07EB24C4117A00E44A22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F47D07C924C4104300E44A22 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F47D07EC24C4118200E44A22 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		F47D07ED24C4119200E44A22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F47D07CE24C4104600E44A22 /* Assets.xcassets */,
+				F47D07D324C4104600E44A22 /* Main.storyboard */,
+				F47D07D624C4104600E44A22 /* Info.plist */,
+				F47D07D724C4104600E44A22 /* CameraController.entitlements */,
+				F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,14 +387,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CameraController/CameraController.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CameraController/Resources/CameraController.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CameraController/Preview Content\"";
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = CameraController/Info.plist;
+				INFOPLIST_FILE = CameraController/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -386,14 +410,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CameraController/CameraController.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CameraController/Resources/CameraController.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CameraController/Preview Content\"";
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = CameraController/Info.plist;
+				INFOPLIST_FILE = CameraController/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
