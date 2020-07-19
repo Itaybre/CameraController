@@ -47,9 +47,10 @@ class DevicesManager {
     }
     
     @objc func deviceRemoved(notif: NSNotification) {
-        let device = notif.object as! AVCaptureDevice
-        if let index = devices.firstIndex(of: device) {
-            devices.remove(at: index)
+        guard let device = notif.object as? AVCaptureDevice,
+            let index = devices.firstIndex(of: device) else {
+            return
         }
+        devices.remove(at: index)
     }
 }
