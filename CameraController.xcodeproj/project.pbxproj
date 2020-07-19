@@ -14,6 +14,9 @@
 		F47D07D224C4104600E44A22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47D07D124C4104600E44A22 /* Preview Assets.xcassets */; };
 		F47D07D524C4104600E44A22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47D07D324C4104600E44A22 /* Main.storyboard */; };
 		F47D07E124C4104600E44A22 /* CameraControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07E024C4104600E44A22 /* CameraControllerTests.swift */; };
+		F47D07EF24C4123600E44A22 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07EE24C4123600E44A22 /* DeviceManager.swift */; };
+		F47D07F224C4125B00E44A22 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47D07F124C4125B00E44A22 /* AVFoundation.framework */; };
+		F47D07F424C412F800E44A22 /* DevicesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07F324C412F800E44A22 /* DevicesManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,9 @@
 		F47D07DC24C4104600E44A22 /* CameraControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CameraControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47D07E024C4104600E44A22 /* CameraControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerTests.swift; sourceTree = "<group>"; };
 		F47D07E224C4104600E44A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F47D07EE24C4123600E44A22 /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
+		F47D07F124C4125B00E44A22 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F47D07F324C412F800E44A22 /* DevicesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47D07F224C4125B00E44A22 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +72,7 @@
 				F47D07C624C4104300E44A22 /* CameraController */,
 				F47D07DF24C4104600E44A22 /* CameraControllerTests */,
 				F47D07C524C4104300E44A22 /* Products */,
+				F47D07F024C4125B00E44A22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,8 +108,9 @@
 		F47D07DF24C4104600E44A22 /* CameraControllerTests */ = {
 			isa = PBXGroup;
 			children = (
-				F47D07E024C4104600E44A22 /* CameraControllerTests.swift */,
 				F47D07E224C4104600E44A22 /* Info.plist */,
+				F47D07E024C4104600E44A22 /* CameraControllerTests.swift */,
+				F47D07F324C412F800E44A22 /* DevicesManagerTests.swift */,
 			);
 			path = CameraControllerTests;
 			sourceTree = "<group>";
@@ -117,6 +126,7 @@
 		F47D07EC24C4118200E44A22 /* Devices */ = {
 			isa = PBXGroup;
 			children = (
+				F47D07EE24C4123600E44A22 /* DeviceManager.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -131,6 +141,14 @@
 				F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F47D07F024C4125B00E44A22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F47D07F124C4125B00E44A22 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47D07CA24C4104300E44A22 /* ContentView.swift in Sources */,
+				F47D07EF24C4123600E44A22 /* DeviceManager.swift in Sources */,
 				F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */,
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
 			);
@@ -245,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47D07E124C4104600E44A22 /* CameraControllerTests.swift in Sources */,
+				F47D07F424C412F800E44A22 /* DevicesManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
