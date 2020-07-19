@@ -18,6 +18,7 @@ class DevicesManager {
         let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.externalUnknown, .builtInWideAngleCamera],
                                                                 mediaType: nil,
                                                                 position: .unspecified)
+        devices = discoverySession.devices
     }
     
     func startMonitoring() {
