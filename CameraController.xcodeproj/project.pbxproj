@@ -16,6 +16,10 @@
 		F47D07EF24C4123600E44A22 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07EE24C4123600E44A22 /* DeviceManager.swift */; };
 		F47D07F224C4125B00E44A22 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47D07F124C4125B00E44A22 /* AVFoundation.framework */; };
 		F47D07F424C412F800E44A22 /* DevicesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07F324C412F800E44A22 /* DevicesManagerTests.swift */; };
+		F47D07F824C417B700E44A22 /* UVCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07F724C417B700E44A22 /* UVCConstants.swift */; };
+		F47D07FA24C4186C00E44A22 /* UVCCameraTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07F924C4186C00E44A22 /* UVCCameraTerminal.swift */; };
+		F47D07FC24C418B200E44A22 /* UVCProcessingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07FB24C418B200E44A22 /* UVCProcessingUnit.swift */; };
+		F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07FD24C418F200E44A22 /* UVCRequestCodes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,10 @@
 		F47D07EE24C4123600E44A22 /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		F47D07F124C4125B00E44A22 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F47D07F324C412F800E44A22 /* DevicesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesManagerTests.swift; sourceTree = "<group>"; };
+		F47D07F724C417B700E44A22 /* UVCConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCConstants.swift; sourceTree = "<group>"; };
+		F47D07F924C4186C00E44A22 /* UVCCameraTerminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCCameraTerminal.swift; sourceTree = "<group>"; };
+		F47D07FB24C418B200E44A22 /* UVCProcessingUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCProcessingUnit.swift; sourceTree = "<group>"; };
+		F47D07FD24C418F200E44A22 /* UVCRequestCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCRequestCodes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 				F47D07C724C4104300E44A22 /* AppDelegate.swift */,
 				F47D07ED24C4119200E44A22 /* Resources */,
 				F47D07EC24C4118200E44A22 /* Devices */,
+				F47D07F524C4177400E44A22 /* UVC */,
 				F47D07EB24C4117A00E44A22 /* Views */,
 				F47D07D024C4104600E44A22 /* Preview Content */,
 			);
@@ -146,6 +155,25 @@
 				F47D07F124C4125B00E44A22 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F47D07F524C4177400E44A22 /* UVC */ = {
+			isa = PBXGroup;
+			children = (
+				F47D07F624C417A700E44A22 /* UVC Standard */,
+			);
+			path = UVC;
+			sourceTree = "<group>";
+		};
+		F47D07F624C417A700E44A22 /* UVC Standard */ = {
+			isa = PBXGroup;
+			children = (
+				F47D07F724C417B700E44A22 /* UVCConstants.swift */,
+				F47D07F924C4186C00E44A22 /* UVCCameraTerminal.swift */,
+				F47D07FB24C418B200E44A22 /* UVCProcessingUnit.swift */,
+				F47D07FD24C418F200E44A22 /* UVCRequestCodes.swift */,
+			);
+			path = "UVC Standard";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,10 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47D07FA24C4186C00E44A22 /* UVCCameraTerminal.swift in Sources */,
 				F47D07CA24C4104300E44A22 /* ContentView.swift in Sources */,
 				F47D07EF24C4123600E44A22 /* DeviceManager.swift in Sources */,
 				F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */,
+				F47D07FC24C418B200E44A22 /* UVCProcessingUnit.swift in Sources */,
+				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
+				F47D07F824C417B700E44A22 /* UVCConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
