@@ -18,7 +18,7 @@ enum UVCProcessingUnit: Int, Selector {
     case saturation = 0x07
     case sharpness = 0x08
     case gamma = 0x09
-    case whiteBalanceTemperatur = 0x0A
+    case whiteBalanceTemperature = 0x0A
     case whiteBalanceTemperatureAuto = 0x0B
     case whiteBalanceComponent = 0x0C
     case whiteBalanceComponentAuto = 0x0D

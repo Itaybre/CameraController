@@ -35,6 +35,7 @@
 		F47D081F24C6919E00E44A22 /* UVCMultipleIntControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081E24C6919E00E44A22 /* UVCMultipleIntControl.swift */; };
 		F47D082124C6924100E44A22 /* UVCBoolControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082024C6924100E44A22 /* UVCBoolControl.swift */; };
 		F47D082324C692A600E44A22 /* UVCBitmapControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082224C692A600E44A22 /* UVCBitmapControl.swift */; };
+		F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		F47D081E24C6919E00E44A22 /* UVCMultipleIntControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCMultipleIntControl.swift; sourceTree = "<group>"; };
 		F47D082024C6924100E44A22 /* UVCBoolControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCBoolControl.swift; sourceTree = "<group>"; };
 		F47D082224C692A600E44A22 /* UVCBitmapControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCBitmapControl.swift; sourceTree = "<group>"; };
+		F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDeviceProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				F47D081424C551D400E44A22 /* UVCDescriptor.swift */,
 				F47D081324C54C1E00E44A22 /* USBHeaders.h */,
 				F47D080024C5078200E44A22 /* UVCDevice.swift */,
+				F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */,
 				F47D081924C68CB100E44A22 /* Controls */,
 			);
 			path = Models;
@@ -388,6 +391,7 @@
 				F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */,
 				F47D081024C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift in Sources */,
 				F47D081224C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */,
+				F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */,
 				F47D080624C50DCE00E44A22 /* String+CameraInformation.swift in Sources */,
 				F47D080E24C54A2000E44A22 /* io_service_t+Interface.swift in Sources */,
 				F47D07F824C417B700E44A22 /* UVCConstants.swift in Sources */,

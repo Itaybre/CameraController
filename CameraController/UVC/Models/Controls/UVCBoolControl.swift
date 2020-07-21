@@ -26,7 +26,7 @@ class UVCBoolControl: UVCControl {
     private var _isEnabled = false
 
     override init(_ interface: USBInterfacePointer, _ uvcSize: Int,
-                  _ uvcSelector: Selector, _ uvcUnit: UVCConstants.Unit) {
+                  _ uvcSelector: Selector, _ uvcUnit: Int) {
         super.init(interface, uvcSize, uvcSelector, uvcUnit)
         configure()
     }

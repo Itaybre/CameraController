@@ -16,15 +16,15 @@ class UVCControl {
     let interface: USBInterfacePointer
     let uvcSize: Int
     let uvcSelector: Int
-    let uvcUnit: UInt8
+    let uvcUnit: Int
 
     var isCapable: Bool = false
 
-    init(_ interface: USBInterfacePointer, _ uvcSize: Int, _ uvcSelector: Selector, _ uvcUnit: UVCConstants.Unit) {
+    init(_ interface: USBInterfacePointer, _ uvcSize: Int, _ uvcSelector: Selector, _ uvcUnit: Int) {
         self.interface = interface
         self.uvcSize = uvcSize
         self.uvcSelector = uvcSelector.raw()
-        self.uvcUnit = uvcUnit.rawValue
+        self.uvcUnit = uvcUnit
     }
 
     func getDataFor(type: UVCRequestCodes, length: Int) -> Int {
