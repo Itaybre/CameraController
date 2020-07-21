@@ -10,6 +10,17 @@ import Foundation
 import AVFoundation
 
 class UVCDevice {
-    init(device: AVCaptureDevice) {
+    let interface: UnsafeMutablePointer<UnsafeMutablePointer<IOUSBInterfaceInterface190>>
+    let processingUnitID: Int
+    let cameraTerminalID: Int
+
+    init(device: AVCaptureDevice) throws {
+        let deviceInfo = try device.usbDevice()
+
+        interface = deviceInfo.interface
+        processingUnitID = deviceInfo.descriptor.processingUnitID
+        cameraTerminalID = deviceInfo.descriptor.cameraTerminalID
     }
+
+    deinit { _ = interface.pointee.pointee.Release(interface) }
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 struct UVCConstants {
-    static let interfaceClassVideo = 0x0E
-    static let interfaceSubclassVideoControl = 0x01
+    static let classVideo: UInt16 = 0x0E
+    static let subclassVideoControl: UInt16 = 0x01
     static let descriptorTypeInterface = 0x24
 
     enum DescriptorSubtype: Int {
@@ -20,7 +20,7 @@ struct UVCConstants {
         case extensionUnit = 0x06
     }
 
-    enum Unit: Int {
+    enum Unit: UInt8 {
         case inputTerminal = 0x01
         case processingUnit = 0x02
     }

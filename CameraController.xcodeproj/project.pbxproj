@@ -25,6 +25,11 @@
 		F47D080624C50DCE00E44A22 /* String+CameraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080524C50DCE00E44A22 /* String+CameraInformation.swift */; };
 		F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080724C50DD700E44A22 /* CameraInformation.swift */; };
 		F47D080A24C50E1C00E44A22 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080924C50E1C00E44A22 /* StringTests.swift */; };
+		F47D080C24C50F7B00E44A22 /* USBDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080B24C50F7B00E44A22 /* USBDevice.swift */; };
+		F47D080E24C54A2000E44A22 /* io_service_t+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080D24C54A2000E44A22 /* io_service_t+Interface.swift */; };
+		F47D081024C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080F24C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift */; };
+		F47D081224C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081124C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift */; };
+		F47D081524C551D400E44A22 /* UVCDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081424C551D400E44A22 /* UVCDescriptor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +66,12 @@
 		F47D080524C50DCE00E44A22 /* String+CameraInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CameraInformation.swift"; sourceTree = "<group>"; };
 		F47D080724C50DD700E44A22 /* CameraInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInformation.swift; sourceTree = "<group>"; };
 		F47D080924C50E1C00E44A22 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		F47D080B24C50F7B00E44A22 /* USBDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBDevice.swift; sourceTree = "<group>"; };
+		F47D080D24C54A2000E44A22 /* io_service_t+Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "io_service_t+Interface.swift"; sourceTree = "<group>"; };
+		F47D080F24C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnsafeMutablePointer+interface.swift"; sourceTree = "<group>"; };
+		F47D081124C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IOUSBConfigurationDescriptorPtr+UVC.swift"; sourceTree = "<group>"; };
+		F47D081324C54C1E00E44A22 /* USBHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USBHeaders.h; sourceTree = "<group>"; };
+		F47D081424C551D400E44A22 /* UVCDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDescriptor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,9 +184,13 @@
 			children = (
 				F47D080424C5091600E44A22 /* Models */,
 				F47D07F624C417A700E44A22 /* UVC Standard */,
+				F47D081324C54C1E00E44A22 /* USBHeaders.h */,
 				F47D080024C5078200E44A22 /* UVCDevice.swift */,
 				F47D080224C507F800E44A22 /* AVCaptureDevice+USB.swift */,
 				F47D080524C50DCE00E44A22 /* String+CameraInformation.swift */,
+				F47D080D24C54A2000E44A22 /* io_service_t+Interface.swift */,
+				F47D080F24C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift */,
+				F47D081124C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift */,
 			);
 			path = UVC;
 			sourceTree = "<group>";
@@ -195,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				F47D080724C50DD700E44A22 /* CameraInformation.swift */,
+				F47D080B24C50F7B00E44A22 /* USBDevice.swift */,
+				F47D081424C551D400E44A22 /* UVCDescriptor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,8 +339,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47D07FA24C4186C00E44A22 /* UVCCameraTerminal.swift in Sources */,
+				F47D081524C551D400E44A22 /* UVCDescriptor.swift in Sources */,
 				F47D07CA24C4104300E44A22 /* ContentView.swift in Sources */,
 				F47D07EF24C4123600E44A22 /* DeviceManager.swift in Sources */,
+				F47D080C24C50F7B00E44A22 /* USBDevice.swift in Sources */,
 				F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */,
 				F47D07FC24C418B200E44A22 /* UVCProcessingUnit.swift in Sources */,
 				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
@@ -331,7 +350,10 @@
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
 				F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */,
 				F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */,
+				F47D081024C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift in Sources */,
+				F47D081224C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */,
 				F47D080624C50DCE00E44A22 /* String+CameraInformation.swift in Sources */,
+				F47D080E24C54A2000E44A22 /* io_service_t+Interface.swift in Sources */,
 				F47D07F824C417B700E44A22 /* UVCConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +521,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.itaysoft.CameraController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = CameraController/UVC/USBHeaders.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -522,6 +545,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.itaysoft.CameraController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = CameraController/UVC/USBHeaders.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
