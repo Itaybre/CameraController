@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum UVCRequestCodes: Int {
+enum UVCRequestCodes: UInt8 {
     case setCurrent = 0x01
     case getCurrent = 0x81
     case getMinimum = 0x82

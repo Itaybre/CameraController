@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum UVCCameraTerminal: Int {
+enum UVCCameraTerminal: Int, Selector {
     case scanningMode = 0x01
     case aeMode = 0x02
     case aePriority = 0x03
@@ -29,4 +29,8 @@ enum UVCCameraTerminal: Int {
     case focusSimple = 0x12
     case digitalWindow = 0x13
     case regionOfInterest = 0x14
+
+    func raw() -> Int {
+        return self.rawValue
+    }
 }

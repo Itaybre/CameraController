@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum UVCProcessingUnit: Int {
+enum UVCProcessingUnit: Int, Selector {
     case backlightCompensation = 0x01
     case brightness = 0x02
     case contrast = 0x03
@@ -28,4 +28,8 @@ enum UVCProcessingUnit: Int {
     case analogVideoStandard = 0x11
     case analogLockStatus = 0x12
     case contrastAuto = 0x13
+
+    func raw() -> Int {
+        return self.rawValue
+    }
 }
