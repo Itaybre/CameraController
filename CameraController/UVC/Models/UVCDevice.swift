@@ -15,6 +15,7 @@ class UVCDevice {
     let interface: USBInterfacePointer
     let processingUnitID: Int
     let cameraTerminalID: Int
+    let properties: UVCDeviceProperties
 
     init(device: AVCaptureDevice) throws {
         let deviceInfo = try device.usbDevice()
@@ -22,6 +23,7 @@ class UVCDevice {
         interface = deviceInfo.interface
         processingUnitID = deviceInfo.descriptor.processingUnitID
         cameraTerminalID = deviceInfo.descriptor.cameraTerminalID
+        properties = UVCDeviceProperties(deviceInfo)
     }
 
     deinit { _ = interface.pointee.pointee.Release(interface) }
