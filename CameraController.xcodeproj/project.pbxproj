@@ -184,13 +184,8 @@
 			children = (
 				F47D080424C5091600E44A22 /* Models */,
 				F47D07F624C417A700E44A22 /* UVC Standard */,
-				F47D081324C54C1E00E44A22 /* USBHeaders.h */,
+				F47D081824C68C0800E44A22 /* Extensions */,
 				F47D080024C5078200E44A22 /* UVCDevice.swift */,
-				F47D080224C507F800E44A22 /* AVCaptureDevice+USB.swift */,
-				F47D080524C50DCE00E44A22 /* String+CameraInformation.swift */,
-				F47D080D24C54A2000E44A22 /* io_service_t+Interface.swift */,
-				F47D080F24C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift */,
-				F47D081124C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift */,
 			);
 			path = UVC;
 			sourceTree = "<group>";
@@ -212,8 +207,21 @@
 				F47D080724C50DD700E44A22 /* CameraInformation.swift */,
 				F47D080B24C50F7B00E44A22 /* USBDevice.swift */,
 				F47D081424C551D400E44A22 /* UVCDescriptor.swift */,
+				F47D081324C54C1E00E44A22 /* USBHeaders.h */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F47D081824C68C0800E44A22 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F47D080224C507F800E44A22 /* AVCaptureDevice+USB.swift */,
+				F47D080524C50DCE00E44A22 /* String+CameraInformation.swift */,
+				F47D080D24C54A2000E44A22 /* io_service_t+Interface.swift */,
+				F47D080F24C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift */,
+				F47D081124C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,7 +529,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.itaysoft.CameraController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = CameraController/UVC/USBHeaders.h;
+				SWIFT_OBJC_BRIDGING_HEADER = CameraController/UVC/Models/USBHeaders.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -545,7 +553,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.itaysoft.CameraController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = CameraController/UVC/USBHeaders.h;
+				SWIFT_OBJC_BRIDGING_HEADER = CameraController/UVC/Models/USBHeaders.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
