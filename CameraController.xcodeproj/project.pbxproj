@@ -36,6 +36,8 @@
 		F47D082124C6924100E44A22 /* UVCBoolControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082024C6924100E44A22 /* UVCBoolControl.swift */; };
 		F47D082324C692A600E44A22 /* UVCBitmapControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082224C692A600E44A22 /* UVCBitmapControl.swift */; };
 		F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */; };
+		F4E5261F24C7BD0B00125DF9 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */; };
+		F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		F47D082024C6924100E44A22 /* UVCBoolControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCBoolControl.swift; sourceTree = "<group>"; };
 		F47D082224C692A600E44A22 /* UVCBitmapControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCBitmapControl.swift; sourceTree = "<group>"; };
 		F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDeviceProperties.swift; sourceTree = "<group>"; };
+		F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewInternal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				F47D07C924C4104300E44A22 /* ContentView.swift */,
+				F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */,
+				F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 				F47D081B24C68CC200E44A22 /* UVCControl.swift in Sources */,
 				F47D080C24C50F7B00E44A22 /* USBDevice.swift in Sources */,
 				F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */,
+				F4E5261F24C7BD0B00125DF9 /* CameraPreview.swift in Sources */,
 				F47D07FC24C418B200E44A22 /* UVCProcessingUnit.swift in Sources */,
 				F47D082124C6924100E44A22 /* UVCBoolControl.swift in Sources */,
 				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
@@ -388,6 +395,7 @@
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
 				F47D081D24C68F6000E44A22 /* UVCIntControl.swift in Sources */,
 				F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */,
+				F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */,
 				F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */,
 				F47D081024C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift in Sources */,
 				F47D081224C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */,

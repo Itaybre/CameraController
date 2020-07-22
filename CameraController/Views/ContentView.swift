@@ -25,6 +25,7 @@ struct ContentView: View {
                         Text(device.localizedName).tag(device as AVCaptureDevice?)
                     }
                 }
+                cameraPreview(device: $selectedDevice)
                 Text("Selected Device: \(selectedDevice?.localizedName ?? "No Device")")
             }.onAppear {
                 DevicesManager.shared.startMonitoring()
@@ -33,6 +34,17 @@ struct ContentView: View {
             }
             Spacer().frame(width: 10)
         }.frame(width: 450)
+    }
+
+    func cameraPreview(device: Binding<AVCaptureDevice?>) -> AnyView {
+        if device.wrappedValue != nil {
+            return AnyView(CameraPreview(captureDevice: device)
+                .frame(width: 400, height: 225))
+        } else {
+            return AnyView(Image("video.slash")
+                .frame(width: 400, height: 225)
+                .background(Color.gray))
+        }
     }
 }
 
