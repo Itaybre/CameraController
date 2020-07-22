@@ -17,22 +17,20 @@ struct ContentView: View {
 
     var body: some View {
         HStack {
-            Spacer().frame(width: 10)
             VStack {
-                Spacer().frame(height: 10)
                 Picker(selection: $selectedDevice.animation(.linear), label: Text("Camera")) {
                     ForEach(manager.devices, id: \.self) { device in
                         Text(device.localizedName).tag(device as AVCaptureDevice?)
                     }
                 }
                 cameraPreview(device: $selectedDevice)
+                SettingsView(device: $selectedDevice)
             }.onAppear {
                 DevicesManager.shared.startMonitoring()
             }.onDisappear {
                 DevicesManager.shared.stopMonitoring()
             }
-            Spacer().frame(width: 10)
-        }.frame(width: 450)
+        }.padding(.all, 10.0).frame(width: 450)
     }
 
     func cameraPreview(device: Binding<AVCaptureDevice?>) -> AnyView {
