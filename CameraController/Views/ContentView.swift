@@ -26,7 +26,6 @@ struct ContentView: View {
                     }
                 }
                 cameraPreview(device: $selectedDevice)
-                Text("Selected Device: \(selectedDevice?.localizedName ?? "No Device")")
             }.onAppear {
                 DevicesManager.shared.startMonitoring()
             }.onDisappear {
