@@ -12,7 +12,7 @@ struct ExposureView: View {
     @State var mode: UVCBitmapControl.BitmapValue = .manual
     @State var time: Float = 1
     @State var gain: Float = 1
-    
+
     var body: some View {
         GroupBox(label: Text("Exposure")) {
             VStack(spacing: 3.0) {
@@ -26,7 +26,7 @@ struct ExposureView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 300, height: 20.0)
                 }
-            
+
                 HStack {
                     Text("Exposure Time:")
                     Spacer()
@@ -34,7 +34,7 @@ struct ExposureView: View {
                         .disabled(!optionsEnabled())
                         .frame(width: 300, height: 15.0)
                 }
-                
+
                 HStack {
                     Text("Gain:")
                     Spacer()
@@ -45,7 +45,7 @@ struct ExposureView: View {
             }
         }
     }
-    
+
     func optionsEnabled() -> Bool {
         return mode == .manual
     }
