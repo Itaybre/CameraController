@@ -6,13 +6,14 @@
 //  Copyright © 2020 Itaysoft. All rights reserved.
 //
 
+import Combine
 import Foundation
 import AVFoundation
 
-class DevicesManager {
+class DevicesManager: ObservableObject {
     static let shared = DevicesManager()
 
-    var devices: [AVCaptureDevice] = []
+    @Published var devices: [AVCaptureDevice] = []
 
     private init() {
         let session = AVCaptureDevice.DiscoverySession(deviceTypes: [.externalUnknown, .builtInWideAngleCamera],

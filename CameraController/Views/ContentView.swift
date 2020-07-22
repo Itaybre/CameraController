@@ -7,11 +7,32 @@
 //
 
 import SwiftUI
+import Combine
+import AVFoundation
 
 struct ContentView: View {
+
+    @State var selectedDevice: AVCaptureDevice?
+    @ObservedObject var manager = DevicesManager.shared
+
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        HStack {
+            Spacer().frame(width: 10)
+            VStack {
+                Spacer().frame(height: 10)
+                Picker(selection: $selectedDevice.animation(.linear), label: Text("Camera")) {
+                    ForEach(manager.devices, id: \.self) { device in
+                        Text(device.localizedName).tag(device as AVCaptureDevice?)
+                    }
+                }
+                Text("Selected Device: \(selectedDevice?.localizedName ?? "No Device")")
+            }.onAppear {
+                DevicesManager.shared.startMonitoring()
+            }.onDisappear {
+                DevicesManager.shared.stopMonitoring()
+            }
+            Spacer().frame(width: 10)
+        }.frame(width: 450)
     }
 }
 
