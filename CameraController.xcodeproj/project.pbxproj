@@ -39,6 +39,8 @@
 		F4E5261F24C7BD0B00125DF9 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */; };
 		F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */; };
 		F4E5262524C7C2E100125DF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262424C7C2E100125DF9 /* SettingsView.swift */; };
+		F4E5262724C7D88800125DF9 /* BasicSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262624C7D88800125DF9 /* BasicSettings.swift */; };
+		F4E5262B24C7D97B00125DF9 /* ExposureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262A24C7D97B00125DF9 /* ExposureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewInternal.swift; sourceTree = "<group>"; };
 		F4E5262424C7C2E100125DF9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F4E5262624C7D88800125DF9 /* BasicSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSettings.swift; sourceTree = "<group>"; };
+		F4E5262A24C7D97B00125DF9 /* ExposureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +171,7 @@
 				F47D07C924C4104300E44A22 /* ContentView.swift */,
 				F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */,
 				F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */,
-				F4E5262424C7C2E100125DF9 /* SettingsView.swift */,
+				F4E5262824C7D88B00125DF9 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,6 +261,24 @@
 				F47D082224C692A600E44A22 /* UVCBitmapControl.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		F4E5262824C7D88B00125DF9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F4E5262424C7C2E100125DF9 /* SettingsView.swift */,
+				F4E5262924C7D89500125DF9 /* Basic */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F4E5262924C7D89500125DF9 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				F4E5262624C7D88800125DF9 /* BasicSettings.swift */,
+				F4E5262A24C7D97B00125DF9 /* ExposureView.swift */,
+			);
+			path = Basic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,10 +422,12 @@
 				F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */,
 				F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */,
 				F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */,
+				F4E5262B24C7D97B00125DF9 /* ExposureView.swift in Sources */,
 				F47D081024C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift in Sources */,
 				F47D081224C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */,
 				F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */,
 				F47D080624C50DCE00E44A22 /* String+CameraInformation.swift in Sources */,
+				F4E5262724C7D88800125DF9 /* BasicSettings.swift in Sources */,
 				F47D080E24C54A2000E44A22 /* io_service_t+Interface.swift in Sources */,
 				F47D07F824C417B700E44A22 /* UVCConstants.swift in Sources */,
 				F4E5262524C7C2E100125DF9 /* SettingsView.swift in Sources */,

@@ -25,6 +25,10 @@ struct SettingsView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .frame(width: 300)
+
+                if currentView == 1 {
+                    BasicSettings().animation(.linear)
+                }
             }
         }
     }
