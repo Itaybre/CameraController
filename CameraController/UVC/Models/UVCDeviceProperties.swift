@@ -19,7 +19,7 @@ class UVCDeviceProperties {
     var zoomAbsolute: UVCIntControl
     var panTiltAbsolute: UVCMultipleIntControl
     var rollAbsolute: UVCIntControl
-    
+
     var backlightCompensation: UVCIntControl
     var brightness: UVCIntControl
     var contrast: UVCIntControl
