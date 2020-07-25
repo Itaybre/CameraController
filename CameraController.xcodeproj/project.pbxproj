@@ -37,6 +37,7 @@
 		F47D082324C692A600E44A22 /* UVCBitmapControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082224C692A600E44A22 /* UVCBitmapControl.swift */; };
 		F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */; };
 		F486353124CBA574003CE0BA /* IntCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486353024CBA574003CE0BA /* IntCaptureDeviceProperty.swift */; };
+		F4D4C6C724CBCEA800581E05 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6C624CBCEA800581E05 /* ImageView.swift */; };
 		F4E5261F24C7BD0B00125DF9 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */; };
 		F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */; };
 		F4E5262524C7C2E100125DF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262424C7C2E100125DF9 /* SettingsView.swift */; };
@@ -94,6 +95,7 @@
 		F47D082224C692A600E44A22 /* UVCBitmapControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCBitmapControl.swift; sourceTree = "<group>"; };
 		F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDeviceProperties.swift; sourceTree = "<group>"; };
 		F486353024CBA574003CE0BA /* IntCaptureDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntCaptureDeviceProperty.swift; sourceTree = "<group>"; };
+		F4D4C6C624CBCEA800581E05 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewInternal.swift; sourceTree = "<group>"; };
 		F4E5262424C7C2E100125DF9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				F4E5262624C7D88800125DF9 /* BasicSettings.swift */,
 				F4E5262A24C7D97B00125DF9 /* ExposureView.swift */,
+				F4D4C6C624CBCEA800581E05 /* ImageView.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				F47D07FC24C418B200E44A22 /* UVCProcessingUnit.swift in Sources */,
 				F486353124CBA574003CE0BA /* IntCaptureDeviceProperty.swift in Sources */,
 				F47D082124C6924100E44A22 /* UVCBoolControl.swift in Sources */,
+				F4D4C6C724CBCEA800581E05 /* ImageView.swift in Sources */,
 				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
 				F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */,
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,

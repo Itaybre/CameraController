@@ -14,6 +14,7 @@ struct BasicSettings: View {
     var body: some View {
         VStack {
             ExposureView(controller: controller)
+            ImageView(controller: controller)
         }
     }
 }
