@@ -42,6 +42,7 @@
 		F4D4C6CB24CBD27600581E05 /* WhiteBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6CA24CBD27600581E05 /* WhiteBalanceView.swift */; };
 		F4D4C6CE24CBD34300581E05 /* AdvancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6CD24CBD34300581E05 /* AdvancedView.swift */; };
 		F4D4C6D024CBD3B000581E05 /* PowerLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6CF24CBD3B000581E05 /* PowerLineView.swift */; };
+		F4D4C6D224CBD83100581E05 /* BacklightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6D124CBD83100581E05 /* BacklightView.swift */; };
 		F4E5261F24C7BD0B00125DF9 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */; };
 		F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */; };
 		F4E5262524C7C2E100125DF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262424C7C2E100125DF9 /* SettingsView.swift */; };
@@ -104,6 +105,7 @@
 		F4D4C6CA24CBD27600581E05 /* WhiteBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBalanceView.swift; sourceTree = "<group>"; };
 		F4D4C6CD24CBD34300581E05 /* AdvancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedView.swift; sourceTree = "<group>"; };
 		F4D4C6CF24CBD3B000581E05 /* PowerLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerLineView.swift; sourceTree = "<group>"; };
+		F4D4C6D124CBD83100581E05 /* BacklightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacklightView.swift; sourceTree = "<group>"; };
 		F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewInternal.swift; sourceTree = "<group>"; };
 		F4E5262424C7C2E100125DF9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			children = (
 				F4D4C6CD24CBD34300581E05 /* AdvancedView.swift */,
 				F4D4C6CF24CBD3B000581E05 /* PowerLineView.swift */,
+				F4D4C6D124CBD83100581E05 /* BacklightView.swift */,
 			);
 			path = Advanced;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */,
 				F4E5263224C93A3400125DF9 /* DeviceController.swift in Sources */,
 				F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */,
+				F4D4C6D224CBD83100581E05 /* BacklightView.swift in Sources */,
 				F4D4C6D024CBD3B000581E05 /* PowerLineView.swift in Sources */,
 				F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */,
 				F4E5262B24C7D97B00125DF9 /* ExposureView.swift in Sources */,

@@ -14,6 +14,7 @@ struct AdvancedView: View {
     var body: some View {
         VStack {
             PowerLineView(controller: controller)
+            BacklightView(controller: controller)
         }
     }
 }

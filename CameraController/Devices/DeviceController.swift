@@ -20,6 +20,7 @@ class DeviceController: ObservableObject {
     @Published var whiteBalanceAuto: BoolCaptureDeviceProperty
     @Published var whiteBalance: IntCaptureDeviceProperty
     @Published var powerLineFrequency: IntCaptureDeviceProperty
+    @Published var backlightCompensation: IntCaptureDeviceProperty
 
     init?(properties: UVCDeviceProperties?) {
         guard let properties = properties else {
@@ -43,5 +44,8 @@ class DeviceController: ObservableObject {
 
         // PowerLine
         powerLineFrequency = IntCaptureDeviceProperty(properties.powerLineFrequency)
+        
+        // Backlight Compensation
+        backlightCompensation = IntCaptureDeviceProperty(properties.backlightCompensation)
     }
 }
