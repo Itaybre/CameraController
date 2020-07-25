@@ -36,7 +36,7 @@
 		F47D082124C6924100E44A22 /* UVCBoolControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082024C6924100E44A22 /* UVCBoolControl.swift */; };
 		F47D082324C692A600E44A22 /* UVCBitmapControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082224C692A600E44A22 /* UVCBitmapControl.swift */; };
 		F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */; };
-		F486353124CBA574003CE0BA /* IntCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486353024CBA574003CE0BA /* IntCaptureDeviceProperty.swift */; };
+		F486353124CBA574003CE0BA /* NumberCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486353024CBA574003CE0BA /* NumberCaptureDeviceProperty.swift */; };
 		F4D4C6C724CBCEA800581E05 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6C624CBCEA800581E05 /* ImageView.swift */; };
 		F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6C824CBD26600581E05 /* BoolCaptureDeviceProperty.swift */; };
 		F4D4C6CB24CBD27600581E05 /* WhiteBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6CA24CBD27600581E05 /* WhiteBalanceView.swift */; };
@@ -101,7 +101,7 @@
 		F47D082024C6924100E44A22 /* UVCBoolControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCBoolControl.swift; sourceTree = "<group>"; };
 		F47D082224C692A600E44A22 /* UVCBitmapControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCBitmapControl.swift; sourceTree = "<group>"; };
 		F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDeviceProperties.swift; sourceTree = "<group>"; };
-		F486353024CBA574003CE0BA /* IntCaptureDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntCaptureDeviceProperty.swift; sourceTree = "<group>"; };
+		F486353024CBA574003CE0BA /* NumberCaptureDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCaptureDeviceProperty.swift; sourceTree = "<group>"; };
 		F4D4C6C624CBCEA800581E05 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		F4D4C6C824CBD26600581E05 /* BoolCaptureDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolCaptureDeviceProperty.swift; sourceTree = "<group>"; };
 		F4D4C6CA24CBD27600581E05 /* WhiteBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBalanceView.swift; sourceTree = "<group>"; };
@@ -326,7 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				F4E5262F24C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift */,
-				F486353024CBA574003CE0BA /* IntCaptureDeviceProperty.swift */,
+				F486353024CBA574003CE0BA /* NumberCaptureDeviceProperty.swift */,
 				F4D4C6C824CBD26600581E05 /* BoolCaptureDeviceProperty.swift */,
 				F4D4C6D524CBD96B00581E05 /* MultipleCaptureDeviceProperty.swift */,
 			);
@@ -469,7 +469,7 @@
 				F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */,
 				F4E5261F24C7BD0B00125DF9 /* CameraPreview.swift in Sources */,
 				F47D07FC24C418B200E44A22 /* UVCProcessingUnit.swift in Sources */,
-				F486353124CBA574003CE0BA /* IntCaptureDeviceProperty.swift in Sources */,
+				F486353124CBA574003CE0BA /* NumberCaptureDeviceProperty.swift in Sources */,
 				F47D082124C6924100E44A22 /* UVCBoolControl.swift in Sources */,
 				F4D4C6C724CBCEA800581E05 /* ImageView.swift in Sources */,
 				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,

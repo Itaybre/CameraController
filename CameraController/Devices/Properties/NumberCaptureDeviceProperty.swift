@@ -8,7 +8,7 @@
 
 import Foundation
 
-class IntCaptureDeviceProperty {
+class NumberCaptureDeviceProperty {
     let control: UVCIntControl
 
     var sliderValue: Float {

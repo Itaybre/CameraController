@@ -11,17 +11,17 @@ import Combine
 
 class DeviceController: ObservableObject {
     @Published var exposureMode: BitmapCaptureDeviceProperty
-    @Published var exposureTime: IntCaptureDeviceProperty
-    @Published var gain: IntCaptureDeviceProperty
-    @Published var brightness: IntCaptureDeviceProperty
-    @Published var contrast: IntCaptureDeviceProperty
-    @Published var saturation: IntCaptureDeviceProperty
-    @Published var sharpness: IntCaptureDeviceProperty
+    @Published var exposureTime: NumberCaptureDeviceProperty
+    @Published var gain: NumberCaptureDeviceProperty
+    @Published var brightness: NumberCaptureDeviceProperty
+    @Published var contrast: NumberCaptureDeviceProperty
+    @Published var saturation: NumberCaptureDeviceProperty
+    @Published var sharpness: NumberCaptureDeviceProperty
     @Published var whiteBalanceAuto: BoolCaptureDeviceProperty
-    @Published var whiteBalance: IntCaptureDeviceProperty
-    @Published var powerLineFrequency: IntCaptureDeviceProperty
-    @Published var backlightCompensation: IntCaptureDeviceProperty
-    @Published var zoomAbsolute: IntCaptureDeviceProperty
+    @Published var whiteBalance: NumberCaptureDeviceProperty
+    @Published var powerLineFrequency: NumberCaptureDeviceProperty
+    @Published var backlightCompensation: NumberCaptureDeviceProperty
+    @Published var zoomAbsolute: NumberCaptureDeviceProperty
     @Published var panTiltAbsolute: MultipleCaptureDeviceProperty
 
     init?(properties: UVCDeviceProperties?) {
@@ -31,27 +31,27 @@ class DeviceController: ObservableObject {
 
         // Exposure
         exposureMode = BitmapCaptureDeviceProperty(properties.exposureMode)
-        exposureTime = IntCaptureDeviceProperty(properties.exposureTime)
-        gain = IntCaptureDeviceProperty(properties.gain)
+        exposureTime = NumberCaptureDeviceProperty(properties.exposureTime)
+        gain = NumberCaptureDeviceProperty(properties.gain)
 
         // Image
-        brightness = IntCaptureDeviceProperty(properties.brightness)
-        contrast = IntCaptureDeviceProperty(properties.contrast)
-        saturation = IntCaptureDeviceProperty(properties.saturation)
-        sharpness = IntCaptureDeviceProperty(properties.sharpness)
+        brightness = NumberCaptureDeviceProperty(properties.brightness)
+        contrast = NumberCaptureDeviceProperty(properties.contrast)
+        saturation = NumberCaptureDeviceProperty(properties.saturation)
+        sharpness = NumberCaptureDeviceProperty(properties.sharpness)
 
         // WhiteBalance
         whiteBalanceAuto = BoolCaptureDeviceProperty(properties.whiteBalanceAuto)
-        whiteBalance = IntCaptureDeviceProperty(properties.whiteBalance)
+        whiteBalance = NumberCaptureDeviceProperty(properties.whiteBalance)
 
         // PowerLine
-        powerLineFrequency = IntCaptureDeviceProperty(properties.powerLineFrequency)
+        powerLineFrequency = NumberCaptureDeviceProperty(properties.powerLineFrequency)
 
         // Backlight Compensation
-        backlightCompensation = IntCaptureDeviceProperty(properties.backlightCompensation)
+        backlightCompensation = NumberCaptureDeviceProperty(properties.backlightCompensation)
 
         // Orientation
-        zoomAbsolute = IntCaptureDeviceProperty(properties.zoomAbsolute)
+        zoomAbsolute = NumberCaptureDeviceProperty(properties.zoomAbsolute)
         panTiltAbsolute = MultipleCaptureDeviceProperty(properties.panTiltAbsolute)
     }
 }
