@@ -15,6 +15,7 @@ struct BasicSettings: View {
         VStack {
             ExposureView(controller: controller)
             ImageView(controller: controller)
+            WhiteBalanceView(controller: controller)
         }
     }
 }

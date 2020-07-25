@@ -38,6 +38,8 @@
 		F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */; };
 		F486353124CBA574003CE0BA /* IntCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486353024CBA574003CE0BA /* IntCaptureDeviceProperty.swift */; };
 		F4D4C6C724CBCEA800581E05 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6C624CBCEA800581E05 /* ImageView.swift */; };
+		F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6C824CBD26600581E05 /* BoolCaptureDeviceProperty.swift */; };
+		F4D4C6CB24CBD27600581E05 /* WhiteBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6CA24CBD27600581E05 /* WhiteBalanceView.swift */; };
 		F4E5261F24C7BD0B00125DF9 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */; };
 		F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */; };
 		F4E5262524C7C2E100125DF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262424C7C2E100125DF9 /* SettingsView.swift */; };
@@ -96,6 +98,8 @@
 		F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCDeviceProperties.swift; sourceTree = "<group>"; };
 		F486353024CBA574003CE0BA /* IntCaptureDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntCaptureDeviceProperty.swift; sourceTree = "<group>"; };
 		F4D4C6C624CBCEA800581E05 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		F4D4C6C824CBD26600581E05 /* BoolCaptureDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolCaptureDeviceProperty.swift; sourceTree = "<group>"; };
+		F4D4C6CA24CBD27600581E05 /* WhiteBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBalanceView.swift; sourceTree = "<group>"; };
 		F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewInternal.swift; sourceTree = "<group>"; };
 		F4E5262424C7C2E100125DF9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 				F4E5262624C7D88800125DF9 /* BasicSettings.swift */,
 				F4E5262A24C7D97B00125DF9 /* ExposureView.swift */,
 				F4D4C6C624CBCEA800581E05 /* ImageView.swift */,
+				F4D4C6CA24CBD27600581E05 /* WhiteBalanceView.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			children = (
 				F4E5262F24C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift */,
 				F486353024CBA574003CE0BA /* IntCaptureDeviceProperty.swift */,
+				F4D4C6C824CBD26600581E05 /* BoolCaptureDeviceProperty.swift */,
 			);
 			path = Properties;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 				F4E5262D24C7DDB000125DF9 /* CaptureDevice.swift in Sources */,
 				F47D07EF24C4123600E44A22 /* DeviceManager.swift in Sources */,
 				F47D081B24C68CC200E44A22 /* UVCControl.swift in Sources */,
+				F4D4C6CB24CBD27600581E05 /* WhiteBalanceView.swift in Sources */,
 				F4E5263024C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift in Sources */,
 				F47D080C24C50F7B00E44A22 /* USBDevice.swift in Sources */,
 				F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */,
@@ -445,6 +452,7 @@
 				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
 				F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */,
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
+				F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */,
 				F47D081D24C68F6000E44A22 /* UVCIntControl.swift in Sources */,
 				F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */,
 				F4E5263224C93A3400125DF9 /* DeviceController.swift in Sources */,
