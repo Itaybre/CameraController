@@ -32,6 +32,8 @@ struct SettingsView: View {
 
                     if currentView == 1 {
                         BasicSettings(controller: (captureDevice?.controller!)!).animation(.linear)
+                    } else if currentView == 2 {
+                        AdvancedView(controller: (captureDevice?.controller!)!).animation(.linear)
                     }
                 }
             }
