@@ -55,6 +55,8 @@
 		F4D4C6F624CBE81900581E05 /* Helper.app in Resources */ = {isa = PBXBuildFile; fileRef = F4D4C6E124CBE7A000581E05 /* Helper.app */; };
 		F4D4C6FA24CBE83500581E05 /* Helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = F4D4C6E124CBE7A000581E05 /* Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F4D4C6FC24CBE94F00581E05 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D4C6FB24CBE94F00581E05 /* IOKit.framework */; };
+		F4D4C6FF24CBF98300581E05 /* RefreshSettingsRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6FE24CBF98300581E05 /* RefreshSettingsRate.swift */; };
+		F4D4C70124CBF99200581E05 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C70024CBF99200581E05 /* UserSettings.swift */; };
 		F4E5261F24C7BD0B00125DF9 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */; };
 		F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */; };
 		F4E5262524C7C2E100125DF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262424C7C2E100125DF9 /* SettingsView.swift */; };
@@ -151,6 +153,8 @@
 		F4D4C6F024CBE7A200581E05 /* Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Helper.entitlements; sourceTree = "<group>"; };
 		F4D4C6F424CBE81600581E05 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		F4D4C6FB24CBE94F00581E05 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		F4D4C6FE24CBF98300581E05 /* RefreshSettingsRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshSettingsRate.swift; sourceTree = "<group>"; };
+		F4D4C70024CBF99200581E05 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewInternal.swift; sourceTree = "<group>"; };
 		F4E5262424C7C2E100125DF9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				F47D07C724C4104300E44A22 /* AppDelegate.swift */,
+				F4D4C6FD24CBF97400581E05 /* Settings */,
 				F47D07ED24C4119200E44A22 /* Resources */,
 				F47D07EC24C4118200E44A22 /* Devices */,
 				F47D07F524C4177400E44A22 /* UVC */,
@@ -383,6 +388,15 @@
 				F4D4C6EA24CBE7A200581E05 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F4D4C6FD24CBF97400581E05 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F4D4C6FE24CBF98300581E05 /* RefreshSettingsRate.swift */,
+				F4D4C70024CBF99200581E05 /* UserSettings.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		F4E5262824C7D88B00125DF9 /* Settings */ = {
@@ -592,8 +606,10 @@
 				F486353124CBA574003CE0BA /* NumberCaptureDeviceProperty.swift in Sources */,
 				F47D082124C6924100E44A22 /* UVCBoolControl.swift in Sources */,
 				F4D4C6C724CBCEA800581E05 /* ImageView.swift in Sources */,
+				F4D4C6FF24CBF98300581E05 /* RefreshSettingsRate.swift in Sources */,
 				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
 				F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */,
+				F4D4C70124CBF99200581E05 /* UserSettings.swift in Sources */,
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
 				F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */,
 				F47D081D24C68F6000E44A22 /* UVCIntControl.swift in Sources */,

@@ -7,39 +7,59 @@
 //
 
 import SwiftUI
-import Combine
-import ServiceManagement
 
-class UserSettings: ObservableObject {
-    @Published var openAtLogin: Bool {
-        didSet {
-            let success = SMLoginItemSetEnabled("com.itaysoft.CameraController.Helper" as CFString, openAtLogin)
-            if success {
-                UserDefaults.standard.set(openAtLogin, forKey: "login")
+struct PreferencesView: View {
+    @ObservedObject var settings = UserSettings.shared
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            applicationSettings()
+            readSettings()
+            writeSettings()
+        }
+    }
+
+    fileprivate func applicationSettings() -> some View {
+        return GroupBox(label: Text("Application")) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Toggle(isOn: $settings.openAtLogin) {
+                        Text("Open at login")
+                    }
+                }
+                Spacer()
             }
         }
     }
 
-    init() {
-        self.openAtLogin = UserDefaults.standard.bool(forKey: "login")
-
-    }
-}
-
-struct PreferencesView: View {
-    @ObservedObject var settings = UserSettings()
-
-    var body: some View {
-        VStack(alignment: .leading) {
-            GroupBox(label: Text("Application")) {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Toggle(isOn: $settings.openAtLogin) {
-                            Text("Open at login")
-                        }
+    fileprivate func readSettings() -> some View {
+        return GroupBox(label: Text("Read Settings")) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Picker(selection: $settings.readRate, label: Text("")) {
+                        Text("Disabled").tag(RefreshSettingsRate.disabled)
+                        Text("Every 0.5 Seconds").tag(RefreshSettingsRate.halfSecond)
+                        Text("Every 1 Second").tag(RefreshSettingsRate.oneSecond)
+                        Text("Every 2 Second").tag(RefreshSettingsRate.twoSeconds)
                     }
-                    Spacer()
                 }
+                Spacer()
+            }
+        }
+    }
+
+    fileprivate func writeSettings() -> some View {
+        GroupBox(label: Text("Push Settings")) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Picker(selection: $settings.writeRate, label: Text("")) {
+                        Text("Disabled").tag(RefreshSettingsRate.disabled)
+                        Text("Every 0.5 Seconds").tag(RefreshSettingsRate.halfSecond)
+                        Text("Every 1 Second").tag(RefreshSettingsRate.oneSecond)
+                        Text("Every 2 Second").tag(RefreshSettingsRate.twoSeconds)
+                    }
+                }
+                Spacer()
             }
         }
     }
