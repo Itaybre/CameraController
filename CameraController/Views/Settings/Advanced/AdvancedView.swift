@@ -15,6 +15,7 @@ struct AdvancedView: View {
         VStack {
             PowerLineView(controller: controller)
             BacklightView(controller: controller)
+            OrientationView(controller: controller)
         }
     }
 }

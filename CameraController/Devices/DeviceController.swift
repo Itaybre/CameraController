@@ -21,6 +21,8 @@ class DeviceController: ObservableObject {
     @Published var whiteBalance: IntCaptureDeviceProperty
     @Published var powerLineFrequency: IntCaptureDeviceProperty
     @Published var backlightCompensation: IntCaptureDeviceProperty
+    @Published var zoomAbsolute: IntCaptureDeviceProperty
+    @Published var panTiltAbsolute: MultipleCaptureDeviceProperty
 
     init?(properties: UVCDeviceProperties?) {
         guard let properties = properties else {
@@ -44,8 +46,12 @@ class DeviceController: ObservableObject {
 
         // PowerLine
         powerLineFrequency = IntCaptureDeviceProperty(properties.powerLineFrequency)
-        
+
         // Backlight Compensation
         backlightCompensation = IntCaptureDeviceProperty(properties.backlightCompensation)
+
+        // Orientation
+        zoomAbsolute = IntCaptureDeviceProperty(properties.zoomAbsolute)
+        panTiltAbsolute = MultipleCaptureDeviceProperty(properties.panTiltAbsolute)
     }
 }
