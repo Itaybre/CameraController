@@ -19,6 +19,7 @@ class DeviceController: ObservableObject {
     @Published var sharpness: IntCaptureDeviceProperty
     @Published var whiteBalanceAuto: BoolCaptureDeviceProperty
     @Published var whiteBalance: IntCaptureDeviceProperty
+    @Published var powerLineFrequency: IntCaptureDeviceProperty
 
     init?(properties: UVCDeviceProperties?) {
         guard let properties = properties else {
@@ -39,5 +40,8 @@ class DeviceController: ObservableObject {
         // WhiteBalance
         whiteBalanceAuto = BoolCaptureDeviceProperty(properties.whiteBalanceAuto)
         whiteBalance = IntCaptureDeviceProperty(properties.whiteBalance)
+
+        // PowerLine
+        powerLineFrequency = IntCaptureDeviceProperty(properties.powerLineFrequency)
     }
 }

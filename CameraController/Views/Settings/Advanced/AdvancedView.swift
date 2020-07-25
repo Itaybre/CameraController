@@ -13,7 +13,7 @@ struct AdvancedView: View {
 
     var body: some View {
         VStack {
-            Text("Demo View")
+            PowerLineView(controller: controller)
         }
     }
 }
