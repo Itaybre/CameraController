@@ -23,6 +23,8 @@ class DeviceController: ObservableObject {
     @Published var backlightCompensation: NumberCaptureDeviceProperty
     @Published var zoomAbsolute: NumberCaptureDeviceProperty
     @Published var panTiltAbsolute: MultipleCaptureDeviceProperty
+    @Published var focusAuto: BoolCaptureDeviceProperty
+    @Published var focusAbsolute: NumberCaptureDeviceProperty
 
     init?(properties: UVCDeviceProperties?) {
         guard let properties = properties else {
@@ -53,5 +55,9 @@ class DeviceController: ObservableObject {
         // Orientation
         zoomAbsolute = NumberCaptureDeviceProperty(properties.zoomAbsolute)
         panTiltAbsolute = MultipleCaptureDeviceProperty(properties.panTiltAbsolute)
+
+        // Focus
+        focusAuto = BoolCaptureDeviceProperty(properties.focusAuto)
+        focusAbsolute = NumberCaptureDeviceProperty(properties.focusAbsolute)
     }
 }

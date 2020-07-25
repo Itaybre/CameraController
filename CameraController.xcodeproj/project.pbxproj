@@ -45,6 +45,7 @@
 		F4D4C6D224CBD83100581E05 /* BacklightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6D124CBD83100581E05 /* BacklightView.swift */; };
 		F4D4C6D424CBD8EC00581E05 /* OrientationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6D324CBD8EC00581E05 /* OrientationView.swift */; };
 		F4D4C6D624CBD96B00581E05 /* MultipleCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6D524CBD96B00581E05 /* MultipleCaptureDeviceProperty.swift */; };
+		F4D4C6D824CBDA5700581E05 /* FocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6D724CBDA5700581E05 /* FocusView.swift */; };
 		F4E5261F24C7BD0B00125DF9 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */; };
 		F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */; };
 		F4E5262524C7C2E100125DF9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262424C7C2E100125DF9 /* SettingsView.swift */; };
@@ -110,6 +111,7 @@
 		F4D4C6D124CBD83100581E05 /* BacklightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacklightView.swift; sourceTree = "<group>"; };
 		F4D4C6D324CBD8EC00581E05 /* OrientationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationView.swift; sourceTree = "<group>"; };
 		F4D4C6D524CBD96B00581E05 /* MultipleCaptureDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCaptureDeviceProperty.swift; sourceTree = "<group>"; };
+		F4D4C6D724CBDA5700581E05 /* FocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusView.swift; sourceTree = "<group>"; };
 		F4E5261E24C7BD0B00125DF9 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		F4E5262024C7BDD400125DF9 /* CameraPreviewInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewInternal.swift; sourceTree = "<group>"; };
 		F4E5262424C7C2E100125DF9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				F4D4C6CF24CBD3B000581E05 /* PowerLineView.swift */,
 				F4D4C6D124CBD83100581E05 /* BacklightView.swift */,
 				F4D4C6D324CBD8EC00581E05 /* OrientationView.swift */,
+				F4D4C6D724CBDA5700581E05 /* FocusView.swift */,
 			);
 			path = Advanced;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				F4D4C6D624CBD96B00581E05 /* MultipleCaptureDeviceProperty.swift in Sources */,
 				F4D4C6D024CBD3B000581E05 /* PowerLineView.swift in Sources */,
 				F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */,
+				F4D4C6D824CBDA5700581E05 /* FocusView.swift in Sources */,
 				F4E5262B24C7D97B00125DF9 /* ExposureView.swift in Sources */,
 				F47D081024C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift in Sources */,
 				F47D081224C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */,
