@@ -31,7 +31,7 @@ class DevicesManagerTests: XCTestCase {
         deviceManager.deviceAdded(notif: notification)
 
         XCTAssertEqual(deviceManager.devices.count, 1)
-        XCTAssertEqual(deviceManager.devices, [device])
+        XCTAssertEqual(deviceManager.devices, [CaptureDevice(avDevice: device!)])
     }
 
     func testNotificationAddNilDevice() throws {
@@ -48,7 +48,7 @@ class DevicesManagerTests: XCTestCase {
     func testNotificationRemoveDevice() throws {
         let deviceManager = DevicesManager.shared
         let device = AVCaptureDevice.default(for: .video)
-        deviceManager.devices = [device!]
+        deviceManager.devices = [CaptureDevice(avDevice: device!)]
         XCTAssertEqual(deviceManager.devices.count, 1)
 
         let notification = NSNotification(name: NSNotification.Name(rawValue: "mockNotification"), object: device)
@@ -60,14 +60,14 @@ class DevicesManagerTests: XCTestCase {
     func testNotificationRemoveNilDevice() throws {
         let deviceManager = DevicesManager.shared
         let device = AVCaptureDevice.default(for: .video)
-        deviceManager.devices = [device!]
+        deviceManager.devices = [CaptureDevice(avDevice: device!)]
         XCTAssertEqual(deviceManager.devices.count, 1)
 
         let notification = NSNotification(name: NSNotification.Name(rawValue: "mockNotification"), object: nil)
         deviceManager.deviceRemoved(notif: notification)
 
         XCTAssertEqual(deviceManager.devices.count, 1)
-        XCTAssertEqual(deviceManager.devices, [device])
+        XCTAssertEqual(deviceManager.devices, [CaptureDevice(avDevice: device!)])
     }
 
 }
