@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct ExposureView: View {
-    @State var mode: UVCBitmapControl.BitmapValue = .manual
-    @State var time: Float = 1
-    @State var gain: Float = 1
+    @ObservedObject var controller: DeviceController
 
     var body: some View {
         GroupBox(label: Text("Exposure")) {
@@ -19,10 +17,11 @@ struct ExposureView: View {
                 HStack {
                     Text("Mode:")
                     Spacer()
-                    Picker(selection: $mode, label: EmptyView()) {
+                    Picker(selection: $controller.exposureMode.selected, label: EmptyView()) {
                         Text("Manual").tag(UVCBitmapControl.BitmapValue.manual)
                         Text("Auto").tag(UVCBitmapControl.BitmapValue.aperturePriority)
                     }
+                .   disabled(!controller.exposureMode.isCapable)
                     .pickerStyle(SegmentedPickerStyle())
                     .frame(width: 300, height: 20.0)
                 }
@@ -30,16 +29,21 @@ struct ExposureView: View {
                 HStack {
                     Text("Exposure Time:")
                     Spacer()
-                    Slider(value: $time, in: 1...100)
-                        .disabled(!optionsEnabled())
+                    Slider(value: $controller.exposureTime.sliderValue, in:
+                        controller.exposureTime.minimum...controller.exposureTime.maximum)
+                        .disabled(!optionsEnabled() || !controller.exposureTime.isCapable)
                         .frame(width: 300, height: 15.0)
+                        .onAppear {
+                            print("Min: \(self.controller.exposureTime.minimum)")
+                            print("Max: \(self.controller.exposureTime.maximum)")
+                    }
                 }
 
                 HStack {
                     Text("Gain:")
                     Spacer()
-                    Slider(value: $gain, in: 1...100)
-                        .disabled(!optionsEnabled())
+                    Slider(value: $controller.gain.sliderValue, in: controller.gain.minimum...controller.gain.maximum)
+                        .disabled(!optionsEnabled() || !controller.gain.isCapable)
                         .frame(width: 300, height: 15.0)
                 }
             }
@@ -47,12 +51,12 @@ struct ExposureView: View {
     }
 
     func optionsEnabled() -> Bool {
-        return mode == .manual
+        return controller.exposureMode.selected == .manual
     }
 }
 
-struct ExposureView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExposureView()
-    }
-}
+//struct ExposureView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ExposureView()
+//    }
+//}

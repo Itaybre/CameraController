@@ -10,32 +10,37 @@ import SwiftUI
 import AVFoundation
 
 struct SettingsView: View {
-    @Binding var device: AVCaptureDevice?
+    @Binding var captureDevice: CaptureDevice?
     @State var currentView: Int = 1
 
     var body: some View {
         GroupBox(label: Text("Settings")) {
-            if device == nil {
-                EmptyView()
-            } else {
-                Picker(selection: $currentView.animation(.linear), label: EmptyView()) {
-                    Text("Basic").tag(1)
-                    Text("Advanced").tag(2)
-                    Text("Preferences").tag(3)
+            if captureDevice?.uvcDevice == nil {
+                HStack {
+                    Text("This device cannot be configured")
+                    Spacer()
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                .frame(width: 300)
+            } else {
+                VStack {
+                    Picker(selection: $currentView.animation(.linear), label: EmptyView()) {
+                        Text("Basic").tag(1)
+                        Text("Advanced").tag(2)
+                        Text("Preferences").tag(3)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .frame(width: 300)
 
-                if currentView == 1 {
-                    BasicSettings().animation(.linear)
+                    if currentView == 1 {
+                        BasicSettings(controller: (captureDevice?.controller!)!).animation(.linear)
+                    }
                 }
             }
         }
     }
 }
 
-//struct SettingsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SettingsView()
-//    }
-//}
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView(captureDevice: .constant(nil))
+    }
+}

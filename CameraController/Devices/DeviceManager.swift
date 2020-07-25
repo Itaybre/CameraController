@@ -13,13 +13,15 @@ import AVFoundation
 class DevicesManager: ObservableObject {
     static let shared = DevicesManager()
 
-    @Published var devices: [AVCaptureDevice] = []
+    @Published var devices: [CaptureDevice] = []
 
     private init() {
         let session = AVCaptureDevice.DiscoverySession(deviceTypes: [.externalUnknown, .builtInWideAngleCamera],
                                                                 mediaType: nil,
                                                                 position: .unspecified)
-        devices = session.devices
+        devices = session.devices.map({ (device) -> CaptureDevice in
+            CaptureDevice(avDevice: device)
+        })
     }
 
     func startMonitoring() {
@@ -44,14 +46,22 @@ class DevicesManager: ObservableObject {
             return
         }
 
-        devices.append(device)
+        devices.append(CaptureDevice(avDevice: device))
     }
 
     @objc func deviceRemoved(notif: NSNotification) {
-        guard let device = notif.object as? AVCaptureDevice,
-            let index = devices.firstIndex(of: device) else {
+        guard let device = notif.object as? AVCaptureDevice else {
             return
         }
-        devices.remove(at: index)
+
+        let index = devices.firstIndex { (captureDevice) -> Bool in
+            captureDevice.avDevice == device
+        }
+
+        guard index != nil else {
+            return
+        }
+
+        devices.remove(at: index!)
     }
 }

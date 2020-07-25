@@ -85,7 +85,7 @@ extension IOUSBConfigurationDescriptorPtr {
     fileprivate func getDeviceId(_ descriptorPointer: InterfaceDescriptorPointer,
                                  _ currentPointer: UnsafeMutablePointer<UInt8>,
                                  _ processingUnitID: inout Int, _ cameraTerminalID: inout Int) {
-        let unitType = UVCConstants.Unit(rawValue: descriptorPointer.pointee.bDescriptorSubType)
+        let unitType = UVCConstants.DescriptorSubtype(rawValue: descriptorPointer.pointee.bDescriptorSubType)
         switch unitType {
         case .processingUnit:
             let puPointer = ProcessingUnitDescriptorPointer(OpaquePointer(currentPointer))
@@ -94,6 +94,10 @@ extension IOUSBConfigurationDescriptorPtr {
             let ctPointer = CameraTerminalDescriptorPointer(OpaquePointer(currentPointer))
             cameraTerminalID = Int(ctPointer.pointee.bTerminalID)
         case .none:
+            break
+        case .selectorUnit:
+            break
+        case .extensionUnit:
             break
         }
     }

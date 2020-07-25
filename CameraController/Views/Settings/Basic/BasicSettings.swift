@@ -9,15 +9,17 @@
 import SwiftUI
 
 struct BasicSettings: View {
+    @ObservedObject var controller: DeviceController
+
     var body: some View {
         VStack {
-            ExposureView()
+            ExposureView(controller: controller)
         }
     }
 }
 
-struct BasicSettings_Previews: PreviewProvider {
-    static var previews: some View {
-        BasicSettings()
-    }
-}
+//struct BasicSettings_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BasicSettings()
+//    }
+//}

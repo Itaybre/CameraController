@@ -12,7 +12,7 @@ import AVFoundation
 
 struct ContentView: View {
 
-    @State var selectedDevice: AVCaptureDevice?
+    @State var selectedDevice: CaptureDevice?
     @ObservedObject var manager = DevicesManager.shared
 
     var body: some View {
@@ -20,11 +20,11 @@ struct ContentView: View {
             VStack {
                 Picker(selection: $selectedDevice.animation(.linear), label: Text("Camera")) {
                     ForEach(manager.devices, id: \.self) { device in
-                        Text(device.localizedName).tag(device as AVCaptureDevice?)
+                        Text(device.name).tag(device as CaptureDevice?)
                     }
                 }
-                cameraPreview(device: $selectedDevice)
-                SettingsView(device: $selectedDevice)
+                cameraPreview(captureDevice: $selectedDevice).animation(.spring())
+                settingsView(captureDevice: $selectedDevice).animation(.spring())
             }.onAppear {
                 DevicesManager.shared.startMonitoring()
             }.onDisappear {
@@ -33,14 +33,22 @@ struct ContentView: View {
         }.padding(.all, 10.0).frame(width: 450)
     }
 
-    func cameraPreview(device: Binding<AVCaptureDevice?>) -> AnyView {
-        if device.wrappedValue != nil {
-            return AnyView(CameraPreview(captureDevice: device)
+    func cameraPreview(captureDevice: Binding<CaptureDevice?>) -> AnyView {
+        if captureDevice.wrappedValue != nil {
+            return AnyView(CameraPreview(captureDevice: captureDevice)
                 .frame(width: 400, height: 225))
         } else {
             return AnyView(Image("video.slash")
                 .frame(width: 400, height: 225)
                 .background(Color.gray))
+        }
+    }
+
+    func settingsView(captureDevice: Binding<CaptureDevice?>) -> some View {
+        if captureDevice.wrappedValue != nil {
+            return AnyView(SettingsView(captureDevice: captureDevice))
+        } else {
+            return AnyView(EmptyView())
         }
     }
 }

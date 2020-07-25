@@ -10,14 +10,14 @@ import SwiftUI
 import AVFoundation
 
 struct CameraPreview: NSViewRepresentable {
-    @Binding var captureDevice: AVCaptureDevice?
+    @Binding var captureDevice: CaptureDevice?
 
     func makeNSView(context: Context) -> CameraPreviewInternal {
-        return CameraPreviewInternal(frame: .zero, device: captureDevice)
+        return CameraPreviewInternal(frame: .zero, device: captureDevice?.avDevice)
     }
 
     func updateNSView(_ nsView: CameraPreviewInternal, context: NSViewRepresentableContext<CameraPreview>) {
-        nsView.updateCamera(captureDevice)
+        nsView.updateCamera(captureDevice?.avDevice)
     }
 
     static func dismantleNSView(_ nsView: CameraPreviewInternal, coordinator: ()) {

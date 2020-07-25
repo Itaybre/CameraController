@@ -30,21 +30,20 @@ class UVCControl {
     func getDataFor(type: UVCRequestCodes, length: Int) -> Int {
         var value: Int = 0
 
-        // TODO: Get Request Type Dynamicaly
-        let requestType = UInt8(161)
+        let requestType = USBmakebmRequestType(direction: kUSBIn, type: kUSBClass, recipient: kUSBInterface)
 
         var request: IOUSBDevRequest = IOUSBDevRequest(bmRequestType: requestType,
-                                                       bRequest: type.rawValue,
+                                                       bRequest: UInt8(type.rawValue),
                                                        wValue: UInt16(uvcSelector<<8),
                                                        wIndex: UInt16(uvcUnit<<8),
                                                        wLength: UInt16(length),
                                                        pData: &value,
                                                        wLenDone: 0)
         guard
-        interface.pointee.pointee.USBInterfaceOpen(interface) == kIOReturnSuccess,
-        interface.pointee.pointee.ControlRequest(interface, 0, &request) == kIOReturnSuccess,
-        interface.pointee.pointee.USBInterfaceClose(interface) == kIOReturnSuccess else {
-            return 0
+            interface.pointee.pointee.USBInterfaceOpen(interface) == kIOReturnSuccess,
+            interface.pointee.pointee.ControlRequest(interface, 0, &request) == kIOReturnSuccess,
+            interface.pointee.pointee.USBInterfaceClose(interface) == kIOReturnSuccess else {
+                return 0
         }
 
         return value
@@ -53,11 +52,10 @@ class UVCControl {
     func setData(value: Int, length: Int) -> Bool {
         var ref = value
 
-        // TODO: Get Request Type Dynamicaly
-        let requestType = UInt8(33)
+        let requestType = USBmakebmRequestType(direction: kUSBOut, type: kUSBClass, recipient: kUSBInterface)
 
         var request: IOUSBDevRequest = IOUSBDevRequest(bmRequestType: requestType,
-                                                       bRequest: UVCRequestCodes.setCurrent.rawValue,
+                                                       bRequest: UInt8(UVCRequestCodes.setCurrent.rawValue),
                                                        wValue: UInt16(uvcSelector<<8),
                                                        wIndex: UInt16(uvcUnit<<8),
                                                        wLength: UInt16(length),
@@ -76,5 +74,11 @@ class UVCControl {
 
     func updateIsCapable() {
         isCapable = getDataFor(type: UVCRequestCodes.getInfo, length: 1) != 0
+    }
+
+    func USBmakebmRequestType(direction: Int, type: Int, recipient: Int) -> UInt8 {
+        return UInt8((direction & kUSBRqDirnMask) << kUSBRqDirnShift) |
+            UInt8((type & kUSBRqTypeMask) << kUSBRqTypeShift)|UInt8(recipient & kUSBRqRecipientMask)
+
     }
 }

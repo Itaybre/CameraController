@@ -13,7 +13,7 @@ struct UVCConstants {
     static let subclassVideoControl: UInt16 = 0x01
     static let descriptorTypeInterface = 0x24
 
-    enum DescriptorSubtype: Int {
+    enum DescriptorSubtype: UInt8 {
         case inputTerminal = 0x02
         case selectorUnit = 0x04
         case processingUnit = 0x05
