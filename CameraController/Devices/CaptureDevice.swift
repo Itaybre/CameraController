@@ -38,4 +38,13 @@ class CaptureDevice: Hashable, ObservableObject {
     func isDefaultDevice() -> Bool {
         return false
     }
+
+    func readValuesFromDevice() {
+        if let controller = controller {
+            controller.exposureTime.control.updateCurrent()
+            controller.whiteBalance.control.updateCurrent()
+            controller.focusAbsolute.control.updateCurrent()
+            controller.objectWillChange.send()
+        }
+    }
 }

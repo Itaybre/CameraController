@@ -57,8 +57,7 @@ class DeviceMonitor {
     }
 
     @objc func readFromDevice() {
-        // TODO: Update values from device
-        print("Read")
+        lastDevice?.readValuesFromDevice()
     }
 
     @objc func writeToDevice() {
