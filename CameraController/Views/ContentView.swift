@@ -11,20 +11,18 @@ import Combine
 import AVFoundation
 
 struct ContentView: View {
-
-    @State var selectedDevice: CaptureDevice?
     @ObservedObject var manager = DevicesManager.shared
 
     var body: some View {
         HStack {
             VStack {
-                Picker(selection: $selectedDevice.animation(.linear), label: Text("Camera")) {
+                Picker(selection: $manager.selectedDevice.animation(.linear), label: Text("Camera")) {
                     ForEach(manager.devices, id: \.self) { device in
                         Text(device.name).tag(device as CaptureDevice?)
                     }
                 }
-                cameraPreview(captureDevice: $selectedDevice).animation(.spring())
-                settingsView(captureDevice: $selectedDevice).animation(.spring())
+                cameraPreview(captureDevice: $manager.selectedDevice).animation(.spring())
+                settingsView(captureDevice: $manager.selectedDevice).animation(.spring())
             }.onAppear {
                 DevicesManager.shared.startMonitoring()
             }.onDisappear {

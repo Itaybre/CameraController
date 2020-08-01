@@ -17,7 +17,7 @@ class DevicesManager: ObservableObject {
 
     @Published var selectedDevice: CaptureDevice? {
         willSet {
-            if selectedDevice != nil && selectedDevice != newValue {
+            if newValue != nil && selectedDevice != newValue {
                 UserSettings.shared.lastSelectedDevice = newValue?.avDevice?.uniqueID
             }
         }
