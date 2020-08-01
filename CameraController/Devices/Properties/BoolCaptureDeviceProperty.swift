@@ -33,4 +33,8 @@ class BoolCaptureDeviceProperty {
     func reset() {
         control.isEnabled = control.defaultValue
     }
+
+    func write() {
+        isEnabled = control.isEnabled
+    }
 }

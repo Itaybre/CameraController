@@ -63,7 +63,6 @@ class DeviceMonitor {
 
     @objc
     private func writeToDevice() {
-        // TODO: Send values to device
-        print("Write")
+        lastDevice?.writeValuesToDevice()
     }
 }

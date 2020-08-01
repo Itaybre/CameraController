@@ -60,4 +60,22 @@ class DeviceController: ObservableObject {
         focusAuto = BoolCaptureDeviceProperty(properties.focusAuto)
         focusAbsolute = NumberCaptureDeviceProperty(properties.focusAbsolute)
     }
+
+    func writeValues() {
+        exposureMode.write()
+        exposureTime.write()
+        gain.write()
+        brightness.write()
+        contrast.write()
+        saturation.write()
+        sharpness.write()
+        whiteBalanceAuto.write()
+        whiteBalance.write()
+        powerLineFrequency.write()
+        backlightCompensation.write()
+        zoomAbsolute.write()
+        panTiltAbsolute.write()
+        focusAuto.write()
+        focusAbsolute.write()
+    }
 }

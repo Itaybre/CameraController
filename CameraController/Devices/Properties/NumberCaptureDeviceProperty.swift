@@ -40,7 +40,11 @@ class NumberCaptureDeviceProperty {
         control.current = control.defaultValue
     }
 
-    func updateValue() {
+    func update() {
         control.updateCurrent()
+    }
+
+    func write() {
+        sliderValue = Float(control.current)
     }
 }

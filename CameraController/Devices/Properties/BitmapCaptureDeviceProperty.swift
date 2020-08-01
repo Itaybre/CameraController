@@ -31,4 +31,8 @@ class BitmapCaptureDeviceProperty {
     func reset() {
         control.current = control.defaultValue
     }
+
+    func write() {
+        selected = control.current
+    }
 }

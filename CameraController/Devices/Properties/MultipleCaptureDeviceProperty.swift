@@ -58,4 +58,9 @@ class MultipleCaptureDeviceProperty {
         control.current1 = control.defaultValue1
         control.current2 = control.defaultValue2
     }
+
+    func write() {
+        sliderValue1 = Float(control.current1)
+        sliderValue2 = Float(control.current2)
+    }
 }
