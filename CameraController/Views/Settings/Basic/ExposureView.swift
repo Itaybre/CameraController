@@ -33,10 +33,6 @@ struct ExposureView: View {
                         controller.exposureTime.minimum...controller.exposureTime.maximum)
                         .disabled(!optionsEnabled() || !controller.exposureTime.isCapable)
                         .frame(width: 300, height: 15.0)
-                        .onAppear {
-                            print("Min: \(self.controller.exposureTime.minimum)")
-                            print("Max: \(self.controller.exposureTime.maximum)")
-                    }
                 }
 
                 HStack {
