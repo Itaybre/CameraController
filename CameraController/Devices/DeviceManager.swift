@@ -77,5 +77,9 @@ class DevicesManager: ObservableObject {
         }
 
         devices.remove(at: index!)
+
+        if device.uniqueID == selectedDevice?.avDevice?.uniqueID {
+            selectedDevice = nil
+        }
     }
 }
