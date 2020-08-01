@@ -9,7 +9,7 @@
 import Foundation
 
 class NumberCaptureDeviceProperty {
-    let control: UVCIntControl
+    private let control: UVCIntControl
 
     var sliderValue: Float {
         get {
@@ -38,5 +38,9 @@ class NumberCaptureDeviceProperty {
 
     func reset() {
         control.current = control.defaultValue
+    }
+
+    func updateValue() {
+        control.updateCurrent()
     }
 }

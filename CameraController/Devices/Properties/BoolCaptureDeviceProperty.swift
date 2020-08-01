@@ -9,7 +9,7 @@
 import Foundation
 
 class BoolCaptureDeviceProperty {
-    let control: UVCBoolControl
+    private let control: UVCBoolControl
 
     let isCapable: Bool
 

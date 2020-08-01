@@ -9,7 +9,7 @@
 import Foundation
 
 class MultipleCaptureDeviceProperty {
-    let control: UVCMultipleIntControl
+    private let control: UVCMultipleIntControl
 
     var sliderValue1: Float {
         get {

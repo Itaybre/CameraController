@@ -56,11 +56,13 @@ class DeviceMonitor {
         recreateTimers()
     }
 
-    @objc func readFromDevice() {
+    @objc
+    private func readFromDevice() {
         lastDevice?.readValuesFromDevice()
     }
 
-    @objc func writeToDevice() {
+    @objc
+    private func writeToDevice() {
         // TODO: Send values to device
         print("Write")
     }

@@ -41,9 +41,9 @@ class CaptureDevice: Hashable, ObservableObject {
 
     func readValuesFromDevice() {
         if let controller = controller {
-            controller.exposureTime.control.updateCurrent()
-            controller.whiteBalance.control.updateCurrent()
-            controller.focusAbsolute.control.updateCurrent()
+            controller.exposureTime.updateValue()
+            controller.whiteBalance.updateValue()
+            controller.focusAbsolute.updateValue()
             controller.objectWillChange.send()
         }
     }

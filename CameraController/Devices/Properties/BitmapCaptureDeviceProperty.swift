@@ -9,7 +9,7 @@
 import Foundation
 
 class BitmapCaptureDeviceProperty {
-    let control: UVCBitmapControl
+    private let control: UVCBitmapControl
 
     let isCapable: Bool
 
