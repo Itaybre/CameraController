@@ -15,6 +15,14 @@ class DevicesManager: ObservableObject {
 
     @Published var devices: [CaptureDevice] = []
 
+    @Published var selectedDevice: CaptureDevice? {
+        willSet {
+            if selectedDevice != nil && selectedDevice != newValue {
+                UserSettings.shared.lastSelectedDevice = newValue?.avDevice?.uniqueID
+            }
+        }
+    }
+
     private init() {
         let session = AVCaptureDevice.DiscoverySession(deviceTypes: [.externalUnknown, .builtInWideAngleCamera],
                                                                 mediaType: nil,
@@ -22,6 +30,12 @@ class DevicesManager: ObservableObject {
         devices = session.devices.map({ (device) -> CaptureDevice in
             CaptureDevice(avDevice: device)
         })
+
+        if let deviceId = UserSettings.shared.lastSelectedDevice {
+            selectedDevice = devices.first { (device) -> Bool in
+                device.avDevice?.uniqueID == deviceId
+            }
+        }
     }
 
     func startMonitoring() {
