@@ -34,9 +34,16 @@ class UserSettings: ObservableObject {
         }
     }
 
+    @Published var lastSelectedDevice: String? {
+        didSet {
+            UserDefaults.standard.set(lastSelectedDevice, forKey: "lastDevice")
+        }
+    }
+
     private init() {
         openAtLogin = UserDefaults.standard.bool(forKey: "login")
         readRate = RefreshSettingsRate(rawValue: UserDefaults.standard.integer(forKey: "readRate")) ?? .disabled
         writeRate = RefreshSettingsRate(rawValue: UserDefaults.standard.integer(forKey: "writeRate")) ?? .disabled
+        lastSelectedDevice = UserDefaults.standard.string(forKey: "lastDevice")
     }
 }
