@@ -13,6 +13,8 @@ import AVFoundation
 class DevicesManager: ObservableObject {
     static let shared = DevicesManager()
 
+    private let deviceMonitor = DeviceMonitor()
+
     @Published var devices: [CaptureDevice] = []
 
     @Published var selectedDevice: CaptureDevice? {
@@ -20,6 +22,7 @@ class DevicesManager: ObservableObject {
             if newValue != nil && selectedDevice != newValue {
                 UserSettings.shared.lastSelectedDevice = newValue?.avDevice?.uniqueID
             }
+            deviceMonitor.updateDevice(newValue)
         }
     }
 

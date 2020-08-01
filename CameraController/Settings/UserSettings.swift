@@ -24,13 +24,13 @@ class UserSettings: ObservableObject {
 
     @Published var readRate: RefreshSettingsRate {
         didSet {
-            UserDefaults.standard.set(readRate, forKey: "readRate")
+            UserDefaults.standard.set(readRate.rawValue, forKey: "readRate")
         }
     }
 
     @Published var writeRate: RefreshSettingsRate {
         didSet {
-            UserDefaults.standard.set(writeRate, forKey: "writeRate")
+            UserDefaults.standard.set(writeRate.rawValue, forKey: "writeRate")
         }
     }
 
@@ -42,8 +42,8 @@ class UserSettings: ObservableObject {
 
     private init() {
         openAtLogin = UserDefaults.standard.bool(forKey: "login")
-        readRate = RefreshSettingsRate(rawValue: UserDefaults.standard.integer(forKey: "readRate")) ?? .disabled
-        writeRate = RefreshSettingsRate(rawValue: UserDefaults.standard.integer(forKey: "writeRate")) ?? .disabled
+        readRate = RefreshSettingsRate(rawValue: UserDefaults.standard.double(forKey: "readRate")) ?? .disabled
+        writeRate = RefreshSettingsRate(rawValue: UserDefaults.standard.double(forKey: "writeRate")) ?? .disabled
         lastSelectedDevice = UserDefaults.standard.string(forKey: "lastDevice")
     }
 }

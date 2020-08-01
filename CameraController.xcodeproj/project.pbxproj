@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F45B7ABA24D545B3004C4420 /* DeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */; };
 		F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07C724C4104300E44A22 /* AppDelegate.swift */; };
 		F47D07CA24C4104300E44A22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07C924C4104300E44A22 /* ContentView.swift */; };
 		F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */; };
@@ -98,6 +99,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMonitor.swift; sourceTree = "<group>"; };
 		F47D07C424C4104300E44A22 /* CameraController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47D07C724C4104300E44A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47D07C924C4104300E44A22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			children = (
 				F47D07EE24C4123600E44A22 /* DeviceManager.swift */,
 				F4E5262C24C7DDB000125DF9 /* CaptureDevice.swift */,
+				F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */,
 				F4E5263124C93A3400125DF9 /* DeviceController.swift */,
 				F4E5262E24C7E0AD00125DF9 /* Properties */,
 			);
@@ -623,6 +626,7 @@
 				F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */,
 				F4D4C6D824CBDA5700581E05 /* FocusView.swift in Sources */,
 				F4E5262B24C7D97B00125DF9 /* ExposureView.swift in Sources */,
+				F45B7ABA24D545B3004C4420 /* DeviceMonitor.swift in Sources */,
 				F47D081024C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift in Sources */,
 				F47D081224C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */,
 				F4D4C6D424CBD8EC00581E05 /* OrientationView.swift in Sources */,
