@@ -80,8 +80,7 @@ class DeviceController: ObservableObject {
     }
 
     func getSettings() -> DeviceSettings {
-        return DeviceSettings(name: "",
-                              exposureMode: self.exposureMode.selected.rawValue,
+        return DeviceSettings(exposureMode: self.exposureMode.selected.rawValue,
                               exposureTime: self.exposureTime.sliderValue,
                               gain: self.gain.sliderValue,
                               brightness: self.brightness.sliderValue,

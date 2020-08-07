@@ -9,8 +9,6 @@
 import Foundation
 
 struct DeviceSettings {
-    var name: String
-
     let exposureMode: Int
     let exposureTime: Float
     let gain: Float
