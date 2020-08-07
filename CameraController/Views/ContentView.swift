@@ -23,6 +23,7 @@ struct ContentView: View {
                 }
                 cameraPreview(captureDevice: $manager.selectedDevice).animation(.spring())
                 settingsView(captureDevice: $manager.selectedDevice).animation(.spring())
+                ProfileSelector()
             }.onAppear {
                 DevicesManager.shared.startMonitoring()
             }.onDisappear {
