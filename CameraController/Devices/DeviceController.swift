@@ -78,4 +78,43 @@ class DeviceController: ObservableObject {
         focusAuto.write()
         focusAbsolute.write()
     }
+
+    func getSettings() -> DeviceSettings {
+        return DeviceSettings(name: "",
+                              exposureMode: self.exposureMode.selected.rawValue,
+                              exposureTime: self.exposureTime.sliderValue,
+                              gain: self.gain.sliderValue,
+                              brightness: self.brightness.sliderValue,
+                              contrast: self.contrast.sliderValue,
+                              saturation: self.saturation.sliderValue,
+                              sharpness: self.sharpness.sliderValue,
+                              whiteBalanceAuto: self.whiteBalanceAuto.isEnabled,
+                              whiteBalance: self.whiteBalance.sliderValue,
+                              powerline: self.powerLineFrequency.sliderValue,
+                              backlightCompensation: self.backlightCompensation.sliderValue,
+                              zoom: self.zoomAbsolute.sliderValue,
+                              pan: self.panTiltAbsolute.sliderValue1,
+                              tilt: self.panTiltAbsolute.sliderValue2,
+                              focusAuto: self.focusAuto.isEnabled,
+                              focus: self.focusAbsolute.sliderValue)
+    }
+
+    func set(_ deviceSettings: DeviceSettings) {
+        self.exposureMode.selected = UVCBitmapControl.BitmapValue(rawValue: deviceSettings.exposureMode) ?? .auto
+        self.exposureTime.sliderValue = deviceSettings.exposureTime
+        self.gain.sliderValue = deviceSettings.gain
+        self.brightness.sliderValue = deviceSettings.brightness
+        self.contrast.sliderValue = deviceSettings.contrast
+        self.saturation.sliderValue = deviceSettings.saturation
+        self.sharpness.sliderValue = deviceSettings.sharpness
+        self.whiteBalanceAuto.isEnabled = deviceSettings.whiteBalanceAuto
+        self.whiteBalance.sliderValue = deviceSettings.whiteBalance
+        self.powerLineFrequency.sliderValue = deviceSettings.powerline
+        self.backlightCompensation.sliderValue = deviceSettings.backlightCompensation
+        self.zoomAbsolute.sliderValue = deviceSettings.zoom
+        self.panTiltAbsolute.sliderValue1 = deviceSettings.pan
+        self.panTiltAbsolute.sliderValue2 = deviceSettings.tilt
+        self.focusAuto.isEnabled = deviceSettings.focusAuto
+        self.focusAbsolute.sliderValue = deviceSettings.focus
+    }
 }
