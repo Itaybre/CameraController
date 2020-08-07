@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DeviceSettings {
+struct DeviceSettings: Codable {
     let exposureMode: Int
     let exposureTime: Float
     let gain: Float

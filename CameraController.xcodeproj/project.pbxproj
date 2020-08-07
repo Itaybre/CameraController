@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F45B7ABA24D545B3004C4420 /* DeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */; };
 		F469CF4524DD0A3E0092C7F9 /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */; };
+		F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */; };
+		F469CF4924DD0E310092C7F9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4824DD0E310092C7F9 /* Profile.swift */; };
 		F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07C724C4104300E44A22 /* AppDelegate.swift */; };
 		F47D07CA24C4104300E44A22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07C924C4104300E44A22 /* ContentView.swift */; };
 		F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */; };
@@ -102,6 +104,8 @@
 /* Begin PBXFileReference section */
 		F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMonitor.swift; sourceTree = "<group>"; };
 		F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
+		F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		F469CF4824DD0E310092C7F9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F47D07C424C4104300E44A22 /* CameraController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47D07C724C4104300E44A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47D07C924C4104300E44A22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -222,8 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				F47D07C724C4104300E44A22 /* AppDelegate.swift */,
-				F4D4C6FD24CBF97400581E05 /* Settings */,
 				F47D07ED24C4119200E44A22 /* Resources */,
+				F4D4C6FD24CBF97400581E05 /* Settings */,
 				F47D07EC24C4118200E44A22 /* Devices */,
 				F47D07F524C4177400E44A22 /* UVC */,
 				F47D07EB24C4117A00E44A22 /* Views */,
@@ -270,6 +274,8 @@
 				F4E5263124C93A3400125DF9 /* DeviceController.swift */,
 				F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */,
 				F4E5262E24C7E0AD00125DF9 /* Properties */,
+				F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */,
+				F469CF4824DD0E310092C7F9 /* Profile.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -619,9 +625,11 @@
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
 				F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */,
 				F47D081D24C68F6000E44A22 /* UVCIntControl.swift in Sources */,
+				F469CF4924DD0E310092C7F9 /* Profile.swift in Sources */,
 				F4D4C6CE24CBD34300581E05 /* AdvancedView.swift in Sources */,
 				F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */,
 				F4E5263224C93A3400125DF9 /* DeviceController.swift in Sources */,
+				F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */,
 				F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */,
 				F4D4C6D224CBD83100581E05 /* BacklightView.swift in Sources */,
 				F4D4C6D624CBD96B00581E05 /* MultipleCaptureDeviceProperty.swift in Sources */,
