@@ -16,14 +16,14 @@ struct ContentView: View {
     var body: some View {
         HStack {
             VStack {
-                Picker(selection: $manager.selectedDevice.animation(.linear), label: Text("Camera")) {
+                Picker(selection: $manager.selectedDevice, label: Text("Camera")) {
                     ForEach(manager.devices, id: \.self) { device in
                         Text(device.name).tag(device as CaptureDevice?)
                     }
                 }
-                cameraPreview(captureDevice: $manager.selectedDevice).animation(.spring())
-                settingsView(captureDevice: $manager.selectedDevice).animation(.spring())
-                ProfileSelector()
+                cameraPreview(captureDevice: $manager.selectedDevice)
+                settingsView(captureDevice: $manager.selectedDevice)
+                ProfileSelector().frame(width: 400, height: 75)
             }.onAppear {
                 DevicesManager.shared.startMonitoring()
             }.onDisappear {

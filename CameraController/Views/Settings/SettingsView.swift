@@ -15,30 +15,39 @@ struct SettingsView: View {
 
     var body: some View {
         GroupBox(label: Text("Settings")) {
-            if captureDevice?.uvcDevice == nil {
-                HStack {
-                    Text("This device cannot be configured")
-                    Spacer()
+            VStack {
+                Picker(selection: $currentView.animation(.linear), label: EmptyView()) {
+                    Text("Basic").tag(1)
+                    Text("Advanced").tag(2)
+                    Text("Preferences").tag(3)
                 }
-            } else {
-                VStack {
-                    Picker(selection: $currentView.animation(.linear), label: EmptyView()) {
-                        Text("Basic").tag(1)
-                        Text("Advanced").tag(2)
-                        Text("Preferences").tag(3)
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .frame(width: 300)
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 300)
 
-                    if currentView == 1 {
-                        BasicSettings(controller: (captureDevice?.controller!)!).animation(.linear)
-                    } else if currentView == 2 {
-                        AdvancedView(controller: (captureDevice?.controller!)!).animation(.linear)
-                    } else {
-                        PreferencesView()
-                    }
+                if currentView == 1 {
+                    basicVew()
+                } else if currentView == 2 {
+                    advancedView()
+                } else {
+                    PreferencesView()
                 }
             }
+        }
+    }
+
+    func basicVew() -> AnyView {
+        if let controller = captureDevice?.controller {
+            return AnyView(BasicSettings(controller: controller))
+        } else {
+            return AnyView(DisabledBasicSettings())
+        }
+    }
+
+    func advancedView() -> AnyView {
+        if let controller = captureDevice?.controller {
+            return AnyView(AdvancedView(controller: controller))
+        } else {
+            return AnyView(DisabledAdvancedView())
         }
     }
 }

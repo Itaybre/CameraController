@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F400B4D024DE13BF003B9602 /* DisabledBasicSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F400B4CF24DE13BF003B9602 /* DisabledBasicSettings.swift */; };
+		F400B4D224DE1546003B9602 /* DisabledAdvancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F400B4D124DE1546003B9602 /* DisabledAdvancedView.swift */; };
 		F45B7ABA24D545B3004C4420 /* DeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */; };
 		F469CF4524DD0A3E0092C7F9 /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */; };
 		F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */; };
@@ -103,6 +105,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F400B4CF24DE13BF003B9602 /* DisabledBasicSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledBasicSettings.swift; sourceTree = "<group>"; };
+		F400B4D124DE1546003B9602 /* DisabledAdvancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledAdvancedView.swift; sourceTree = "<group>"; };
 		F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMonitor.swift; sourceTree = "<group>"; };
 		F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
 		F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
@@ -372,6 +376,7 @@
 				F4D4C6D124CBD83100581E05 /* BacklightView.swift */,
 				F4D4C6D324CBD8EC00581E05 /* OrientationView.swift */,
 				F4D4C6D724CBDA5700581E05 /* FocusView.swift */,
+				F400B4D124DE1546003B9602 /* DisabledAdvancedView.swift */,
 			);
 			path = Advanced;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				F4E5262A24C7D97B00125DF9 /* ExposureView.swift */,
 				F4D4C6C624CBCEA800581E05 /* ImageView.swift */,
 				F4D4C6CA24CBD27600581E05 /* WhiteBalanceView.swift */,
+				F400B4CF24DE13BF003B9602 /* DisabledBasicSettings.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -635,11 +641,13 @@
 				F4E5263224C93A3400125DF9 /* DeviceController.swift in Sources */,
 				F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */,
 				F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */,
+				F400B4D224DE1546003B9602 /* DisabledAdvancedView.swift in Sources */,
 				F4D4C6D224CBD83100581E05 /* BacklightView.swift in Sources */,
 				F4D4C6D624CBD96B00581E05 /* MultipleCaptureDeviceProperty.swift in Sources */,
 				F4D4C6D024CBD3B000581E05 /* PowerLineView.swift in Sources */,
 				F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */,
 				F4D4C6D824CBDA5700581E05 /* FocusView.swift in Sources */,
+				F400B4D024DE13BF003B9602 /* DisabledBasicSettings.swift in Sources */,
 				F4E5262B24C7D97B00125DF9 /* ExposureView.swift in Sources */,
 				F45B7ABA24D545B3004C4420 /* DeviceMonitor.swift in Sources */,
 				F47D081024C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift in Sources */,
