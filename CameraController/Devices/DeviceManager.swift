@@ -59,7 +59,7 @@ class DevicesManager: ObservableObject {
     }
 
     @objc
-    private func deviceAdded(notif: NSNotification) {
+    func deviceAdded(notif: NSNotification) {
         guard let device = notif.object as? AVCaptureDevice else {
             return
         }
@@ -68,7 +68,7 @@ class DevicesManager: ObservableObject {
     }
 
     @objc
-    private func deviceRemoved(notif: NSNotification) {
+    func deviceRemoved(notif: NSNotification) {
         guard let device = notif.object as? AVCaptureDevice else {
             return
         }
