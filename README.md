@@ -2,7 +2,7 @@
 
 <!-- subtext -->
 <div align="center">
-Control your cameras settings.
+Control your cameras settings without using the software provided (or not) by the company.
 </div>
 
 <br/>
