@@ -42,6 +42,7 @@ Go to [Release](https://github.com/itaybre/CameraController/releases/latest) and
 
 ## ToDo
 
+- Get an Icon
 - Add MenuBar for easily configure camera
 - Apply latest settings on startup
 - Add more Unit Tests
@@ -63,11 +64,12 @@ Clone the project
 $ git clone https://github.com/itaybre/CameraController.git
 ```
 
-You're all set ! Now open the `MonitorControl.xcodeproj` with Xcode
+You're all set ! Now open the `CameraController.xcodeproj` with Xcode
 
 ## FAQ
 
 - Does it work with Apple's Facetime Camera?
+
 In old machines it will work, but new machines (wth T1 and T2 chip) require a special entitlement only available to Apple.
 
 ## Support
