@@ -14,4 +14,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Test
-      run: xcodebuild -project CameraController.xcworkspace -scheme CameraController -sdk macos test | xcpretty
+      run: xcodebuild -project CameraController.xcodeproj -scheme CameraController -sdk macosx test
