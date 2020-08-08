@@ -116,4 +116,23 @@ class DeviceController: ObservableObject {
         self.focusAuto.isEnabled = deviceSettings.focusAuto
         self.focusAbsolute.sliderValue = deviceSettings.focus
     }
+
+    func resetDefault() {
+        self.exposureMode.reset()
+        self.exposureTime.reset()
+        self.gain.reset()
+        self.brightness.reset()
+        self.contrast.reset()
+        self.saturation.reset()
+        self.sharpness.reset()
+        self.whiteBalanceAuto.reset()
+        self.whiteBalance.reset()
+        self.powerLineFrequency.reset()
+        self.backlightCompensation.reset()
+        self.zoomAbsolute.reset()
+        self.panTiltAbsolute.reset()
+        self.panTiltAbsolute.reset()
+        self.focusAuto.reset()
+        self.focusAbsolute.reset()
+    }
 }
