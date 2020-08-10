@@ -38,7 +38,7 @@ Control your cameras settings without using the software provided (or not) by th
 
 ## Download
 
-Go to [Release](https://github.com/itaybre/CameraController/releases/latest) and download the latest `.dmg`
+Go to [Release](https://github.com/itaybre/CameraController/releases/latest) and download the latest `.zip`
 
 ## ToDo
 
