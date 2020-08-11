@@ -12,10 +12,8 @@ struct UVC_InterfaceDescriptorHdr {
     uint8_t bLength;
     uint8_t bDescriptorType;
     uint8_t bDescriptorSubType;
-};
+} __attribute__((packed));;
 
-#pragma pack(1)    /* needed here because otherwise there would be a gap of
-1 byte added before bcdUV. */
 struct UVC_VCHeaderDescriptor {
     uint8_t  bLength;
     uint8_t  bDescriptorType;
@@ -25,8 +23,7 @@ struct UVC_VCHeaderDescriptor {
     uint32_t dwClockFrequency;
     uint8_t  bInCollection;
     uint8_t  baInterface;    /* TODO: array, but we're not using this. */
-};
-#pragma pack(pop)
+} __attribute__((packed));
 
 struct UVC_CameraTerminalDescriptor {
     uint8_t  bLength;
@@ -41,9 +38,8 @@ struct UVC_CameraTerminalDescriptor {
     uint16_t wOcularFocalLength;
     uint8_t  bControlSize;
     uint8_t  bmControls;    /* TODO: array, but we're not using this (yet). */
-};
+} __attribute__((packed));
 
-#pragma pack(1)
 struct UVC_ProcessingUnitDescriptor {
     uint8_t  bLength;
     uint8_t  bDescriptorType;
@@ -54,5 +50,4 @@ struct UVC_ProcessingUnitDescriptor {
     uint8_t  bControlSize;
     uint8_t  bmControls;    /* TODO: array, but we're not using this (yet). */
     /* TODO: iProcessing and bmVideoStandards */
-};
-#pragma pack(pop)
+} __attribute__((packed));
