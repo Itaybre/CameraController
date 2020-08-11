@@ -39,9 +39,9 @@ extension IOUSBConfigurationDescriptorPtr {
                 let intDesc = UnsafeMutablePointer<IOUSBInterfaceDescriptor>(OpaquePointer(descriptorPointer))
                 if !(intDesc.pointee.bInterfaceClass == UVCConstants.classVideo
                     && intDesc.pointee.bInterfaceSubClass == UVCConstants.subclassVideoControl) {
-                    
+
                     currentPointer = currentPointer.advanced(by: Int(intDesc.pointee.bLength))
-                    
+
                     continue
                 }
 
