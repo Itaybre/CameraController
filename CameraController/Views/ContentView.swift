@@ -12,6 +12,10 @@ import AVFoundation
 
 struct ContentView: View {
     @ObservedObject var manager = DevicesManager.shared
+    @State var shouldShowPreview = false
+
+    let willShowPublisher = NotificationCenter.default.publisher(for: NSPopover.willShowNotification)
+    let didClosePublisher = NotificationCenter.default.publisher(for: NSPopover.didCloseNotification)
 
     var body: some View {
         HStack {
@@ -24,16 +28,20 @@ struct ContentView: View {
                 cameraPreview(captureDevice: $manager.selectedDevice)
                 settingsView(captureDevice: $manager.selectedDevice)
                 ProfileSelector().frame(width: 400, height: 75)
-            }.onAppear {
+            }
+            .onReceive(willShowPublisher) { _ in
                 DevicesManager.shared.startMonitoring()
-            }.onDisappear {
+                self.shouldShowPreview = true
+            }
+            .onReceive(didClosePublisher) { _ in
                 DevicesManager.shared.stopMonitoring()
+                self.shouldShowPreview = false
             }
         }.padding(.all, 10.0).frame(width: 450)
     }
 
     func cameraPreview(captureDevice: Binding<CaptureDevice?>) -> AnyView {
-        if captureDevice.wrappedValue != nil {
+        if captureDevice.wrappedValue != nil && shouldShowPreview {
             return AnyView(CameraPreview(captureDevice: captureDevice)
                 .frame(width: 400, height: 225))
         } else {
