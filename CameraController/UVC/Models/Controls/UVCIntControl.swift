@@ -28,8 +28,8 @@ class UVCIntControl: UVCControl {
     private var _current: Int = 0
 
     override init(_ interface: USBInterfacePointer, _ uvcSize: Int,
-                  _ uvcSelector: Selector, _ uvcUnit: Int) {
-        super.init(interface, uvcSize, uvcSelector, uvcUnit)
+                  _ uvcSelector: Selector, _ uvcUnit: Int, _ uvcInterface: Int) {
+        super.init(interface, uvcSize, uvcSelector, uvcUnit, uvcInterface)
         configure()
     }
 

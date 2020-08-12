@@ -12,7 +12,7 @@ struct UVC_InterfaceDescriptorHdr {
     uint8_t bLength;
     uint8_t bDescriptorType;
     uint8_t bDescriptorSubType;
-} __attribute__((packed));;
+} __attribute__((packed));
 
 struct UVC_VCHeaderDescriptor {
     uint8_t  bLength;

@@ -17,14 +17,17 @@ class UVCControl {
     let uvcSize: Int
     let uvcSelector: Int
     let uvcUnit: Int
+    let uvcInterface: Int
 
     var isCapable: Bool = false
 
-    init(_ interface: USBInterfacePointer, _ uvcSize: Int, _ uvcSelector: Selector, _ uvcUnit: Int) {
+    init(_ interface: USBInterfacePointer, _ uvcSize: Int, _ uvcSelector: Selector,
+         _ uvcUnit: Int, _ uvcInterface: Int) {
         self.interface = interface
         self.uvcSize = uvcSize
         self.uvcSelector = uvcSelector.raw()
         self.uvcUnit = uvcUnit
+        self.uvcInterface = uvcInterface
     }
 
     func getDataFor(type: UVCRequestCodes, length: Int) -> Int {
@@ -35,7 +38,7 @@ class UVCControl {
         var request: IOUSBDevRequest = IOUSBDevRequest(bmRequestType: requestType,
                                                        bRequest: UInt8(type.rawValue),
                                                        wValue: UInt16(uvcSelector<<8),
-                                                       wIndex: UInt16(uvcUnit<<8),
+                                                       wIndex: UInt16(uvcUnit<<8) | UInt16(uvcInterface),
                                                        wLength: UInt16(length),
                                                        pData: &value,
                                                        wLenDone: 0)
@@ -57,7 +60,7 @@ class UVCControl {
         var request: IOUSBDevRequest = IOUSBDevRequest(bmRequestType: requestType,
                                                        bRequest: UInt8(UVCRequestCodes.setCurrent.rawValue),
                                                        wValue: UInt16(uvcSelector<<8),
-                                                       wIndex: UInt16(uvcUnit<<8),
+                                                       wIndex: UInt16(uvcUnit<<8) | UInt16(uvcInterface),
                                                        wLength: UInt16(length),
                                                        pData: &ref,
                                                        wLenDone: 0)

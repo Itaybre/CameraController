@@ -17,18 +17,22 @@ extension IOUSBConfigurationDescriptorPtr {
     func proccessDescriptor() -> UVCDescriptor {
         var processingUnitID = 0
         var cameraTerminalID = 0
+        var interfaceID = 0
 
         let remaining = self.pointee.wTotalLength - UInt16(self.pointee.bLength)
         var pointer = UnsafeMutablePointer<UInt8>(OpaquePointer(self))
         pointer = pointer.advanced(by: Int(self.pointee.bLength))
 
-        browseDescriptor(remaining, pointer, &processingUnitID, &cameraTerminalID)
+        browseDescriptor(remaining, pointer, &processingUnitID, &cameraTerminalID, &interfaceID)
 
-        return UVCDescriptor(processingUnitID: processingUnitID, cameraTerminalID: cameraTerminalID)
+        return UVCDescriptor(processingUnitID: processingUnitID,
+                             cameraTerminalID: cameraTerminalID,
+                             interfaceID: interfaceID)
     }
 
     fileprivate func browseDescriptor(_ memory: UInt16, _ pointer: UnsafeMutablePointer<UInt8>,
-                                      _ processingUnitID: inout Int, _ cameraTerminalID: inout Int) {
+                                      _ processingUnitID: inout Int, _ cameraTerminalID: inout Int,
+                                      _ interfaceID: inout Int) {
         var remaining = memory
         var currentPointer = pointer
 
@@ -41,7 +45,6 @@ extension IOUSBConfigurationDescriptorPtr {
                     && intDesc.pointee.bInterfaceSubClass == UVCConstants.subclassVideoControl) {
 
                     currentPointer = currentPointer.advanced(by: Int(intDesc.pointee.bLength))
-
                     continue
                 }
 
@@ -69,6 +72,7 @@ extension IOUSBConfigurationDescriptorPtr {
                         }
 
                         getDeviceId(descriptorPointer, currentPointer, &processingUnitID, &cameraTerminalID)
+                        interfaceID = Int(intDesc.pointee.bInterfaceNumber)
 
                         remainingMemory -= UInt16(descriptorPointer.pointee.bLength)
                         currentPointer = currentPointer.advanced(by: Int(descriptorPointer.pointee.bLength))
