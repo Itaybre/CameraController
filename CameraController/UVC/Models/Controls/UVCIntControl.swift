@@ -42,6 +42,12 @@ class UVCIntControl: UVCControl {
             updateMaximum()
             updateCurrent()
             updateResolution()
+
+            if minimum > maximum {
+                minimum = 0
+            }
+
+            isCapable = minimum != maximum
         }
     }
 
