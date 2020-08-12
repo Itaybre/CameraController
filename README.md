@@ -43,7 +43,6 @@ Go to [Release](https://github.com/itaybre/CameraController/releases/latest) and
 ## ToDo
 
 - Get an Icon
-- Add MenuBar for easily configure camera
 - Apply latest settings on startup
 - Add more Unit Tests
 - Support for some vendor specific capabilities (like Logitech LED control)
