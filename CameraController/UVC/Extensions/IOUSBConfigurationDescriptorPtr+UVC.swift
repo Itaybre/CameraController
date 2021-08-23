@@ -15,9 +15,9 @@ typealias CameraTerminalDescriptorPointer = UnsafeMutablePointer<UVC_CameraTermi
 
 extension IOUSBConfigurationDescriptorPtr {
     func proccessDescriptor() -> UVCDescriptor {
-        var processingUnitID = 0
-        var cameraTerminalID = 0
-        var interfaceID = 0
+        var processingUnitID = -1
+        var cameraTerminalID = -1
+        var interfaceID = -1
 
         let remaining = self.pointee.wTotalLength - UInt16(self.pointee.bLength)
         var pointer = UnsafeMutablePointer<UInt8>(OpaquePointer(self))
@@ -73,6 +73,12 @@ extension IOUSBConfigurationDescriptorPtr {
 
                         getDeviceId(descriptorPointer, currentPointer, &processingUnitID, &cameraTerminalID)
                         interfaceID = Int(intDesc.pointee.bInterfaceNumber)
+                        
+                        if interfaceID != -1 && processingUnitID != -1 && cameraTerminalID != -1 {
+                            // Found all necessary data, exit
+                            // Fix for WB7022 Camera
+                            return
+                        }
 
                         remainingMemory -= UInt16(descriptorPointer.pointee.bLength)
                         currentPointer = currentPointer.advanced(by: Int(descriptorPointer.pointee.bLength))
