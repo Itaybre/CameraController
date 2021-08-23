@@ -78,3 +78,4 @@ In old machines it will work, but new machines (wth T1 and T2 chip) require a sp
 
 ## Contributors
 - [@itaybre](https://github.com/itaybre)
+- Icons by [@herrerajeff](https://github.com/herrerajeff)
