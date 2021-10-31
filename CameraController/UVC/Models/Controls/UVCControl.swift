@@ -42,11 +42,18 @@ class UVCControl {
                                                        wLength: UInt16(length),
                                                        pData: &value,
                                                        wLenDone: 0)
-        guard
-            interface.pointee.pointee.USBInterfaceOpen(interface) == kIOReturnSuccess,
-            interface.pointee.pointee.ControlRequest(interface, 0, &request) == kIOReturnSuccess,
-            interface.pointee.pointee.USBInterfaceClose(interface) == kIOReturnSuccess else {
-                return 0
+        if #available(macOS 12.0, *) {
+            guard
+                interface.pointee.pointee.ControlRequest(interface, 0, &request) == kIOReturnSuccess else {
+                    return 0
+            }
+        } else {
+            guard
+                interface.pointee.pointee.USBInterfaceOpenSeize(interface) == kIOReturnSuccess,
+                interface.pointee.pointee.ControlRequest(interface, 0, &request) == kIOReturnSuccess,
+                interface.pointee.pointee.USBInterfaceClose(interface) == kIOReturnSuccess else {
+                    return 0
+            }
         }
 
         return value
@@ -65,11 +72,18 @@ class UVCControl {
                                                        pData: &ref,
                                                        wLenDone: 0)
 
-        guard
-            interface.pointee.pointee.USBInterfaceOpen(interface) == kIOReturnSuccess,
-            interface.pointee.pointee.ControlRequest(interface, 0, &request) == kIOReturnSuccess,
-            interface.pointee.pointee.USBInterfaceClose(interface) == kIOReturnSuccess else {
-                return false
+        if #available(macOS 12.0, *) {
+            guard
+                interface.pointee.pointee.ControlRequest(interface, 0, &request) == kIOReturnSuccess else {
+                    return false
+            }
+        } else {
+            guard
+                interface.pointee.pointee.USBInterfaceOpenSeize(interface) == kIOReturnSuccess,
+                interface.pointee.pointee.ControlRequest(interface, 0, &request) == kIOReturnSuccess,
+                interface.pointee.pointee.USBInterfaceClose(interface) == kIOReturnSuccess else {
+                    return false
+            }
         }
 
         return true
