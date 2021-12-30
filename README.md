@@ -36,9 +36,18 @@ Control your cameras settings without using the software provided (or not) by th
 
 </div>
 
-## Download
+## Installation
 
-Go to [Release](https://github.com/itaybre/CameraController/releases/latest) and download the latest `.zip`
+### Manually
+
+Download the latest `.zip` from [Releases](https://github.com/itaybre/CameraController/releases/latest).
+
+### Homebrew
+
+```
+brew tap homebrew/cask-drivers
+brew install --cask cameracontroller
+```
 
 ## ToDo
 
