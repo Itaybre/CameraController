@@ -24,7 +24,7 @@ class NumberCaptureDeviceProperty {
 
     let isCapable: Bool
     let minimum: Float
-    let maximum: Float
+    var maximum: Float
     let resolution: Float
 
     init(_ control: UVCIntControl) {

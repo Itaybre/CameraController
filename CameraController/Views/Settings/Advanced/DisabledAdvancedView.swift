@@ -52,18 +52,14 @@ struct DisabledAdvancedView: View {
                     }
 
                     Spacer()
-                    Slider(value: .constant(0.0), in: 0...1).frame(width: 300, height: 15.0)
+                    Slider(value: .constant(0.0), in: 0...1).frame(width: 300, height: 18.0)
                 }
             }
         }.disabled(true)
     }
 
     func slider(_ name: String) -> some View {
-        HStack {
-            Text(name)
-            Spacer()
-            Slider(value: .constant(0.0), in: 0...1).frame(width: 300, height: 15.0)
-        }
+        CustomSlider(title: name, value: .constant(0.0))
     }
 }
 

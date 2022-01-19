@@ -19,8 +19,7 @@ struct SettingsView: View {
                 Picker(selection: $currentView.animation(.linear), label: EmptyView()) {
                     Text("Basic").tag(1)
                     Text("Advanced").tag(2)
-                    Text("Vendor Specific").tag(3)
-                    Text("Preferences").tag(4)
+                    Text("Preferences").tag(3)
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .frame(width: 300)
@@ -51,8 +50,6 @@ struct SettingsView: View {
             return basicVew()
         } else if currentView == 2 {
             return advancedView()
-        } else if currentView == 3 {
-            return AnyView(EmptyView())
         } else {
             return AnyView(PreferencesView())
         }
