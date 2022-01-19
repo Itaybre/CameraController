@@ -20,9 +20,3 @@ struct AdvancedView: View {
         }
     }
 }
-
-//struct AdvancedView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AdvancedView()
-//    }
-//}

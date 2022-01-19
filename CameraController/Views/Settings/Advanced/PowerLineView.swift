@@ -28,9 +28,3 @@ struct PowerLineView: View {
         }
     }
 }
-
-//struct PowerLineView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PowerLineView()
-//    }
-//}

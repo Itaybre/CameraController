@@ -26,6 +26,7 @@ class NumberCaptureDeviceProperty {
     let minimum: Float
     var maximum: Float
     let resolution: Float
+    let defaultValue: Float
 
     init(_ control: UVCIntControl) {
         self.control = control
@@ -33,6 +34,7 @@ class NumberCaptureDeviceProperty {
         minimum = Float(control.minimum)
         maximum = Float(control.maximum)
         resolution = Float(control.resolution)
+        defaultValue = Float(control.defaultValue)
         sliderValue = Float(control.current)
     }
 

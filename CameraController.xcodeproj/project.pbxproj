@@ -71,6 +71,7 @@
 		F4E5262D24C7DDB000125DF9 /* CaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262C24C7DDB000125DF9 /* CaptureDevice.swift */; };
 		F4E5263024C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262F24C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift */; };
 		F4E5263224C93A3400125DF9 /* DeviceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5263124C93A3400125DF9 /* DeviceController.swift */; };
+		F4F1CCAD279860A0008C2A5D /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,7 @@
 		F4E5262C24C7DDB000125DF9 /* CaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureDevice.swift; sourceTree = "<group>"; };
 		F4E5262F24C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapCaptureDeviceProperty.swift; sourceTree = "<group>"; };
 		F4E5263124C93A3400125DF9 /* DeviceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceController.swift; sourceTree = "<group>"; };
+		F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				F4E5262424C7C2E100125DF9 /* SettingsView.swift */,
+				F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */,
 				F4E5262924C7D89500125DF9 /* Basic */,
 				F4D4C6CC24CBD32000581E05 /* Advanced */,
 				F4D4C6DA24CBDBAF00581E05 /* Preferences */,
@@ -630,6 +633,7 @@
 				F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */,
 				F4D4C70124CBF99200581E05 /* UserSettings.swift in Sources */,
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
+				F4F1CCAD279860A0008C2A5D /* CustomSlider.swift in Sources */,
 				F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */,
 				F47D081D24C68F6000E44A22 /* UVCIntControl.swift in Sources */,
 				F469CF4B24DD0FC70092C7F9 /* ProfileSelector.swift in Sources */,
@@ -834,7 +838,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"CameraController/Preview Content\"";
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -862,7 +866,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"CameraController/Preview Content\"";
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				ENABLE_HARDENED_RUNTIME = YES;

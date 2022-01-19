@@ -40,6 +40,8 @@ class MultipleCaptureDeviceProperty {
     let maximum2: Float
     let resolution1: Float
     let resolution2: Float
+    let defaultValue1: Float
+    let defaultValue2: Float
 
     init(_ control: UVCMultipleIntControl) {
         self.control = control
@@ -50,6 +52,8 @@ class MultipleCaptureDeviceProperty {
         maximum2 = Float(control.maximum2)
         resolution1 = Float(control.resolution1)
         resolution2 = Float(control.resolution2)
+        defaultValue1 = Float(control.defaultValue1)
+        defaultValue2 = Float(control.defaultValue2)
         sliderValue1 = Float(control.current1)
         sliderValue2 = Float(control.current2)
     }
