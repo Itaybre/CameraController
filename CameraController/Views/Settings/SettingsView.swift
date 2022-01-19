@@ -19,23 +19,18 @@ struct SettingsView: View {
                 Picker(selection: $currentView.animation(.linear), label: EmptyView()) {
                     Text("Basic").tag(1)
                     Text("Advanced").tag(2)
-                    Text("Preferences").tag(3)
+                    Text("Vendor Specific").tag(3)
+                    Text("Preferences").tag(4)
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .frame(width: 300)
 
-                if currentView == 1 {
-                    basicVew()
-                } else if currentView == 2 {
-                    advancedView()
-                } else {
-                    PreferencesView()
-                }
+                contentView()
             }
         }
     }
 
-    func basicVew() -> AnyView {
+    fileprivate func basicVew() -> AnyView {
         if let controller = captureDevice?.controller {
             return AnyView(BasicSettings(controller: controller))
         } else {
@@ -43,11 +38,23 @@ struct SettingsView: View {
         }
     }
 
-    func advancedView() -> AnyView {
+    fileprivate func advancedView() -> AnyView {
         if let controller = captureDevice?.controller {
             return AnyView(AdvancedView(controller: controller))
         } else {
             return AnyView(DisabledAdvancedView())
+        }
+    }
+
+    fileprivate func contentView() -> AnyView {
+        if currentView == 1 {
+            return basicVew()
+        } else if currentView == 2 {
+            return advancedView()
+        } else if currentView == 3 {
+            return AnyView(EmptyView())
+        } else {
+            return AnyView(PreferencesView())
         }
     }
 }
