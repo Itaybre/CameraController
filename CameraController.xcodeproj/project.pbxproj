@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		F400B4D224DE1546003B9602 /* DisabledAdvancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F400B4D124DE1546003B9602 /* DisabledAdvancedView.swift */; };
 		F42D42D627A0E3D500107DFF /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D42D527A0E3D500107DFF /* StatusBarManager.swift */; };
 		F42D42D827A0E92100107DFF /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D42D727A0E92100107DFF /* WindowManager.swift */; };
+		F42D42DB27A0F0C600107DFF /* MoveApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D42DA27A0F0C600107DFF /* MoveApplication.swift */; };
+		F42D42DD27A0F0DC00107DFF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42D42DC27A0F0DB00107DFF /* Security.framework */; platformFilter = maccatalyst; };
+		F42D42DF27A0F0EE00107DFF /* MoveApplication.strings in Resources */ = {isa = PBXBuildFile; fileRef = F42D42DE27A0F0EE00107DFF /* MoveApplication.strings */; };
 		F45B7ABA24D545B3004C4420 /* DeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */; };
 		F469CF4524DD0A3E0092C7F9 /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */; };
 		F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */; };
@@ -110,6 +113,9 @@
 		F400B4D124DE1546003B9602 /* DisabledAdvancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledAdvancedView.swift; sourceTree = "<group>"; };
 		F42D42D527A0E3D500107DFF /* StatusBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
 		F42D42D727A0E92100107DFF /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		F42D42DA27A0F0C600107DFF /* MoveApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveApplication.swift; sourceTree = "<group>"; };
+		F42D42DC27A0F0DB00107DFF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F42D42DE27A0F0EE00107DFF /* MoveApplication.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MoveApplication.strings; sourceTree = "<group>"; };
 		F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMonitor.swift; sourceTree = "<group>"; };
 		F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
 		F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 			files = (
 				F47D07F224C4125B00E44A22 /* AVFoundation.framework in Frameworks */,
 				F4D4C6F524CBE81600581E05 /* ServiceManagement.framework in Frameworks */,
+				F42D42DD27A0F0DC00107DFF /* Security.framework in Frameworks */,
 				F4D4C6FC24CBE94F00581E05 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +223,15 @@
 				F42D42D527A0E3D500107DFF /* StatusBarManager.swift */,
 			);
 			path = StatusBar;
+			sourceTree = "<group>";
+		};
+		F42D42D927A0F0B200107DFF /* Vendored */ = {
+			isa = PBXGroup;
+			children = (
+				F42D42DA27A0F0C600107DFF /* MoveApplication.swift */,
+				F42D42DE27A0F0EE00107DFF /* MoveApplication.strings */,
+			);
+			path = Vendored;
 			sourceTree = "<group>";
 		};
 		F47D07BB24C4104300E44A22 = {
@@ -251,6 +267,7 @@
 				F47D07F524C4177400E44A22 /* UVC */,
 				F47D07EB24C4117A00E44A22 /* Views */,
 				F47D07D024C4104600E44A22 /* Preview Content */,
+				F42D42D927A0F0B200107DFF /* Vendored */,
 			);
 			path = CameraController;
 			sourceTree = "<group>";
@@ -315,6 +332,7 @@
 		F47D07F024C4125B00E44A22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F42D42DC27A0F0DB00107DFF /* Security.framework */,
 				F4D4C6FB24CBE94F00581E05 /* IOKit.framework */,
 				F4D4C6F424CBE81600581E05 /* ServiceManagement.framework */,
 				F47D07F124C4125B00E44A22 /* AVFoundation.framework */,
@@ -573,6 +591,7 @@
 			files = (
 				F47D07D524C4104600E44A22 /* Main.storyboard in Resources */,
 				F47D07D224C4104600E44A22 /* Preview Assets.xcassets in Resources */,
+				F42D42DF27A0F0EE00107DFF /* MoveApplication.strings in Resources */,
 				F47D07CF24C4104600E44A22 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -650,6 +669,7 @@
 				F469CF4924DD0E310092C7F9 /* Profile.swift in Sources */,
 				F4D4C6CE24CBD34300581E05 /* AdvancedView.swift in Sources */,
 				F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */,
+				F42D42DB27A0F0C600107DFF /* MoveApplication.swift in Sources */,
 				F4E5263224C93A3400125DF9 /* DeviceController.swift in Sources */,
 				F42D42D827A0E92100107DFF /* WindowManager.swift in Sources */,
 				F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */,

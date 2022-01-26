@@ -15,6 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusBarManager: StatusBarManager!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        LetsMove.shared.moveToApplicationsFolderIfNecessary()
+
         statusBarManager = StatusBarManager()
         WindowManager.shared.showWindow()
         NSApp.activate(ignoringOtherApps: true)
