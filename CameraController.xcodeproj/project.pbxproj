@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F400B4D024DE13BF003B9602 /* DisabledBasicSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F400B4CF24DE13BF003B9602 /* DisabledBasicSettings.swift */; };
 		F400B4D224DE1546003B9602 /* DisabledAdvancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F400B4D124DE1546003B9602 /* DisabledAdvancedView.swift */; };
+		F42D42D627A0E3D500107DFF /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D42D527A0E3D500107DFF /* StatusBarManager.swift */; };
+		F42D42D827A0E92100107DFF /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D42D727A0E92100107DFF /* WindowManager.swift */; };
 		F45B7ABA24D545B3004C4420 /* DeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */; };
 		F469CF4524DD0A3E0092C7F9 /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */; };
 		F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */; };
@@ -106,6 +108,8 @@
 /* Begin PBXFileReference section */
 		F400B4CF24DE13BF003B9602 /* DisabledBasicSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledBasicSettings.swift; sourceTree = "<group>"; };
 		F400B4D124DE1546003B9602 /* DisabledAdvancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledAdvancedView.swift; sourceTree = "<group>"; };
+		F42D42D527A0E3D500107DFF /* StatusBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
+		F42D42D727A0E92100107DFF /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMonitor.swift; sourceTree = "<group>"; };
 		F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
 		F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
@@ -206,6 +210,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F42D42D427A0E3C200107DFF /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				F42D42D527A0E3D500107DFF /* StatusBarManager.swift */,
+			);
+			path = StatusBar;
+			sourceTree = "<group>";
+		};
 		F47D07BB24C4104300E44A22 = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				F47D07C724C4104300E44A22 /* AppDelegate.swift */,
+				F42D42D727A0E92100107DFF /* WindowManager.swift */,
 				F47D07ED24C4119200E44A22 /* Resources */,
+				F42D42D427A0E3C200107DFF /* StatusBar */,
 				F4D4C6FD24CBF97400581E05 /* Settings */,
 				F47D07EC24C4118200E44A22 /* Devices */,
 				F47D07F524C4177400E44A22 /* UVC */,
@@ -637,6 +651,7 @@
 				F4D4C6CE24CBD34300581E05 /* AdvancedView.swift in Sources */,
 				F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */,
 				F4E5263224C93A3400125DF9 /* DeviceController.swift in Sources */,
+				F42D42D827A0E92100107DFF /* WindowManager.swift in Sources */,
 				F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */,
 				F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */,
 				F400B4D224DE1546003B9602 /* DisabledAdvancedView.swift in Sources */,
@@ -652,6 +667,7 @@
 				F47D081224C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */,
 				F4D4C6D424CBD8EC00581E05 /* OrientationView.swift in Sources */,
 				F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */,
+				F42D42D627A0E3D500107DFF /* StatusBarManager.swift in Sources */,
 				F469CF4524DD0A3E0092C7F9 /* DeviceSettings.swift in Sources */,
 				F47D080624C50DCE00E44A22 /* String+CameraInformation.swift in Sources */,
 				F4E5262724C7D88800125DF9 /* BasicSettings.swift in Sources */,
