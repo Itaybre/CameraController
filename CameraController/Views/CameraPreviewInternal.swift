@@ -25,6 +25,15 @@ class CameraPreviewInternal: NSView {
         configureDevice(device)
         setupPreviewLayer(captureSession)
         captureSession.startRunning()
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(windowClosed),
+                                               name: .windowClose,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(windowOpen),
+                                               name: .windowOpen,
+                                               object: nil)
     }
 
     private func setupPreviewLayer(_ captureSession: AVCaptureSession) {
@@ -35,6 +44,10 @@ class CameraPreviewInternal: NSView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func layout() {
@@ -80,5 +93,17 @@ class CameraPreviewInternal: NSView {
             return
         }
         captureDevice = device
+    }
+
+    @objc
+    func windowClosed() {
+        stopRunning()
+    }
+
+    @objc
+    func windowOpen() {
+        if !captureSession.isRunning {
+            captureSession.startRunning()
+        }
     }
 }

@@ -25,11 +25,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return false
     }
-
-    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
-            WindowManager.shared.closeWindow()
-        }
-        return .terminateCancel
-    }
 }

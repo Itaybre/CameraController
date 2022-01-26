@@ -9,14 +9,17 @@
 import Foundation
 import SwiftUI
 
-class WindowManager {
+class WindowManager: NSObject {
     static let shared = WindowManager()
 
     var window: NSWindow?
 
-    private init() {}
+    override private init() {
+        super.init()
+    }
 
     func showWindow() {
+        NotificationCenter.default.post(name: .windowOpen, object: nil)
         guard window?.isVisible != true else {
             window?.makeKeyAndOrderFront(nil)
             return
@@ -32,10 +35,17 @@ class WindowManager {
         window?.setFrameAutosaveName("Main Window")
         window?.contentView = NSHostingView(rootView: contentView)
         window?.isReleasedWhenClosed = false
+        window?.delegate = self
         window?.makeKeyAndOrderFront(nil)
     }
 
     func closeWindow() {
         window?.close()
+    }
+}
+
+extension WindowManager: NSWindowDelegate {
+    func windowWillClose(_ notification: Notification) {
+        NotificationCenter.default.post(name: .windowClose, object: nil)
     }
 }
