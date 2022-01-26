@@ -14,6 +14,8 @@ protocol MenuTarget: AnyObject {
     @objc func quit()
     @objc func showPanel()
     @objc func deviceSelected(_ menuItem: NSMenuItem)
+    @objc func profileSelected(_ menuItem: NSMenuItem)
+    @objc func defaultProfileSelected()
 }
 
 class MenuBuilder: NSObject {
@@ -26,8 +28,15 @@ class MenuBuilder: NSObject {
         buildCameraSection(target).forEach { menuItem in
             mainMenu.addItem(menuItem)
         }
-
         mainMenu.addItem(NSMenuItem.separator())
+
+        if DevicesManager.shared.selectedDevice?.isConfigurable() == true {
+            buildProfileSection(target).forEach { menuItem in
+                mainMenu.addItem(menuItem)
+            }
+            mainMenu.addItem(NSMenuItem.separator())
+        }
+
         mainMenu.addItem(buildCloseItem(target))
 
         return mainMenu
@@ -67,6 +76,35 @@ class MenuBuilder: NSObject {
             deviceItem.indentationLevel = 1
             deviceItem.tag = index
             deviceItem.state = DevicesManager.shared.selectedDevice == device ? .on : .off
+
+            items.append(deviceItem)
+        }
+
+        return items
+    }
+
+    func buildProfileSection(_ target: MenuTarget) -> [NSMenuItem] {
+        var items: [NSMenuItem] = []
+
+        let titleItem = NSMenuItem()
+        titleItem.title = "Profile"
+        titleItem.target = nil
+        items.append(titleItem)
+
+        let defaultItem = NSMenuItem()
+        defaultItem.title = "Camera Default"
+        defaultItem.target = target
+        defaultItem.action = #selector(MenuTarget.defaultProfileSelected)
+        defaultItem.indentationLevel = 1
+        items.append(defaultItem)
+
+        for (index, device) in ProfileManager.shared.profiles.enumerated() {
+            let deviceItem = NSMenuItem()
+            deviceItem.title = device.name
+            deviceItem.target = target
+            deviceItem.action = #selector(MenuTarget.profileSelected(_:))
+            deviceItem.indentationLevel = 1
+            deviceItem.tag = index
 
             items.append(deviceItem)
         }
