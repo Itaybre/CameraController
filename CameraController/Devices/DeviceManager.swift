@@ -65,6 +65,7 @@ class DevicesManager: ObservableObject {
         }
 
         devices.append(CaptureDevice(avDevice: device))
+        NotificationCenter.default.post(name: .devicesUpdated, object: nil)
     }
 
     @objc
@@ -86,5 +87,6 @@ class DevicesManager: ObservableObject {
         if device.uniqueID == selectedDevice?.avDevice?.uniqueID {
             selectedDevice = nil
         }
+        NotificationCenter.default.post(name: .devicesUpdated, object: nil)
     }
 }

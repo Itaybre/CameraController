@@ -26,9 +26,14 @@ class StatusBarManager {
             button.imageScaling = NSImageScaling.scaleProportionallyDown
         }
 
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(buildMenu),
+                                               name: .devicesUpdated,
+                                               object: nil)
         buildMenu()
     }
 
+    @objc
     func buildMenu() {
         statusBarItem.menu = MenuBuilder().buildMenu(self)
     }

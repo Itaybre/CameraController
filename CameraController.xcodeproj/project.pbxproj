@@ -14,6 +14,7 @@
 		F42D42DB27A0F0C600107DFF /* MoveApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D42DA27A0F0C600107DFF /* MoveApplication.swift */; };
 		F42D42DD27A0F0DC00107DFF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42D42DC27A0F0DB00107DFF /* Security.framework */; platformFilter = maccatalyst; };
 		F42D42DF27A0F0EE00107DFF /* MoveApplication.strings in Resources */ = {isa = PBXBuildFile; fileRef = F42D42DE27A0F0EE00107DFF /* MoveApplication.strings */; };
+		F42D42E227A0F68000107DFF /* NSNotificationName+Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D42E127A0F68000107DFF /* NSNotificationName+Devices.swift */; };
 		F45B7ABA24D545B3004C4420 /* DeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */; };
 		F469CF4524DD0A3E0092C7F9 /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */; };
 		F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */; };
@@ -116,6 +117,7 @@
 		F42D42DA27A0F0C600107DFF /* MoveApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveApplication.swift; sourceTree = "<group>"; };
 		F42D42DC27A0F0DB00107DFF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F42D42DE27A0F0EE00107DFF /* MoveApplication.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MoveApplication.strings; sourceTree = "<group>"; };
+		F42D42E127A0F68000107DFF /* NSNotificationName+Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotificationName+Devices.swift"; sourceTree = "<group>"; };
 		F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMonitor.swift; sourceTree = "<group>"; };
 		F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
 		F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
@@ -234,6 +236,14 @@
 			path = Vendored;
 			sourceTree = "<group>";
 		};
+		F42D42E027A0F66D00107DFF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F42D42E127A0F68000107DFF /* NSNotificationName+Devices.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F47D07BB24C4104300E44A22 = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +270,7 @@
 			children = (
 				F47D07C724C4104300E44A22 /* AppDelegate.swift */,
 				F42D42D727A0E92100107DFF /* WindowManager.swift */,
+				F42D42E027A0F66D00107DFF /* Extensions */,
 				F47D07ED24C4119200E44A22 /* Resources */,
 				F42D42D427A0E3C200107DFF /* StatusBar */,
 				F4D4C6FD24CBF97400581E05 /* Settings */,
@@ -662,6 +673,7 @@
 				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
 				F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */,
 				F4D4C70124CBF99200581E05 /* UserSettings.swift in Sources */,
+				F42D42E227A0F68000107DFF /* NSNotificationName+Devices.swift in Sources */,
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
 				F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */,
 				F47D081D24C68F6000E44A22 /* UVCIntControl.swift in Sources */,
