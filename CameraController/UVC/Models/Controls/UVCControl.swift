@@ -31,6 +31,9 @@ class UVCControl {
     }
 
     func getDataFor(type: UVCRequestCodes, length: Int) -> Int {
+
+        guard uvcUnit >= 0 else { return 0 }
+
         var value: Int = 0
 
         let requestType = USBmakebmRequestType(direction: kUSBIn, type: kUSBClass, recipient: kUSBInterface)
@@ -60,6 +63,9 @@ class UVCControl {
     }
 
     func setData(value: Int, length: Int) -> Bool {
+
+        guard uvcUnit >= 0 else { return false }
+
         var ref = value
 
         let requestType = USBmakebmRequestType(direction: kUSBOut, type: kUSBClass, recipient: kUSBInterface)
