@@ -29,7 +29,8 @@ private let kIOUSBInterfaceInterfaceID: CFUUID =  CFUUIDGetConstantUUIDWithBytes
 typealias DeviceInterfacePointer = UnsafeMutablePointer<UnsafeMutablePointer<IOUSBDeviceInterface>>
 
 extension AVCaptureDevice {
-    func usbDevice() throws -> USBDevice {
+
+    private func getIOService() throws -> io_service_t {
         var camera: io_service_t = 0
         let cameraInformation = try self.modelID.extractCameraInformation()
         let dictionary: NSMutableDictionary = IOServiceMatching("IOUSBDevice") as NSMutableDictionary
@@ -45,14 +46,23 @@ extension AVCaptureDevice {
         if IOServiceGetMatchingServices(kIOMasterPortDefault, dictionary, &iter) == kIOReturnSuccess {
             var cameraCandidate: io_service_t
             cameraCandidate = IOIteratorNext(iter)
-            while (cameraCandidate != 0) {
-                var propsRef: Unmanaged<CFMutableDictionary>? = nil
+            while cameraCandidate != 0 {
+                var propsRef: Unmanaged<CFMutableDictionary>?
 
-                if IORegistryEntryCreateCFProperties(cameraCandidate, &propsRef, kCFAllocatorDefault, 0) == kIOReturnSuccess {
+                if IORegistryEntryCreateCFProperties(
+                    cameraCandidate,
+                    &propsRef,
+                    kCFAllocatorDefault,
+                    0) == kIOReturnSuccess {
                     if let properties = propsRef?.takeRetainedValue() {
 
                         // these are common keys that might have the device name stored in the propery dictionary
-                        let keysToTry: [String] = ["kUSBProductString", "kUSBVendorString", "USB Product Name", "USB Vendor Name"]
+                        let keysToTry: [String] = [
+                            "kUSBProductString",
+                            "kUSBVendorString",
+                            "USB Product Name",
+                            "USB Vendor Name"
+                        ]
 
                         var found: Bool = false
                         for key in keysToTry {
@@ -80,6 +90,13 @@ extension AVCaptureDevice {
         if camera == 0 {
             camera = IOServiceGetMatchingService(kIOMasterPortDefault, dictionary)
         }
+
+        return camera
+    }
+
+    func usbDevice() throws -> USBDevice {
+
+        let camera = try self.getIOService()
         defer {
             let code: kern_return_t = IOObjectRelease(camera)
             assert( code == kIOReturnSuccess )
