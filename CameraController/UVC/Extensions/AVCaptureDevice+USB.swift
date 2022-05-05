@@ -29,18 +29,79 @@ private let kIOUSBInterfaceInterfaceID: CFUUID =  CFUUIDGetConstantUUIDWithBytes
 typealias DeviceInterfacePointer = UnsafeMutablePointer<UnsafeMutablePointer<IOUSBDeviceInterface>>
 
 extension AVCaptureDevice {
-    func usbDevice() throws -> USBDevice {
+
+    private func getIOService() throws -> io_service_t {
+        var camera: io_service_t = 0
         let cameraInformation = try self.modelID.extractCameraInformation()
         let dictionary: NSMutableDictionary = IOServiceMatching("IOUSBDevice") as NSMutableDictionary
         dictionary["idVendor"] = cameraInformation.vendorId
         dictionary["idProduct"] = cameraInformation.productId
 
-        var interfaceRef: UnsafeMutablePointer<UnsafeMutablePointer<IOUSBInterfaceInterface190>>?
-        let camera: io_service_t = IOServiceGetMatchingService(kIOMasterPortDefault, dictionary)
+        // adding other keys to this dictionary like kUSBProductString, kUSBVendorString, etc don't
+        // seem to have any affect on using IOServiceGetMatchingService to get the correct camera,
+        // so we instead get an iterator for the matching services based on idVendor and idProduct
+        // and fetch their property dicts and then match against the more specific values
+
+        var iter: io_iterator_t = 0
+        if IOServiceGetMatchingServices(kIOMasterPortDefault, dictionary, &iter) == kIOReturnSuccess {
+            var cameraCandidate: io_service_t
+            cameraCandidate = IOIteratorNext(iter)
+            while cameraCandidate != 0 {
+                var propsRef: Unmanaged<CFMutableDictionary>?
+
+                if IORegistryEntryCreateCFProperties(
+                    cameraCandidate,
+                    &propsRef,
+                    kCFAllocatorDefault,
+                    0) == kIOReturnSuccess {
+                    if let properties = propsRef?.takeRetainedValue() {
+
+                        // these are common keys that might have the device name stored in the propery dictionary
+                        let keysToTry: [String] = [
+                            "kUSBProductString",
+                            "kUSBVendorString",
+                            "USB Product Name",
+                            "USB Vendor Name"
+                        ]
+
+                        var found: Bool = false
+                        for key in keysToTry {
+                            if let cameraName = (properties as NSDictionary)[key] as? String {
+                                if cameraName == self.localizedName {
+                                    // we have a match, use this as the camera
+                                    camera = cameraCandidate
+                                    found = true
+                                    // break out of `for key in keysToTry`
+                                    break
+                                }
+                            }
+                        }
+                        if found {
+                            // break out of `while (cameraCandidate != 0)`
+                            break
+                        }
+                    }
+                }
+                cameraCandidate = IOIteratorNext(iter)
+            }
+        }
+
+        // if we haven't found a camera after looping through the iterator, fallback on GetMatchingService method
+        if camera == 0 {
+            camera = IOServiceGetMatchingService(kIOMasterPortDefault, dictionary)
+        }
+
+        return camera
+    }
+
+    func usbDevice() throws -> USBDevice {
+
+        let camera = try self.getIOService()
         defer {
             let code: kern_return_t = IOObjectRelease(camera)
             assert( code == kIOReturnSuccess )
         }
+        var interfaceRef: UnsafeMutablePointer<UnsafeMutablePointer<IOUSBInterfaceInterface190>>?
         var configDesc: IOUSBConfigurationDescriptorPtr?
         try camera.ioCreatePluginInterfaceFor(service: kIOUSBDeviceUserClientTypeID) {
             let deviceInterface: DeviceInterfacePointer = try $0.getInterface(uuid: kIOUSBDeviceInterfaceID)
