@@ -40,10 +40,17 @@ class UserSettings: ObservableObject {
         }
     }
 
+    @Published var hideCameraPreview: Bool {
+        didSet {
+            UserDefaults.standard.set(hideCameraPreview, forKey: "hideCameraPreview")
+        }
+    }
+
     private init() {
         openAtLogin = UserDefaults.standard.bool(forKey: "login")
         readRate = RefreshSettingsRate(rawValue: UserDefaults.standard.double(forKey: "readRate")) ?? .disabled
         writeRate = RefreshSettingsRate(rawValue: UserDefaults.standard.double(forKey: "writeRate")) ?? .disabled
         lastSelectedDevice = UserDefaults.standard.string(forKey: "lastDevice")
+        hideCameraPreview = UserDefaults.standard.bool(forKey: "hideCameraPreview")
     }
 }
