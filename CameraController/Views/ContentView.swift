@@ -18,6 +18,7 @@ struct ContentView: View {
         HStack {
             VStack {
                 Picker(selection: $manager.selectedDevice, label: Text("Camera")) {
+                    Text("None").tag(nil as CaptureDevice?)
                     ForEach(manager.devices, id: \.self) { device in
                         Text(device.name).tag(device as CaptureDevice?)
                     }
