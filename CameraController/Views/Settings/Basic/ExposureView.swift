@@ -29,8 +29,10 @@ struct ExposureView: View {
                 HStack {
                     Text("Exposure Time:")
                     Spacer()
-                    Slider(value: $controller.exposureTime.sliderValue, in:
-                        controller.exposureTime.minimum...controller.exposureTime.maximum)
+                    Slider(value: $controller.exposureTime.sliderValue,
+                           in:
+                        controller.exposureTime.minimum...controller.exposureTime.maximum,
+                          step: controller.exposureTime.resolution)
                         .disabled(!optionsEnabled() || !controller.exposureTime.isCapable)
                         .frame(width: 300, height: 15.0)
                 }
@@ -38,7 +40,9 @@ struct ExposureView: View {
                 HStack {
                     Text("Gain:")
                     Spacer()
-                    Slider(value: $controller.gain.sliderValue, in: controller.gain.minimum...controller.gain.maximum)
+                    Slider(value: $controller.gain.sliderValue,
+                           in: controller.gain.minimum...controller.gain.maximum,
+                           step: controller.gain.resolution)
                         .disabled(!optionsEnabled() || !controller.gain.isCapable)
                         .frame(width: 300, height: 15.0)
                 }

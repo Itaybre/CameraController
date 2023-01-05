@@ -18,7 +18,8 @@ struct OrientationView: View {
                     Text("Zoom:")
                     Spacer()
                     Slider(value: $controller.zoomAbsolute.sliderValue,
-                            in: controller.zoomAbsolute.minimum...controller.zoomAbsolute.maximum)
+                            in: controller.zoomAbsolute.minimum...controller.zoomAbsolute.maximum,
+                           step: controller.zoomAbsolute.resolution)
                         .frame(width: 300, height: 15.0)
                         .disabled(!controller.zoomAbsolute.isCapable)
                 }
@@ -26,7 +27,8 @@ struct OrientationView: View {
                     Text("Tilt:")
                     Spacer()
                     Slider(value: $controller.panTiltAbsolute.sliderValue1,
-                           in: controller.panTiltAbsolute.minimum1...controller.panTiltAbsolute.maximum1)
+                           in: controller.panTiltAbsolute.minimum1...controller.panTiltAbsolute.maximum1,
+                           step: controller.panTiltAbsolute.resolution1)
                         .frame(width: 300, height: 15.0)
                         .disabled(!controller.panTiltAbsolute.isCapable)
                 }
@@ -34,7 +36,8 @@ struct OrientationView: View {
                     Text("Pan:")
                     Spacer()
                     Slider(value: $controller.panTiltAbsolute.sliderValue2,
-                           in: controller.panTiltAbsolute.minimum2...controller.panTiltAbsolute.maximum2)
+                           in: controller.panTiltAbsolute.minimum2...controller.panTiltAbsolute.maximum2,
+                           step: controller.panTiltAbsolute.resolution2)
                         .frame(width: 300, height: 15.0)
                         .disabled(!controller.panTiltAbsolute.isCapable)
                 }

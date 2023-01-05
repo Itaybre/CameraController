@@ -21,7 +21,8 @@ struct FocusView: View {
 
                 Spacer()
                 Slider(value: $controller.focusAbsolute.sliderValue,
-                       in: controller.focusAbsolute.minimum...controller.focusAbsolute.maximum)
+                       in: controller.focusAbsolute.minimum...controller.focusAbsolute.maximum,
+                       step: controller.focusAbsolute.resolution)
                     .frame(width: 300, height: 15)
                     .disabled(!controller.focusAbsolute.isCapable)
             }
