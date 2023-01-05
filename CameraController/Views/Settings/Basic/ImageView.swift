@@ -18,7 +18,8 @@ struct ImageView: View {
                     Text("Brightness:")
                     Spacer()
                     Slider(value: $controller.brightness.sliderValue,
-                            in: controller.brightness.minimum...controller.brightness.maximum)
+                            in: controller.brightness.minimum...controller.brightness.maximum,
+                           step: controller.brightness.resolution)
                         .frame(width: 300, height: 15.0)
                         .disabled(!controller.brightness.isCapable)
                 }
@@ -26,23 +27,26 @@ struct ImageView: View {
                     Text("Contrast:")
                     Spacer()
                     Slider(value: $controller.contrast.sliderValue,
-                            in: controller.contrast.minimum...controller.contrast.maximum)
+                            in: controller.contrast.minimum...controller.contrast.maximum,
+                           step: controller.contrast.resolution)
                         .frame(width: 300, height: 15.0)
-                        .disabled(!controller.brightness.isCapable)
+                        .disabled(!controller.contrast.isCapable)
                 }
                 HStack {
                     Text("Saturation:")
                     Spacer()
                     Slider(value: $controller.saturation.sliderValue,
-                            in: controller.saturation.minimum...controller.saturation.maximum)
+                            in: controller.saturation.minimum...controller.saturation.maximum,
+                           step: controller.saturation.resolution)
                         .frame(width: 300, height: 15.0)
-                        .disabled(!controller.brightness.isCapable)
+                        .disabled(!controller.saturation.isCapable)
                 }
                 HStack {
                     Text("Sharpness:")
                     Spacer()
                     Slider(value: $controller.sharpness.sliderValue,
-                            in: controller.sharpness.minimum...controller.sharpness.maximum)
+                            in: controller.sharpness.minimum...controller.sharpness.maximum,
+                           step: controller.sharpness.resolution)
                         .frame(width: 300, height: 15.0)
                         .disabled(!controller.sharpness.isCapable)
                 }

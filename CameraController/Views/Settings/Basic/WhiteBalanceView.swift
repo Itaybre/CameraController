@@ -20,7 +20,8 @@ struct WhiteBalanceView: View {
 
                 Spacer()
                 Slider(value: $controller.whiteBalance.sliderValue,
-                       in: controller.whiteBalance.minimum...controller.whiteBalance.maximum)
+                       in: controller.whiteBalance.minimum...controller.whiteBalance.maximum,
+                       step: controller.whiteBalance.resolution)
                     .frame(width: 300, height: 15)
                     .disabled(controller.whiteBalanceAuto.isEnabled)
             }
