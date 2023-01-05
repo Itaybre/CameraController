@@ -13,19 +13,7 @@ struct FocusView: View {
 
     var body: some View {
         GroupBox(label: Text("Focus")) {
-            HStack {
-                Toggle(isOn: $controller.focusAuto.isEnabled) {
-                    Text("Auto")
-                }
-                .disabled(!controller.focusAuto.isCapable)
-
-                Spacer()
-                Slider(value: $controller.focusAbsolute.sliderValue,
-                       in: controller.focusAbsolute.minimum...controller.focusAbsolute.maximum,
-                       step: controller.focusAbsolute.resolution)
-                    .frame(width: 300, height: 15)
-                    .disabled(!controller.focusAbsolute.isCapable)
-            }
+            SliderOptionWithAuto(valueProperty: $controller.focusAbsolute, autoProperty: $controller.focusAuto)
         }
     }
 }
