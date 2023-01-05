@@ -54,26 +54,15 @@ extension AVCaptureDevice {
                     &propsRef,
                     kCFAllocatorDefault,
                     0) == kIOReturnSuccess {
+                    var found: Bool = false
                     if let properties = propsRef?.takeRetainedValue() {
-
-                        // these are common keys that might have the device name stored in the propery dictionary
-                        let keysToTry: [String] = [
-                            "kUSBProductString",
-                            "kUSBVendorString",
-                            "USB Product Name",
-                            "USB Vendor Name"
-                        ]
-
-                        var found: Bool = false
-                        for key in keysToTry {
-                            if let cameraName = (properties as NSDictionary)[key] as? String {
-                                if cameraName == self.localizedName {
-                                    // we have a match, use this as the camera
-                                    camera = cameraCandidate
-                                    found = true
-                                    // break out of `for key in keysToTry`
-                                    break
-                                }
+                        
+                        // uniqueID starts with hex version of locationID
+                        if let locationID = (properties as NSDictionary)["locationID"] as? Int {
+                            let locationIDHex = "0x" + String(locationID, radix: 16)
+                            if self.uniqueID.hasPrefix(locationIDHex) {
+                                camera = cameraCandidate
+                                found = true
                             }
                         }
                         if found {
