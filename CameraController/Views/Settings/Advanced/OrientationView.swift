@@ -38,6 +38,15 @@ struct OrientationView: View {
                         .frame(width: 300, height: 15.0)
                         .disabled(!controller.panTiltAbsolute.isCapable)
                 }
+                HStack {
+                    Text("Roll:")
+                    Spacer()
+                    Slider(value: $controller.rollAbsolute.sliderValue,
+                           in: controller.rollAbsolute.minimum...controller.rollAbsolute.maximum,
+                           step: controller.rollAbsolute.resolution)
+                        .frame(width: 300, height: 15.0)
+                        .disabled(!controller.rollAbsolute.isCapable)
+                }
             }
         }
     }

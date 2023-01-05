@@ -44,7 +44,20 @@ struct ImageView: View {
                     Slider(value: $controller.sharpness.sliderValue,
                             in: controller.sharpness.minimum...controller.sharpness.maximum)
                         .frame(width: 300, height: 15.0)
-                        .disabled(!controller.brightness.isCapable)
+                        .disabled(!controller.sharpness.isCapable)
+                }
+                HStack {
+                    Toggle(isOn: $controller.hueAuto.isEnabled) {
+                        Text("Auto")
+                    }
+                    .disabled(!controller.hueAuto.isCapable)
+
+                    Spacer()
+                    Slider(value: $controller.hue.sliderValue,
+                           in: controller.hue.minimum...controller.hue.maximum,
+                           step: controller.hue.resolution)
+                        .frame(width: 300, height: 15)
+                        .disabled(!controller.hue.isCapable)
                 }
             }
         }
