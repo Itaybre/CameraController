@@ -17,12 +17,15 @@ class DeviceController: ObservableObject {
     @Published var contrast: NumberCaptureDeviceProperty
     @Published var saturation: NumberCaptureDeviceProperty
     @Published var sharpness: NumberCaptureDeviceProperty
+    @Published var hue: NumberCaptureDeviceProperty
+    @Published var hueAuto: BoolCaptureDeviceProperty
     @Published var whiteBalanceAuto: BoolCaptureDeviceProperty
     @Published var whiteBalance: NumberCaptureDeviceProperty
     @Published var powerLineFrequency: NumberCaptureDeviceProperty
     @Published var backlightCompensation: NumberCaptureDeviceProperty
     @Published var zoomAbsolute: NumberCaptureDeviceProperty
     @Published var panTiltAbsolute: MultipleCaptureDeviceProperty
+    @Published var rollAbsolute: NumberCaptureDeviceProperty
     @Published var focusAuto: BoolCaptureDeviceProperty
     @Published var focusAbsolute: NumberCaptureDeviceProperty
 
@@ -41,6 +44,8 @@ class DeviceController: ObservableObject {
         contrast = NumberCaptureDeviceProperty(properties.contrast)
         saturation = NumberCaptureDeviceProperty(properties.saturation)
         sharpness = NumberCaptureDeviceProperty(properties.sharpness)
+        hue = NumberCaptureDeviceProperty(properties.hue)
+        hueAuto = BoolCaptureDeviceProperty(properties.hueAuto)
 
         // WhiteBalance
         whiteBalanceAuto = BoolCaptureDeviceProperty(properties.whiteBalanceAuto)
@@ -55,6 +60,7 @@ class DeviceController: ObservableObject {
         // Orientation
         zoomAbsolute = NumberCaptureDeviceProperty(properties.zoomAbsolute)
         panTiltAbsolute = MultipleCaptureDeviceProperty(properties.panTiltAbsolute)
+        rollAbsolute = NumberCaptureDeviceProperty(properties.rollAbsolute)
 
         // Focus
         focusAuto = BoolCaptureDeviceProperty(properties.focusAuto)
