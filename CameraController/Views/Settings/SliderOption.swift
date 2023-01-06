@@ -31,8 +31,8 @@ struct SliderOption: View {
         if property.maximum > 0 {
             HStack {
                 Text(title)
-                    .onTapGesture(count: 2) {
-                        property.sliderValue = property.defaultValue
+                    .onTapGesture(count: 1) {
+                        showField = false
                     }
                     .onLongPressGesture {
                         showField = !showField
@@ -48,9 +48,11 @@ struct SliderOption: View {
 
                         Spacer()
 
-                        TextField("", value: $property.sliderValue, formatter: formatter)
+                        TextField("\(Int(property.minimum))-\(Int(property.maximum))",
+                                  value: $property.sliderValue,
+                                  formatter: formatter)
                             .multilineTextAlignment(.center)
-                            .frame(width: 32, height: 18)
+                            .frame(width: 60, height: 20)
                         Button("Reset") {
                             property.sliderValue = property.defaultValue
                         }
