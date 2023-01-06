@@ -50,12 +50,12 @@ class UVCMultipleIntControl: UVCControl {
     }
 
     private func set1(_ val1: Int) -> Bool {
-        let newValue = (val1*3600) << 32 | (_current2*3600)
+        let newValue = (val1*3600) << 32 + (_current2*3600)
         return setData(value: newValue, length: uvcSize)
     }
 
     private func set2(_ val2: Int) -> Bool {
-        let newValue = (_current1*3600) << 32 | (val2*3600)
+        let newValue = (_current1*3600) << 32 + (val2*3600)
         return setData(value: newValue, length: uvcSize)
     }
 
