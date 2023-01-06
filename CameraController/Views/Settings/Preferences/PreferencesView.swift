@@ -29,6 +29,14 @@ struct PreferencesView: View {
                 }
                 Spacer()
             }
+            HStack {
+                VStack(alignment: .leading) {
+                    Toggle(isOn: $settings.hideCameraPreview) {
+                        Text("Hide camera preview")
+                    }
+                }
+                Spacer()
+            }
         }
     }
 

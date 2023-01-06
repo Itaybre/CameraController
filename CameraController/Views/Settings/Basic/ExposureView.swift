@@ -26,14 +26,24 @@ struct ExposureView: View {
                     .frame(width: 300, height: 20.0)
                 }
 
-                CustomSlider(title: "Exposure Time:",
-                             deviceProperty: controller.exposureTime,
-                             value: $controller.exposureTime.sliderValue)
-                    .disabled(!optionsEnabled() || !controller.exposureTime.isCapable)
-                CustomSlider(title: "Gain:",
-                             deviceProperty: controller.gain,
-                             value: $controller.gain.sliderValue)
-                    .disabled(!optionsEnabled() || !controller.gain.isCapable)
+                HStack {
+                    Text("Exposure Time:")
+                    Spacer()
+                    Slider(value: $controller.exposureTime.sliderValue,
+                           in:
+                        controller.exposureTime.minimum...controller.exposureTime.maximum)
+                        .disabled(!optionsEnabled() || !controller.exposureTime.isCapable)
+                        .frame(width: 300, height: 20.0)
+                }
+
+                HStack {
+                    Text("Gain:")
+                    Spacer()
+                    Slider(value: $controller.gain.sliderValue,
+                           in: controller.gain.minimum...controller.gain.maximum)
+                        .disabled(!optionsEnabled() || !controller.gain.isCapable)
+                        .frame(width: 300, height: 20.0)
+                }
             }
         }
     }

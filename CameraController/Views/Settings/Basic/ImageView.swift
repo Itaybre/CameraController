@@ -14,18 +14,18 @@ struct ImageView: View {
     var body: some View {
         GroupBox(label: Text("Image")) {
             VStack(spacing: 3.0) {
-                CustomSlider(title: "Brightness:",
-                             deviceProperty: controller.brightness,
-                             value: $controller.brightness.sliderValue)
-                CustomSlider(title: "Contrast:",
-                             deviceProperty: controller.contrast,
-                             value: $controller.contrast.sliderValue)
-                CustomSlider(title: "Saturation:",
-                             deviceProperty: controller.saturation,
-                             value: $controller.saturation.sliderValue)
-                CustomSlider(title: "Sharpness:",
-                             deviceProperty: controller.sharpness,
-                             value: $controller.sharpness.sliderValue)
+                SliderOption(property: $controller.brightness, title: "Brightness:")
+                SliderOption(property: $controller.contrast, title: "Contrast:")
+                SliderOption(property: $controller.saturation, title: "Saturation:")
+                SliderOption(property: $controller.sharpness, title: "Sharpness")
+            }
+        }
+
+        if controller.hue.maximum > 0 {
+            GroupBox(label: Text("Hue")) {
+                VStack(spacing: 3.0) {
+                    SliderOptionWithAuto(valueProperty: $controller.hue, autoProperty: $controller.hueAuto)
+                }
             }
         }
     }

@@ -26,9 +26,3 @@ struct BacklightView: View {
         }
     }
 }
-
-//struct BacklightView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BacklightView()
-//    }
-//}

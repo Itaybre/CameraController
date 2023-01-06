@@ -12,16 +12,22 @@ import AVFoundation
 
 struct ContentView: View {
     @ObservedObject var manager = DevicesManager.shared
+    @ObservedObject var settings = UserSettings.shared
 
     var body: some View {
         HStack {
             VStack {
                 Picker(selection: $manager.selectedDevice, label: Text("Camera")) {
+                    Text("None").tag(nil as CaptureDevice?)
                     ForEach(manager.devices, id: \.self) { device in
                         Text(device.name).tag(device as CaptureDevice?)
                     }
                 }
-                cameraPreview(captureDevice: $manager.selectedDevice)
+
+                if !settings.hideCameraPreview {
+                    cameraPreview(captureDevice: $manager.selectedDevice)
+                }
+
                 settingsView(captureDevice: $manager.selectedDevice)
                 ProfileSelector().frame(width: 400, height: 75)
             }.onAppear {
