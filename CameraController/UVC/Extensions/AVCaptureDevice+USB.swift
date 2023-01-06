@@ -56,7 +56,7 @@ extension AVCaptureDevice {
                     0) == kIOReturnSuccess {
                     var found: Bool = false
                     if let properties = propsRef?.takeRetainedValue() {
-                        
+
                         // uniqueID starts with hex version of locationID
                         if let locationID = (properties as NSDictionary)["locationID"] as? Int {
                             let locationIDHex = "0x" + String(locationID, radix: 16)

@@ -17,9 +17,3 @@ struct FocusView: View {
         }
     }
 }
-
-//struct FocusView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FocusView()
-//    }
-//}

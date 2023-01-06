@@ -21,9 +21,3 @@ struct OrientationView: View {
         }
     }
 }
-
-//struct OrientationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OrientationView()
-//    }
-//}

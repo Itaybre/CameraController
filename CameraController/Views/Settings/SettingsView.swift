@@ -24,18 +24,12 @@ struct SettingsView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .frame(width: 300)
 
-                if currentView == 1 {
-                    basicVew()
-                } else if currentView == 2 {
-                    advancedView()
-                } else {
-                    PreferencesView()
-                }
+                contentView()
             }
         }
     }
 
-    func basicVew() -> AnyView {
+    fileprivate func basicVew() -> AnyView {
         if let controller = captureDevice?.controller {
             return AnyView(BasicSettings(controller: controller))
         } else {
@@ -43,11 +37,21 @@ struct SettingsView: View {
         }
     }
 
-    func advancedView() -> AnyView {
+    fileprivate func advancedView() -> AnyView {
         if let controller = captureDevice?.controller {
             return AnyView(AdvancedView(controller: controller))
         } else {
             return AnyView(DisabledAdvancedView())
+        }
+    }
+
+    fileprivate func contentView() -> AnyView {
+        if currentView == 1 {
+            return basicVew()
+        } else if currentView == 2 {
+            return advancedView()
+        } else {
+            return AnyView(PreferencesView())
         }
     }
 }

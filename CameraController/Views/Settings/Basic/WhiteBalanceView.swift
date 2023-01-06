@@ -17,9 +17,3 @@ struct WhiteBalanceView: View {
         }
     }
 }
-
-//struct WhiteBalanceView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WhiteBalanceView()
-//    }
-//}
