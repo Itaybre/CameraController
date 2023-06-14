@@ -44,7 +44,7 @@ struct DisabledBasicSettings: View {
                     }
 
                     Spacer()
-                    Slider(value: .constant(0.0), in: 0...1).frame(width: 300, height: 15.0)
+                    Slider(value: .constant(0.0), in: 0...1).frame(width: 300, height: 20.0)
                 }
             }
         }.disabled(true)
@@ -54,7 +54,7 @@ struct DisabledBasicSettings: View {
         HStack {
             Text(name)
             Spacer()
-            Slider(value: .constant(0.0), in: 0...1).frame(width: 300, height: 15.0)
+            Slider(value: .constant(0.0), in: 0...1).frame(width: 300, height: 20.0)
         }
     }
 }

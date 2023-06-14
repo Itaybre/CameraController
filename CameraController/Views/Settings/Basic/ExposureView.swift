@@ -26,22 +26,10 @@ struct ExposureView: View {
                     .frame(width: 300, height: 20.0)
                 }
 
-                HStack {
-                    Text("Exposure Time:")
-                    Spacer()
-                    Slider(value: $controller.exposureTime.sliderValue, in:
-                        controller.exposureTime.minimum...controller.exposureTime.maximum)
-                        .disabled(!optionsEnabled() || !controller.exposureTime.isCapable)
-                        .frame(width: 300, height: 15.0)
-                }
-
-                HStack {
-                    Text("Gain:")
-                    Spacer()
-                    Slider(value: $controller.gain.sliderValue, in: controller.gain.minimum...controller.gain.maximum)
-                        .disabled(!optionsEnabled() || !controller.gain.isCapable)
-                        .frame(width: 300, height: 15.0)
-                }
+                SliderOption(property: $controller.exposureTime, title: "Exposure Time:")
+                    .disabled(!optionsEnabled())
+                SliderOption(property: $controller.gain, title: "Gain:")
+                    .disabled(!optionsEnabled())
             }
         }
     }
@@ -50,9 +38,3 @@ struct ExposureView: View {
         return controller.exposureMode.selected == .manual
     }
 }
-
-//struct ExposureView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ExposureView()
-//    }
-//}

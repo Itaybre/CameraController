@@ -73,7 +73,7 @@ extension IOUSBConfigurationDescriptorPtr {
 
                         getDeviceId(descriptorPointer, currentPointer, &processingUnitID, &cameraTerminalID)
                         interfaceID = Int(intDesc.pointee.bInterfaceNumber)
-                        
+
                         if interfaceID != -1 && processingUnitID != -1 && cameraTerminalID != -1 {
                             // Found all necessary data, exit
                             // Fix for WB7022 Camera

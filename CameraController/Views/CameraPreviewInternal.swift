@@ -24,7 +24,14 @@ class CameraPreviewInternal: NSView {
 
         configureDevice(device)
         setupPreviewLayer(captureSession)
-        captureSession.startRunning()
+        // lock configuration to keep device.activeFormat
+        do {
+            try captureDevice?.lockForConfiguration()
+            captureSession.startRunning()
+            captureDevice?.unlockForConfiguration()
+        } catch {
+            // Handle error.
+        }
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(windowClosed),
@@ -66,7 +73,14 @@ class CameraPreviewInternal: NSView {
         if captureDevice != cam {
             captureSession.stopRunning()
             configureDevice(cam)
-            captureSession.startRunning()
+            // lock configuration to keep device.activeFormat
+            do {
+                try captureDevice?.lockForConfiguration()
+                captureSession.startRunning()
+                captureDevice?.unlockForConfiguration()
+            } catch {
+                // Handle error.
+            }
         }
     }
 

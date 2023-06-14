@@ -14,37 +14,17 @@ struct ImageView: View {
     var body: some View {
         GroupBox(label: Text("Image")) {
             VStack(spacing: 3.0) {
-                HStack {
-                    Text("Brightness:")
-                    Spacer()
-                    Slider(value: $controller.brightness.sliderValue,
-                            in: controller.brightness.minimum...controller.brightness.maximum)
-                        .frame(width: 300, height: 15.0)
-                        .disabled(!controller.brightness.isCapable)
-                }
-                HStack {
-                    Text("Contrast:")
-                    Spacer()
-                    Slider(value: $controller.contrast.sliderValue,
-                            in: controller.contrast.minimum...controller.contrast.maximum)
-                        .frame(width: 300, height: 15.0)
-                        .disabled(!controller.brightness.isCapable)
-                }
-                HStack {
-                    Text("Saturation:")
-                    Spacer()
-                    Slider(value: $controller.saturation.sliderValue,
-                            in: controller.saturation.minimum...controller.saturation.maximum)
-                        .frame(width: 300, height: 15.0)
-                        .disabled(!controller.brightness.isCapable)
-                }
-                HStack {
-                    Text("Sharpness:")
-                    Spacer()
-                    Slider(value: $controller.sharpness.sliderValue,
-                            in: controller.sharpness.minimum...controller.sharpness.maximum)
-                        .frame(width: 300, height: 15.0)
-                        .disabled(!controller.brightness.isCapable)
+                SliderOption(property: $controller.brightness, title: "Brightness:")
+                SliderOption(property: $controller.contrast, title: "Contrast:")
+                SliderOption(property: $controller.saturation, title: "Saturation:")
+                SliderOption(property: $controller.sharpness, title: "Sharpness")
+            }
+        }
+
+        if controller.hue.maximum > 0 {
+            GroupBox(label: Text("Hue")) {
+                VStack(spacing: 3.0) {
+                    SliderOptionWithAuto(valueProperty: $controller.hue, autoProperty: $controller.hueAuto)
                 }
             }
         }

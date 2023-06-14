@@ -19,9 +19,3 @@ struct BasicSettings: View {
         }
     }
 }
-
-//struct BasicSettings_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BasicSettings()
-//    }
-//}
