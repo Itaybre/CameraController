@@ -32,7 +32,6 @@ class CameraPreviewInternal: NSView {
         } catch {
             // Handle error.
         }
-        
     }
 
     private func setupPreviewLayer(_ captureSession: AVCaptureSession) {
