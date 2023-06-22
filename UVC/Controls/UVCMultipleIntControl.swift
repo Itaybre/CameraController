@@ -8,17 +8,17 @@
 
 import Foundation
 
-class UVCMultipleIntControl: UVCControl {
-    var minimum1: Int = 0
-    var minimum2: Int = 0
-    var maximum1: Int = 0
-    var maximum2: Int = 0
-    var defaultValue1: Int = 0
-    var defaultValue2: Int = 0
-    var resolution1: Int = 0
-    var resolution2: Int = 0
+public class UVCMultipleIntControl: UVCControl {
+    public var minimum1: Int = 0
+    public var minimum2: Int = 0
+    public var maximum1: Int = 0
+    public var maximum2: Int = 0
+    public var defaultValue1: Int = 0
+    public var defaultValue2: Int = 0
+    public var resolution1: Int = 0
+    public var resolution2: Int = 0
 
-    var current1: Int {
+    public var current1: Int {
         get {
             return _current1
         }
@@ -29,7 +29,7 @@ class UVCMultipleIntControl: UVCControl {
         }
     }
 
-    var current2: Int {
+    public var current2: Int {
         get {
             return _current2
         }

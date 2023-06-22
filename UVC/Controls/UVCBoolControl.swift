@@ -8,10 +8,10 @@
 
 import Foundation
 
-class UVCBoolControl: UVCControl {
-    var defaultValue: Bool = false
+public class UVCBoolControl: UVCControl {
+    public var defaultValue: Bool = false
 
-    var isEnabled: Bool {
+    public var isEnabled: Bool {
         get {
             return _isEnabled
         }

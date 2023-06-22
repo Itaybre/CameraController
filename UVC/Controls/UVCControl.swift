@@ -12,14 +12,14 @@ protocol Selector {
     func raw() -> Int
 }
 
-class UVCControl {
+public class UVCControl {
     let interface: USBInterfacePointer
     let uvcSize: Int
     let uvcSelector: Int
     let uvcUnit: Int
     let uvcInterface: Int
 
-    var isCapable: Bool = false
+    public var isCapable: Bool = false
 
     init(_ interface: USBInterfacePointer, _ uvcSize: Int, _ uvcSelector: Selector,
          _ uvcUnit: Int, _ uvcInterface: Int) {
