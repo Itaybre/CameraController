@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,6 +43,7 @@
 		F47D082324C692A600E44A22 /* UVCBitmapControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082224C692A600E44A22 /* UVCBitmapControl.swift */; };
 		F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */; };
 		F486353124CBA574003CE0BA /* NumberCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486353024CBA574003CE0BA /* NumberCaptureDeviceProperty.swift */; };
+		F49FA8252A43BE5D0043E0E1 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = F49FA8242A43BE5D0043E0E1 /* Sparkle */; };
 		F4D4C6C724CBCEA800581E05 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6C624CBCEA800581E05 /* ImageView.swift */; };
 		F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6C824CBD26600581E05 /* BoolCaptureDeviceProperty.swift */; };
 		F4D4C6CB24CBD27600581E05 /* WhiteBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6CA24CBD27600581E05 /* WhiteBalanceView.swift */; };
@@ -190,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47D07F224C4125B00E44A22 /* AVFoundation.framework in Frameworks */,
+				F49FA8252A43BE5D0043E0E1 /* Sparkle in Frameworks */,
 				F4D4C6F524CBE81600581E05 /* ServiceManagement.framework in Frameworks */,
 				F4D4C6FC24CBE94F00581E05 /* IOKit.framework in Frameworks */,
 			);
@@ -480,6 +482,9 @@
 				F4D4C6F824CBE81900581E05 /* PBXTargetDependency */,
 			);
 			name = CameraController;
+			packageProductDependencies = (
+				F49FA8242A43BE5D0043E0E1 /* Sparkle */,
+			);
 			productName = CameraController;
 			productReference = F47D07C424C4104300E44A22 /* CameraController.app */;
 			productType = "com.apple.product-type.application";
@@ -550,6 +555,9 @@
 				Base,
 			);
 			mainGroup = F47D07BB24C4104300E44A22;
+			packageReferences = (
+				F49FA8232A43BE5D0043E0E1 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			productRefGroup = F47D07C524C4104300E44A22 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -607,7 +615,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1036,6 +1044,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F49FA8232A43BE5D0043E0E1 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F49FA8242A43BE5D0043E0E1 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F49FA8232A43BE5D0043E0E1 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F47D07CC24C4104300E44A22 /* CameraController.xcdatamodel */,
+			);
+			currentVersion = F47D07CC24C4104300E44A22 /* CameraController.xcdatamodel */;
+			path = CameraController.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F47D07BC24C4104300E44A22 /* Project object */;
 }

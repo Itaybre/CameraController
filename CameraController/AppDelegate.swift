@@ -8,11 +8,18 @@
 
 import Cocoa
 import SwiftUI
+import Sparkle
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
+
+    private let updaterController = SPUStandardUpdaterController(
+        startingUpdater: true,
+        updaterDelegate: nil,
+        userDriverDelegate: nil
+    )
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let contentView = ContentView()
@@ -30,5 +37,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
+    }
+
+    // MARK: - Check For updated
+    func checkForUpdates() {
+        updaterController.checkForUpdates(nil)
     }
 }
