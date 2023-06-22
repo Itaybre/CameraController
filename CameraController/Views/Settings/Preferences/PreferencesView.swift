@@ -16,6 +16,7 @@ struct PreferencesView: View {
             applicationSettings()
             readSettings()
             writeSettings()
+            updatesSettings()
         }
     }
 
@@ -69,6 +70,22 @@ struct PreferencesView: View {
                 }
                 Spacer()
             }
+        }
+    }
+
+    fileprivate func updatesSettings() -> some View {
+        HStack {
+            Spacer()
+            Button("Check for updates") {
+                guard let delegate = NSApplication.shared.delegate as? AppDelegate else {
+                    return
+                }
+                delegate.checkForUpdates()
+            }
+            Button("Quit") {
+                NSApplication.shared.terminate(nil)
+            }
+            Spacer()
         }
     }
 }
