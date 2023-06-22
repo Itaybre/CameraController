@@ -16,7 +16,6 @@
 		F469CF4B24DD0FC70092C7F9 /* ProfileSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4A24DD0FC70092C7F9 /* ProfileSelector.swift */; };
 		F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07C724C4104300E44A22 /* AppDelegate.swift */; };
 		F47D07CA24C4104300E44A22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07C924C4104300E44A22 /* ContentView.swift */; };
-		F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */; };
 		F47D07CF24C4104600E44A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47D07CE24C4104600E44A22 /* Assets.xcassets */; };
 		F47D07D224C4104600E44A22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47D07D124C4104600E44A22 /* Preview Assets.xcassets */; };
 		F47D07D524C4104600E44A22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47D07D324C4104600E44A22 /* Main.storyboard */; };
@@ -119,7 +118,6 @@
 		F47D07C424C4104300E44A22 /* CameraController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47D07C724C4104300E44A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47D07C924C4104300E44A22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F47D07CC24C4104300E44A22 /* CameraController.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CameraController.xcdatamodel; sourceTree = "<group>"; };
 		F47D07CE24C4104600E44A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F47D07D124C4104600E44A22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F47D07D424C4104600E44A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -303,7 +301,6 @@
 				F47D07D324C4104600E44A22 /* Main.storyboard */,
 				F47D07D624C4104600E44A22 /* Info.plist */,
 				F47D07D724C4104600E44A22 /* CameraController.entitlements */,
-				F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -649,7 +646,6 @@
 				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
 				F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */,
 				F4D4C70124CBF99200581E05 /* UserSettings.swift in Sources */,
-				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
 				F4F1CCAD279860A0008C2A5D /* CustomSlider.swift in Sources */,
 				F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */,
 				F47D081D24C68F6000E44A22 /* UVCIntControl.swift in Sources */,
