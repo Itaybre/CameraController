@@ -16,7 +16,6 @@
 		F469CF4B24DD0FC70092C7F9 /* ProfileSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4A24DD0FC70092C7F9 /* ProfileSelector.swift */; };
 		F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07C724C4104300E44A22 /* AppDelegate.swift */; };
 		F47D07CA24C4104300E44A22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07C924C4104300E44A22 /* ContentView.swift */; };
-		F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */; };
 		F47D07CF24C4104600E44A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47D07CE24C4104600E44A22 /* Assets.xcassets */; };
 		F47D07D224C4104600E44A22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47D07D124C4104600E44A22 /* Preview Assets.xcassets */; };
 		F47D07D524C4104600E44A22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47D07D324C4104600E44A22 /* Main.storyboard */; };
@@ -71,10 +70,10 @@
 		F4E5262D24C7DDB000125DF9 /* CaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262C24C7DDB000125DF9 /* CaptureDevice.swift */; };
 		F4E5263024C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262F24C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift */; };
 		F4E5263224C93A3400125DF9 /* DeviceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5263124C93A3400125DF9 /* DeviceController.swift */; };
-		F4F1CCAD279860A0008C2A5D /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */; };
 		F4EA729E296793D20014D3E2 /* SliderOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA729D296793D20014D3E2 /* SliderOption.swift */; };
 		F4EA72A0296794910014D3E2 /* SliderOptionWithAuto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA729F296794910014D3E2 /* SliderOptionWithAuto.swift */; };
 		F4EA72A2296798190014D3E2 /* DualSliderOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA72A1296798190014D3E2 /* DualSliderOption.swift */; };
+		F4F1CCAD279860A0008C2A5D /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +117,6 @@
 		F47D07C424C4104300E44A22 /* CameraController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47D07C724C4104300E44A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47D07C924C4104300E44A22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F47D07CC24C4104300E44A22 /* CameraController.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CameraController.xcdatamodel; sourceTree = "<group>"; };
 		F47D07CE24C4104600E44A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F47D07D124C4104600E44A22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F47D07D424C4104600E44A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,10 +178,10 @@
 		F4E5262C24C7DDB000125DF9 /* CaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureDevice.swift; sourceTree = "<group>"; };
 		F4E5262F24C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapCaptureDeviceProperty.swift; sourceTree = "<group>"; };
 		F4E5263124C93A3400125DF9 /* DeviceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceController.swift; sourceTree = "<group>"; };
-		F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		F4EA729D296793D20014D3E2 /* SliderOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderOption.swift; sourceTree = "<group>"; };
 		F4EA729F296794910014D3E2 /* SliderOptionWithAuto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderOptionWithAuto.swift; sourceTree = "<group>"; };
 		F4EA72A1296798190014D3E2 /* DualSliderOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualSliderOption.swift; sourceTree = "<group>"; };
+		F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,7 +299,6 @@
 				F47D07D324C4104600E44A22 /* Main.storyboard */,
 				F47D07D624C4104600E44A22 /* Info.plist */,
 				F47D07D724C4104600E44A22 /* CameraController.entitlements */,
-				F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -641,7 +638,6 @@
 				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
 				F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */,
 				F4D4C70124CBF99200581E05 /* UserSettings.swift in Sources */,
-				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
 				F4F1CCAD279860A0008C2A5D /* CustomSlider.swift in Sources */,
 				F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */,
 				F47D081D24C68F6000E44A22 /* UVCIntControl.swift in Sources */,
@@ -1040,19 +1036,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F47D07CC24C4104300E44A22 /* CameraController.xcdatamodel */,
-			);
-			currentVersion = F47D07CC24C4104300E44A22 /* CameraController.xcdatamodel */;
-			path = CameraController.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F47D07BC24C4104300E44A22 /* Project object */;
 }
