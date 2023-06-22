@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class UVCMultipleIntControl: UVCControl {
+public final class UVCMultipleIntControl: UVCControl {
     public var minimum1: Int = 0
     public var minimum2: Int = 0
     public var maximum1: Int = 0

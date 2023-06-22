@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UVC
 
-class NumberCaptureDeviceProperty {
+final class NumberCaptureDeviceProperty {
     private let control: UVCIntControl
 
     var sliderValue: Float {

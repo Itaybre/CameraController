@@ -11,7 +11,7 @@ import AVFoundation
 
 typealias USBInterfacePointer = UnsafeMutablePointer<UnsafeMutablePointer<IOUSBInterfaceInterface190>>
 
-public class UVCDevice {
+public final class UVCDevice {
     let interface: USBInterfacePointer
     let processingUnitID: Int
     let cameraTerminalID: Int

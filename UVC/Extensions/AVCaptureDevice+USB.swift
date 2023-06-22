@@ -10,24 +10,6 @@ import Foundation
 import AVFoundation
 import IOKit.usb
 
-private let kIOUSBDeviceUserClientTypeID: CFUUID = CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,
-                                                                                  0x9d, 0xc7, 0xb7, 0x80,
-                                                                                  0x9e, 0xc0, 0x11, 0xD4,
-                                                                                  0xa5, 0x4f, 0x00, 0x0a,
-                                                                                  0x27, 0x05, 0x28, 0x61)
-private let kIOUSBDeviceInterfaceID: CFUUID =  CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,
-                                                                              0x5c, 0x81, 0x87, 0xd0,
-                                                                              0x9e, 0xf3, 0x11, 0xD4,
-                                                                              0x8b, 0x45, 0x00, 0x0a,
-                                                                              0x27, 0x05, 0x28, 0x61)
-private let kIOUSBInterfaceInterfaceID: CFUUID =  CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,
-                                                                                 0x73, 0xc9, 0x7a, 0xe8,
-                                                                                 0x9e, 0xf3, 0x11, 0xD4,
-                                                                                 0xb1, 0xd0, 0x00, 0x0a,
-                                                                                 0x27, 0x05, 0x28, 0x61)
-
-typealias DeviceInterfacePointer = UnsafeMutablePointer<UnsafeMutablePointer<IOUSBDeviceInterface>>
-
 extension AVCaptureDevice {
 
     private func getIOService() throws -> io_service_t {

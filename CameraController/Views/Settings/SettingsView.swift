@@ -29,29 +29,32 @@ struct SettingsView: View {
         }
     }
 
-    fileprivate func basicVew() -> AnyView {
+    @ViewBuilder
+    private func basicVew() -> some View {
         if let controller = captureDevice?.controller {
-            return AnyView(BasicSettings(controller: controller))
+            BasicSettings(controller: controller)
         } else {
-            return AnyView(DisabledBasicSettings())
+            DisabledBasicSettings()
         }
     }
 
-    fileprivate func advancedView() -> AnyView {
+    @ViewBuilder
+    private func advancedView() -> some View {
         if let controller = captureDevice?.controller {
-            return AnyView(AdvancedView(controller: controller))
+            AdvancedView(controller: controller)
         } else {
-            return AnyView(DisabledAdvancedView())
+            DisabledAdvancedView()
         }
     }
 
-    fileprivate func contentView() -> AnyView {
+    @ViewBuilder
+    private func contentView() -> some View {
         if currentView == 1 {
-            return basicVew()
+            basicVew()
         } else if currentView == 2 {
-            return advancedView()
+            advancedView()
         } else {
-            return AnyView(PreferencesView())
+            PreferencesView()
         }
     }
 }

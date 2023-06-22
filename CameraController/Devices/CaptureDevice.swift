@@ -9,8 +9,9 @@
 import Foundation
 import AVFoundation
 import Combine
+import UVC
 
-class CaptureDevice: Hashable, ObservableObject {
+final class CaptureDevice: Hashable, ObservableObject {
     let name: String
     let avDevice: AVCaptureDevice?
     let uvcDevice: UVCDevice?

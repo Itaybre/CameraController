@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UVC
 
-class BoolCaptureDeviceProperty {
+final class BoolCaptureDeviceProperty {
     private let control: UVCBoolControl
 
     let isCapable: Bool

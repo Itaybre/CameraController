@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class UVCIntControl: UVCControl {
+public final class UVCIntControl: UVCControl {
     public var minimum: Int = 0
     public var maximum: Int = 0
     public var defaultValue: Int = 0

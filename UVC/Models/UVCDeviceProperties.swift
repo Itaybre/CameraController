@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class UVCDeviceProperties {
+public final class UVCDeviceProperties {
     public let scanningMode: UVCBoolControl
     public let exposureMode: UVCBitmapControl
     public let exposurePriority: UVCIntControl

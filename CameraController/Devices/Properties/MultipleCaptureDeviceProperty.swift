@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UVC
 
-class MultipleCaptureDeviceProperty {
+final class MultipleCaptureDeviceProperty {
     private let control: UVCMultipleIntControl
 
     var sliderValue1: Float {

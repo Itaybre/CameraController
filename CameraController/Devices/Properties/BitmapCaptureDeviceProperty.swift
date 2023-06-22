@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UVC
 
-class BitmapCaptureDeviceProperty {
+final class BitmapCaptureDeviceProperty {
     private let control: UVCBitmapControl
 
     let isCapable: Bool

@@ -11,7 +11,7 @@ import SwiftUI
 import Sparkle
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
 

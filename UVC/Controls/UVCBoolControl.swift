@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class UVCBoolControl: UVCControl {
+public final class UVCBoolControl: UVCControl {
     public var defaultValue: Bool = false
 
     public var isEnabled: Bool {

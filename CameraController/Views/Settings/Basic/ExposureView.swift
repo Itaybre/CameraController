@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UVC
 
 struct ExposureView: View {
     @ObservedObject var controller: DeviceController

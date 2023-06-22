@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class UVCBitmapControl: UVCControl {
+public final class UVCBitmapControl: UVCControl {
     public enum BitmapValue: Int {
         case manual = 1
         case auto = 2
