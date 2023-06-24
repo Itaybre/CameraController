@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>CameraController</title>
+        <item>
+            <title>1.4.0</title>
+            <pubDate>Wed, 21 Jun 2023 20:50:11 -0300</pubDate>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>1.4.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>10.15</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/Itaybre/CameraController/releases/download/v1.4.0/CameraController.zip" length="1594581" type="application/octet-stream"/>
+        </item>
+    </channel>
+</rss>

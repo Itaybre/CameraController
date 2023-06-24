@@ -38,5 +38,13 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
+	<key>SUEnableDownloaderService</key>
+	<true/>
+	<key>SUEnableInstallerLauncherService</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/Itaybre/CameraController/master/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>5Lp9Csohd08SbQ7xIuAnCXWoRpIcCYZadGQUQzgxIik=</string>
 </dict>
 </plist>

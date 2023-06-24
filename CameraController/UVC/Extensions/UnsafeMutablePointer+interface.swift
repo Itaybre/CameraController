@@ -24,24 +24,26 @@ extension UnsafeMutablePointer where Pointee == UnsafeMutablePointer<IOUSBDevice
     func iterate(interfaceRequest: IOUSBFindInterfaceRequest,
                  handle: (UnsafeMutablePointer<UnsafeMutablePointer<IOCFPlugInInterface>>) throws -> Void) rethrows {
         var iterator: io_iterator_t = 0
-        let mutatingPointer = UnsafeMutablePointer<IOUSBFindInterfaceRequest>(mutating: [interfaceRequest])
-        guard pointee.pointee.CreateInterfaceIterator(self, mutatingPointer, &iterator) == kIOReturnSuccess else {
-                                                        return
-        }
-        defer {
-            let code: kern_return_t = IOObjectRelease(iterator)
-            assert( code == kIOReturnSuccess )
-        }
-        while true {
-            let object: io_service_t = IOIteratorNext(iterator)
+        var interfaceRequest = interfaceRequest
+        try withUnsafeMutablePointer(to: &interfaceRequest, { mutatingPointer in
+            guard pointee.pointee.CreateInterfaceIterator(self, mutatingPointer, &iterator) == kIOReturnSuccess else {
+                                                            return
+            }
             defer {
-                let code: kern_return_t = IOObjectRelease(object)
+                let code: kern_return_t = IOObjectRelease(iterator)
                 assert( code == kIOReturnSuccess )
             }
-            guard 0 < object else { break }
-            try object.ioCreatePluginInterfaceFor(service: kIOUSBInterfaceUserClientTypeID,
-                                                  handle: handle)
-        }
+            while true {
+                let object: io_service_t = IOIteratorNext(iterator)
+                defer {
+                    let code: kern_return_t = IOObjectRelease(object)
+                    assert( code == kIOReturnSuccess )
+                }
+                guard 0 < object else { break }
+                try object.ioCreatePluginInterfaceFor(service: kIOUSBInterfaceUserClientTypeID,
+                                                      handle: handle)
+            }
+        })
     }
 }
 

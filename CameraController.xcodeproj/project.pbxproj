@@ -23,7 +23,6 @@
 		F469CF4B24DD0FC70092C7F9 /* ProfileSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4A24DD0FC70092C7F9 /* ProfileSelector.swift */; };
 		F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07C724C4104300E44A22 /* AppDelegate.swift */; };
 		F47D07CA24C4104300E44A22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07C924C4104300E44A22 /* ContentView.swift */; };
-		F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */; };
 		F47D07CF24C4104600E44A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47D07CE24C4104600E44A22 /* Assets.xcassets */; };
 		F47D07D224C4104600E44A22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47D07D124C4104600E44A22 /* Preview Assets.xcassets */; };
 		F47D07D524C4104600E44A22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47D07D324C4104600E44A22 /* Main.storyboard */; };
@@ -51,6 +50,7 @@
 		F47D082324C692A600E44A22 /* UVCBitmapControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082224C692A600E44A22 /* UVCBitmapControl.swift */; };
 		F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */; };
 		F486353124CBA574003CE0BA /* NumberCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486353024CBA574003CE0BA /* NumberCaptureDeviceProperty.swift */; };
+		F49FA8252A43BE5D0043E0E1 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = F49FA8242A43BE5D0043E0E1 /* Sparkle */; };
 		F4D4C6C724CBCEA800581E05 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6C624CBCEA800581E05 /* ImageView.swift */; };
 		F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6C824CBD26600581E05 /* BoolCaptureDeviceProperty.swift */; };
 		F4D4C6CB24CBD27600581E05 /* WhiteBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6CA24CBD27600581E05 /* WhiteBalanceView.swift */; };
@@ -78,10 +78,10 @@
 		F4E5262D24C7DDB000125DF9 /* CaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262C24C7DDB000125DF9 /* CaptureDevice.swift */; };
 		F4E5263024C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5262F24C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift */; };
 		F4E5263224C93A3400125DF9 /* DeviceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E5263124C93A3400125DF9 /* DeviceController.swift */; };
-		F4F1CCAD279860A0008C2A5D /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */; };
 		F4EA729E296793D20014D3E2 /* SliderOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA729D296793D20014D3E2 /* SliderOption.swift */; };
 		F4EA72A0296794910014D3E2 /* SliderOptionWithAuto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA729F296794910014D3E2 /* SliderOptionWithAuto.swift */; };
 		F4EA72A2296798190014D3E2 /* DualSliderOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA72A1296798190014D3E2 /* DualSliderOption.swift */; };
+		F4F1CCAD279860A0008C2A5D /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,7 +132,6 @@
 		F47D07C424C4104300E44A22 /* CameraController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47D07C724C4104300E44A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47D07C924C4104300E44A22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F47D07CC24C4104300E44A22 /* CameraController.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CameraController.xcdatamodel; sourceTree = "<group>"; };
 		F47D07CE24C4104600E44A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F47D07D124C4104600E44A22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F47D07D424C4104600E44A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -194,10 +193,10 @@
 		F4E5262C24C7DDB000125DF9 /* CaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureDevice.swift; sourceTree = "<group>"; };
 		F4E5262F24C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapCaptureDeviceProperty.swift; sourceTree = "<group>"; };
 		F4E5263124C93A3400125DF9 /* DeviceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceController.swift; sourceTree = "<group>"; };
-		F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		F4EA729D296793D20014D3E2 /* SliderOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderOption.swift; sourceTree = "<group>"; };
 		F4EA729F296794910014D3E2 /* SliderOptionWithAuto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderOptionWithAuto.swift; sourceTree = "<group>"; };
 		F4EA72A1296798190014D3E2 /* DualSliderOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualSliderOption.swift; sourceTree = "<group>"; };
+		F4F1CCAC279860A0008C2A5D /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47D07F224C4125B00E44A22 /* AVFoundation.framework in Frameworks */,
+				F49FA8252A43BE5D0043E0E1 /* Sparkle in Frameworks */,
 				F4D4C6F524CBE81600581E05 /* ServiceManagement.framework in Frameworks */,
 				F42D42DD27A0F0DC00107DFF /* Security.framework in Frameworks */,
 				F4D4C6FC24CBE94F00581E05 /* IOKit.framework in Frameworks */,
@@ -346,7 +346,6 @@
 				F47D07D324C4104600E44A22 /* Main.storyboard */,
 				F47D07D624C4104600E44A22 /* Info.plist */,
 				F47D07D724C4104600E44A22 /* CameraController.entitlements */,
-				F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -529,6 +528,9 @@
 				F4D4C6F824CBE81900581E05 /* PBXTargetDependency */,
 			);
 			name = CameraController;
+			packageProductDependencies = (
+				F49FA8242A43BE5D0043E0E1 /* Sparkle */,
+			);
 			productName = CameraController;
 			productReference = F47D07C424C4104300E44A22 /* CameraController.app */;
 			productType = "com.apple.product-type.application";
@@ -599,6 +601,9 @@
 				Base,
 			);
 			mainGroup = F47D07BB24C4104300E44A22;
+			packageReferences = (
+				F49FA8232A43BE5D0043E0E1 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			productRefGroup = F47D07C524C4104300E44A22 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -657,7 +662,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1092,6 +1097,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F49FA8232A43BE5D0043E0E1 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F49FA8242A43BE5D0043E0E1 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F49FA8232A43BE5D0043E0E1 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */ = {
