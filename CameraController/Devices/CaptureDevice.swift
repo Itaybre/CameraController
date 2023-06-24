@@ -41,7 +41,11 @@ final class CaptureDevice: Hashable, ObservableObject {
     }
 
     func readValuesFromDevice() {
-        if let controller = controller {
+        guard let controller = controller else {
+            return
+        }
+
+        Task {
             controller.exposureTime.update()
             controller.whiteBalance.update()
             controller.focusAbsolute.update()
@@ -50,7 +54,11 @@ final class CaptureDevice: Hashable, ObservableObject {
     }
 
     func writeValuesToDevice() {
-        if let controller = controller {
+        guard let controller = controller else {
+            return
+        }
+
+        Task {
             controller.writeValues()
         }
     }

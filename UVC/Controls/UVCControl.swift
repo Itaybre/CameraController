@@ -31,9 +31,12 @@ public class UVCControl {
     }
 
     func getDataFor(type: UVCRequestCodes, length: Int) -> Int {
+        let requestType = USBmakebmRequestType(direction: kUSBIn, type: kUSBClass, recipient: kUSBInterface)
+
         do {
             return try performRequest(type: type,
-                                      length: length)
+                                      length: length,
+                                      requestType: requestType)
         } catch {
             // Should not return 0, but working on improving this
             return 0
@@ -41,10 +44,13 @@ public class UVCControl {
     }
 
     func setData(value: Int, length: Int) -> Bool {
+        let requestType = USBmakebmRequestType(direction: kUSBOut, type: kUSBClass, recipient: kUSBInterface)
+
         do {
             _ = try performRequest(type: UVCRequestCodes.setCurrent,
-                               length: length,
-                               value: value)
+                                   length: length,
+                                   requestType: requestType,
+                                   value: value)
             return true
         } catch {
             return false
@@ -55,14 +61,15 @@ public class UVCControl {
         isCapable = getDataFor(type: UVCRequestCodes.getInfo, length: 1) != 0
     }
 
-    private func performRequest(type: UVCRequestCodes, length: Int, value: Int = 0) throws -> Int {
+    private func performRequest(type: UVCRequestCodes,
+                                length: Int,
+                                requestType: UInt8,
+                                value: Int = 0) throws -> Int {
         guard uvcUnit >= 0 else {
             throw UVCError.invalidUnitId
         }
 
         var value = value
-
-        let requestType = USBmakebmRequestType(direction: kUSBIn, type: kUSBClass, recipient: kUSBInterface)
 
         try withUnsafeMutablePointer(to: &value, { value in
             var request = IOUSBDevRequest(bmRequestType: requestType,

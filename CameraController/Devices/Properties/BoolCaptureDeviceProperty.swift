@@ -20,7 +20,9 @@ final class BoolCaptureDeviceProperty {
         }
         set {
             if newValue != isEnabled {
-                control.isEnabled = newValue
+                Task {
+                    control.isEnabled = newValue
+                }
             }
         }
     }

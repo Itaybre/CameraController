@@ -18,7 +18,9 @@ final class NumberCaptureDeviceProperty {
         }
         set {
             if sliderValue != newValue {
-                control.current = Int(newValue)
+                Task {
+                    control.current = Int(newValue)
+                }
             }
         }
     }

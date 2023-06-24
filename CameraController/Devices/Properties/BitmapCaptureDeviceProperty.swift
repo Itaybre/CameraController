@@ -19,7 +19,9 @@ final class BitmapCaptureDeviceProperty {
             return control.current
         }
         set {
-            control.current = newValue
+            Task {
+                control.current = newValue
+            }
         }
     }
 

@@ -18,7 +18,9 @@ final class MultipleCaptureDeviceProperty {
         }
         set {
             if sliderValue1 != newValue {
-                control.current1 = Int(newValue)
+                Task {
+                    control.current1 = Int(newValue)
+                }
             }
         }
     }
@@ -29,7 +31,9 @@ final class MultipleCaptureDeviceProperty {
         }
         set {
             if sliderValue2 != newValue {
-                control.current2 = Int(newValue)
+                Task {
+                    control.current2 = Int(newValue)
+                }
             }
         }
     }
