@@ -25,6 +25,7 @@ struct SettingsView: View {
                 .frame(width: 300)
 
                 contentView()
+                    .frame(maxWidth: .infinity)
             }
         }
     }

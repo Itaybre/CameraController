@@ -29,7 +29,9 @@ struct ContentView: View {
                 }
 
                 settingsView(captureDevice: $manager.selectedDevice)
-                ProfileSelector().frame(width: 400, height: 75)
+                ProfileSelector()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 75)
             }.onAppear {
                 DevicesManager.shared.startMonitoring()
             }.onDisappear {
