@@ -39,7 +39,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
-    // MARK: - Check For updated
+    // MARK: - Check For Updates
     func checkForUpdates() {
         updaterController.checkForUpdates(nil)
     }
