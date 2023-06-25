@@ -8,17 +8,17 @@
 
 import Foundation
 
-class UVCBitmapControl: UVCControl {
-    enum BitmapValue: Int {
+public final class UVCBitmapControl: UVCControl {
+    public enum BitmapValue: Int {
         case manual = 1
         case auto = 2
         case shutterPriority = 4
         case aperturePriority = 8
     }
 
-    var defaultValue: BitmapValue = .manual
+    public var defaultValue: BitmapValue = .manual
 
-    var current: BitmapValue {
+    public var current: BitmapValue {
         get {
             return internalCurrent
         }

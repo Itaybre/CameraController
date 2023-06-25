@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import ServiceManagement
 
-class UserSettings: ObservableObject {
+final class UserSettings: ObservableObject {
     static let shared = UserSettings()
 
     @Published var openAtLogin: Bool {

@@ -9,10 +9,10 @@
 import Foundation
 import Combine
 
-class ProfileManager: ObservableObject {
+final class ProfileManager: ObservableObject {
     static let shared = ProfileManager()
 
-    @Published private(set) var profiles: [Profile] = []
+    private(set) var profiles: [Profile] = []
 
     private init() {
         if let savedProfiles = UserDefaults.standard.object(forKey: "profiles") as? Data {

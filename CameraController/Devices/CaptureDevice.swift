@@ -9,8 +9,9 @@
 import Foundation
 import AVFoundation
 import Combine
+import UVC
 
-class CaptureDevice: Hashable, ObservableObject {
+final class CaptureDevice: Hashable, ObservableObject {
     let name: String
     let avDevice: AVCaptureDevice?
     let uvcDevice: UVCDevice?
@@ -40,7 +41,11 @@ class CaptureDevice: Hashable, ObservableObject {
     }
 
     func readValuesFromDevice() {
-        if let controller = controller {
+        guard let controller = controller else {
+            return
+        }
+
+        Task {
             controller.exposureTime.update()
             controller.whiteBalance.update()
             controller.focusAbsolute.update()
@@ -49,7 +54,11 @@ class CaptureDevice: Hashable, ObservableObject {
     }
 
     func writeValuesToDevice() {
-        if let controller = controller {
+        guard let controller = controller else {
+            return
+        }
+
+        Task {
             controller.writeValues()
         }
     }

@@ -11,7 +11,7 @@ import SwiftUI
 import Sparkle
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
 
@@ -39,7 +39,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
-    // MARK: - Check For updated
+    // MARK: - Check For Updates
     func checkForUpdates() {
         updaterController.checkForUpdates(nil)
     }
