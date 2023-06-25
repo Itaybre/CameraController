@@ -20,7 +20,7 @@ struct PreferencesView: View {
         }
     }
 
-    fileprivate func applicationSettings() -> some View {
+    private func applicationSettings() -> some View {
         return GroupBox(label: Text("Application")) {
             HStack {
                 VStack(alignment: .leading) {
@@ -41,7 +41,7 @@ struct PreferencesView: View {
         }
     }
 
-    fileprivate func readSettings() -> some View {
+    private func readSettings() -> some View {
         return GroupBox(label: Text("Read Settings")) {
             HStack {
                 VStack(alignment: .leading) {
@@ -57,7 +57,7 @@ struct PreferencesView: View {
         }
     }
 
-    fileprivate func writeSettings() -> some View {
+    private func writeSettings() -> some View {
         GroupBox(label: Text("Push Settings")) {
             HStack {
                 VStack(alignment: .leading) {
@@ -73,7 +73,7 @@ struct PreferencesView: View {
         }
     }
 
-    fileprivate func updatesSettings() -> some View {
+    private func updatesSettings() -> some View {
         HStack {
             Spacer()
             Button("Check for updates") {

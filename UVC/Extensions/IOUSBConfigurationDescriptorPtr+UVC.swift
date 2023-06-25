@@ -9,10 +9,6 @@
 import Foundation
 import IOKit
 
-typealias InterfaceDescriptorPointer = UnsafeMutablePointer<UVC_InterfaceDescriptorHdr>
-typealias ProcessingUnitDescriptorPointer = UnsafeMutablePointer<UVC_ProcessingUnitDescriptor>
-typealias CameraTerminalDescriptorPointer = UnsafeMutablePointer<UVC_CameraTerminalDescriptor>
-
 extension IOUSBConfigurationDescriptorPtr {
     func proccessDescriptor() -> UVCDescriptor {
         var processingUnitID = -1
@@ -30,9 +26,10 @@ extension IOUSBConfigurationDescriptorPtr {
                              interfaceID: interfaceID)
     }
 
-    fileprivate func browseDescriptor(_ memory: UInt16, _ pointer: UnsafeMutablePointer<UInt8>,
-                                      _ processingUnitID: inout Int, _ cameraTerminalID: inout Int,
-                                      _ interfaceID: inout Int) {
+    private func browseDescriptor(_ memory: UInt16, _ pointer: UnsafeMutablePointer<UInt8>,
+                                  _ processingUnitID: inout Int,
+                                  _ cameraTerminalID: inout Int,
+                                  _ interfaceID: inout Int) {
         var remaining = memory
         var currentPointer = pointer
 
@@ -95,9 +92,10 @@ extension IOUSBConfigurationDescriptorPtr {
         }
     }
 
-    fileprivate func getDeviceId(_ descriptorPointer: InterfaceDescriptorPointer,
-                                 _ currentPointer: UnsafeMutablePointer<UInt8>,
-                                 _ processingUnitID: inout Int, _ cameraTerminalID: inout Int) {
+    private func getDeviceId(_ descriptorPointer: InterfaceDescriptorPointer,
+                             _ currentPointer: UnsafeMutablePointer<UInt8>,
+                             _ processingUnitID: inout Int,
+                             _ cameraTerminalID: inout Int) {
         let unitType = UVCConstants.DescriptorSubtype(rawValue: descriptorPointer.pointee.bDescriptorSubType)
         switch unitType {
         case .processingUnit:

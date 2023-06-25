@@ -8,14 +8,6 @@
 
 import Foundation
 
-private let kIOCFPlugInInterfaceID: CFUUID =  CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,
-                                                                             0xC2, 0x44, 0xE8, 0x58,
-                                                                             0x10, 0x9C, 0x11, 0xD4,
-                                                                             0x91, 0xD4, 0x00, 0x50,
-                                                                             0xE4, 0xC6, 0x42, 0x6F)
-
-typealias PluginInterfacePointer = UnsafeMutablePointer<UnsafeMutablePointer<IOCFPlugInInterface>>
-
 extension io_service_t {
     func ioCreatePluginInterfaceFor(service: CFUUID,
                                     handle: (PluginInterfacePointer) throws -> Void) rethrows {

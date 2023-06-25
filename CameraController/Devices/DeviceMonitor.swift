@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class DeviceMonitor {
+final class DeviceMonitor {
     private var readTimer: Timer?
     private var writeTimer: Timer?
     private var readInterval: Double = 0

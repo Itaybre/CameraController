@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UVC
 
-class BitmapCaptureDeviceProperty {
+final class BitmapCaptureDeviceProperty {
     private let control: UVCBitmapControl
 
     let isCapable: Bool
@@ -18,7 +19,9 @@ class BitmapCaptureDeviceProperty {
             return control.current
         }
         set {
-            control.current = newValue
+            Task {
+                control.current = newValue
+            }
         }
     }
 

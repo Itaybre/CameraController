@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 import AVFoundation
 
-class CameraPreviewInternal: NSView {
+final class CameraPreviewInternal: NSView {
     var captureDevice: AVCaptureDevice?
     private var captureSession: AVCaptureSession
     private var previewLayer: AVCaptureVideoPreviewLayer!

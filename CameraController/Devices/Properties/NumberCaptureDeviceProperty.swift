@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UVC
 
-class NumberCaptureDeviceProperty {
+final class NumberCaptureDeviceProperty {
     private let control: UVCIntControl
 
     var sliderValue: Float {
@@ -17,7 +18,9 @@ class NumberCaptureDeviceProperty {
         }
         set {
             if sliderValue != newValue {
-                control.current = Int(newValue)
+                Task {
+                    control.current = Int(newValue)
+                }
             }
         }
     }

@@ -22,21 +22,17 @@ struct ProfileSelector: View {
         GroupBox(label: Text("Profile")) {
             VStack {
                 HStack {
-                    Button(action: {
-                        self.showAddProfile = true
-                    }) {
+                    Button(action: showAddProfileAlert) {
                         Text("Save Profile")
                             .frame(width: self.buttonWidth)
                     }.disabled(!canCreateProfile())
 
-                    Button(action: {}) {
+                    Button(action: updateProfile) {
                         Text("Update Profile")
                         .frame(width: self.buttonWidth)
                     }.disabled(!canCreateProfile() || (selectedProfile == nil || selectedProfile?.isDefault ?? false))
 
-                    Button(action: {
-                        self.deleteProfile()
-                    }) {
+                    Button(action: deleteProfile) {
                         Text("Delete Profile")
                         .frame(width: self.buttonWidth)
                     }.disabled(selectedProfile == nil || selectedProfile?.isDefault ?? false)
@@ -51,9 +47,7 @@ struct ProfileSelector: View {
                         }
                     }
 
-                    Button(action: {
-                        self.applyProfile()
-                    }) {
+                    Button(action: applyProfile) {
                         Text("Apply")
                     }
                 }
@@ -65,14 +59,10 @@ struct ProfileSelector: View {
 
                 HStack {
                     Spacer()
-                    Button(action: {
-                        self.addNewProfile()
-                    }) {
+                    Button(action: addNewProfile) {
                         Text("Save")
                     }
-                    Button(action: {
-                        self.showAddProfile = false
-                    }) {
+                    Button(action: hideAddProfile) {
                         Text("Cancel")
                     }
                 }
@@ -105,14 +95,14 @@ struct ProfileSelector: View {
         profileName = ""
     }
 
-    func canCreateProfile() -> Bool {
+    private func canCreateProfile() -> Bool {
         guard let device = DevicesManager.shared.selectedDevice else {
             return false
         }
         return device.isConfigurable()
     }
 
-    func deleteProfile() {
+    private func deleteProfile() {
         guard let profile = selectedProfile else {
             return
         }
@@ -121,7 +111,7 @@ struct ProfileSelector: View {
         selectedProfile = nil
     }
 
-    func updateProfile() {
+    private func updateProfile() {
         guard let profile = selectedProfile,
             let device = DevicesManager.shared.selectedDevice,
             let controller = device.controller else {
@@ -129,6 +119,14 @@ struct ProfileSelector: View {
         }
 
         profileManager.updateProfile(profile, controller.getSettings())
+    }
+
+    private func showAddProfileAlert() {
+        showAddProfile = true
+    }
+
+    private func hideAddProfile() {
+        showAddProfile = false
     }
 }
 

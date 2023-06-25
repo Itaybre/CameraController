@@ -8,13 +8,13 @@
 
 import Foundation
 
-class UVCIntControl: UVCControl {
-    var minimum: Int = 0
-    var maximum: Int = 0
-    var defaultValue: Int = 0
-    var resolution: Int = 0
+public final class UVCIntControl: UVCControl {
+    public var minimum: Int = 0
+    public var maximum: Int = 0
+    public var defaultValue: Int = 0
+    public var resolution: Int = 0
 
-    var current: Int {
+    public var current: Int {
         get {
             return _current
         }
@@ -51,7 +51,7 @@ class UVCIntControl: UVCControl {
         }
     }
 
-    func updateCurrent() {
+    public func updateCurrent() {
         _current = getDataFor(type: .getCurrent, length: uvcSize)
     }
 

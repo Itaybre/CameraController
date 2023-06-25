@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,30 @@
 		F42D42DF27A0F0EE00107DFF /* MoveApplication.strings in Resources */ = {isa = PBXBuildFile; fileRef = F42D42DE27A0F0EE00107DFF /* MoveApplication.strings */; };
 		F42D42E227A0F68000107DFF /* NSNotificationName+Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D42E127A0F68000107DFF /* NSNotificationName+Devices.swift */; };
 		F42D42E427A0F7CA00107DFF /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D42E327A0F7CA00107DFF /* MenuBuilder.swift */; };
+		F4508AD22A43E477003C44F1 /* UVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4508ACC2A43E477003C44F1 /* UVC.framework */; };
+		F4508AD42A43E477003C44F1 /* UVC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4508ACC2A43E477003C44F1 /* UVC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4508AD82A43E48A003C44F1 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081124C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift */; };
+		F4508AD92A43E48E003C44F1 /* UnsafeMutablePointer+interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080F24C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift */; };
+		F4508ADA2A43E491003C44F1 /* io_service_t+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080D24C54A2000E44A22 /* io_service_t+Interface.swift */; };
+		F4508ADB2A43E494003C44F1 /* String+CameraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080524C50DCE00E44A22 /* String+CameraInformation.swift */; };
+		F4508ADC2A43E49A003C44F1 /* AVCaptureDevice+USB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080224C507F800E44A22 /* AVCaptureDevice+USB.swift */; };
+		F4508ADD2A43E4A0003C44F1 /* UVCRequestCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07FD24C418F200E44A22 /* UVCRequestCodes.swift */; };
+		F4508ADE2A43E4A3003C44F1 /* UVCProcessingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07FB24C418B200E44A22 /* UVCProcessingUnit.swift */; };
+		F4508ADF2A43E4A7003C44F1 /* UVCCameraTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07F924C4186C00E44A22 /* UVCCameraTerminal.swift */; };
+		F4508AE02A43E4AA003C44F1 /* UVCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07F724C417B700E44A22 /* UVCConstants.swift */; };
+		F4508AE12A43E4AF003C44F1 /* UVCBitmapControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082224C692A600E44A22 /* UVCBitmapControl.swift */; };
+		F4508AE22A43E4B3003C44F1 /* UVCBoolControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082024C6924100E44A22 /* UVCBoolControl.swift */; };
+		F4508AE32A43E4B6003C44F1 /* UVCMultipleIntControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081E24C6919E00E44A22 /* UVCMultipleIntControl.swift */; };
+		F4508AE42A43E4B9003C44F1 /* UVCIntControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081C24C68F6000E44A22 /* UVCIntControl.swift */; };
+		F4508AE52A43E4BE003C44F1 /* UVCControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081A24C68CC200E44A22 /* UVCControl.swift */; };
+		F4508AE62A43E4C1003C44F1 /* UVCErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4508AC52A43DE40003C44F1 /* UVCErrors.swift */; };
+		F4508AE72A43E4C5003C44F1 /* UVCDeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */; };
+		F4508AE82A43E4C8003C44F1 /* UVCDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080024C5078200E44A22 /* UVCDevice.swift */; };
+		F4508AE92A43E4CF003C44F1 /* UVCDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081424C551D400E44A22 /* UVCDescriptor.swift */; };
+		F4508AEA2A43E4D3003C44F1 /* USBDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080B24C50F7B00E44A22 /* USBDevice.swift */; };
+		F4508AEB2A43E4D7003C44F1 /* CameraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080724C50DD700E44A22 /* CameraInformation.swift */; };
+		F4508AF72A43F186003C44F1 /* LibConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4508AF62A43F186003C44F1 /* LibConstants.swift */; };
+		F4508AFA2A43F2C0003C44F1 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4508AF92A43F2C0003C44F1 /* Typealiases.swift */; };
 		F45B7ABA24D545B3004C4420 /* DeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */; };
 		F469CF4524DD0A3E0092C7F9 /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */; };
 		F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */; };
@@ -29,26 +53,7 @@
 		F47D07EF24C4123600E44A22 /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07EE24C4123600E44A22 /* DeviceManager.swift */; };
 		F47D07F224C4125B00E44A22 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47D07F124C4125B00E44A22 /* AVFoundation.framework */; };
 		F47D07F424C412F800E44A22 /* DevicesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07F324C412F800E44A22 /* DevicesManagerTests.swift */; };
-		F47D07F824C417B700E44A22 /* UVCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07F724C417B700E44A22 /* UVCConstants.swift */; };
-		F47D07FA24C4186C00E44A22 /* UVCCameraTerminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07F924C4186C00E44A22 /* UVCCameraTerminal.swift */; };
-		F47D07FC24C418B200E44A22 /* UVCProcessingUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07FB24C418B200E44A22 /* UVCProcessingUnit.swift */; };
-		F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D07FD24C418F200E44A22 /* UVCRequestCodes.swift */; };
-		F47D080124C5078200E44A22 /* UVCDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080024C5078200E44A22 /* UVCDevice.swift */; };
-		F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080224C507F800E44A22 /* AVCaptureDevice+USB.swift */; };
-		F47D080624C50DCE00E44A22 /* String+CameraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080524C50DCE00E44A22 /* String+CameraInformation.swift */; };
-		F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080724C50DD700E44A22 /* CameraInformation.swift */; };
 		F47D080A24C50E1C00E44A22 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080924C50E1C00E44A22 /* StringTests.swift */; };
-		F47D080C24C50F7B00E44A22 /* USBDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080B24C50F7B00E44A22 /* USBDevice.swift */; };
-		F47D080E24C54A2000E44A22 /* io_service_t+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080D24C54A2000E44A22 /* io_service_t+Interface.swift */; };
-		F47D081024C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D080F24C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift */; };
-		F47D081224C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081124C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift */; };
-		F47D081524C551D400E44A22 /* UVCDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081424C551D400E44A22 /* UVCDescriptor.swift */; };
-		F47D081B24C68CC200E44A22 /* UVCControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081A24C68CC200E44A22 /* UVCControl.swift */; };
-		F47D081D24C68F6000E44A22 /* UVCIntControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081C24C68F6000E44A22 /* UVCIntControl.swift */; };
-		F47D081F24C6919E00E44A22 /* UVCMultipleIntControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081E24C6919E00E44A22 /* UVCMultipleIntControl.swift */; };
-		F47D082124C6924100E44A22 /* UVCBoolControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082024C6924100E44A22 /* UVCBoolControl.swift */; };
-		F47D082324C692A600E44A22 /* UVCBitmapControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082224C692A600E44A22 /* UVCBitmapControl.swift */; };
-		F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */; };
 		F486353124CBA574003CE0BA /* NumberCaptureDeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486353024CBA574003CE0BA /* NumberCaptureDeviceProperty.swift */; };
 		F49FA8252A43BE5D0043E0E1 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = F49FA8242A43BE5D0043E0E1 /* Sparkle */; };
 		F4D4C6C724CBCEA800581E05 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D4C6C624CBCEA800581E05 /* ImageView.swift */; };
@@ -85,6 +90,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F4508AD02A43E477003C44F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F47D07BC24C4104300E44A22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4508ACB2A43E477003C44F1;
+			remoteInfo = UVC;
+		};
 		F47D07DD24C4104600E44A22 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F47D07BC24C4104300E44A22 /* Project object */;
@@ -102,6 +114,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		F4508AD32A43E477003C44F1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F4508AD42A43E477003C44F1 /* UVC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4D4C6F924CBE82D00581E05 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,6 +147,10 @@
 		F42D42DE27A0F0EE00107DFF /* MoveApplication.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MoveApplication.strings; sourceTree = "<group>"; };
 		F42D42E127A0F68000107DFF /* NSNotificationName+Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotificationName+Devices.swift"; sourceTree = "<group>"; };
 		F42D42E327A0F7CA00107DFF /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
+		F4508AC52A43DE40003C44F1 /* UVCErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCErrors.swift; sourceTree = "<group>"; };
+		F4508ACC2A43E477003C44F1 /* UVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4508AF62A43F186003C44F1 /* LibConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibConstants.swift; sourceTree = "<group>"; };
+		F4508AF92A43F2C0003C44F1 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		F45B7AB924D545B3004C4420 /* DeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMonitor.swift; sourceTree = "<group>"; };
 		F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
 		F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
@@ -200,6 +227,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F4508AC92A43E477003C44F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F47D07C124C4104300E44A22 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,6 +242,7 @@
 				F49FA8252A43BE5D0043E0E1 /* Sparkle in Frameworks */,
 				F4D4C6F524CBE81600581E05 /* ServiceManagement.framework in Frameworks */,
 				F42D42DD27A0F0DC00107DFF /* Security.framework in Frameworks */,
+				F4508AD22A43E477003C44F1 /* UVC.framework in Frameworks */,
 				F4D4C6FC24CBE94F00581E05 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,12 +290,35 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F4508ACD2A43E477003C44F1 /* UVC */ = {
+			isa = PBXGroup;
+			children = (
+				F47D081324C54C1E00E44A22 /* USBHeaders.h */,
+				F4508AF82A43F234003C44F1 /* Helpers */,
+				F47D080424C5091600E44A22 /* Models */,
+				F47D081924C68CB100E44A22 /* Controls */,
+				F47D07F624C417A700E44A22 /* UVC Standard */,
+				F47D081824C68C0800E44A22 /* Extensions */,
+			);
+			path = UVC;
+			sourceTree = "<group>";
+		};
+		F4508AF82A43F234003C44F1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F4508AF62A43F186003C44F1 /* LibConstants.swift */,
+				F4508AF92A43F2C0003C44F1 /* Typealiases.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F47D07BB24C4104300E44A22 = {
 			isa = PBXGroup;
 			children = (
 				F47D07C624C4104300E44A22 /* CameraController */,
 				F47D07DF24C4104600E44A22 /* CameraControllerTests */,
 				F4D4C6E224CBE7A000581E05 /* Helper */,
+				F4508ACD2A43E477003C44F1 /* UVC */,
 				F47D07C524C4104300E44A22 /* Products */,
 				F47D07F024C4125B00E44A22 /* Frameworks */,
 			);
@@ -272,6 +330,7 @@
 				F47D07C424C4104300E44A22 /* CameraController.app */,
 				F47D07DC24C4104600E44A22 /* CameraControllerTests.xctest */,
 				F4D4C6E124CBE7A000581E05 /* Helper.app */,
+				F4508ACC2A43E477003C44F1 /* UVC.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,7 +345,6 @@
 				F42D42D427A0E3C200107DFF /* StatusBar */,
 				F4D4C6FD24CBF97400581E05 /* Settings */,
 				F47D07EC24C4118200E44A22 /* Devices */,
-				F47D07F524C4177400E44A22 /* UVC */,
 				F47D07EB24C4117A00E44A22 /* Views */,
 				F47D07D024C4104600E44A22 /* Preview Content */,
 				F42D42D927A0F0B200107DFF /* Vendored */,
@@ -361,16 +419,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F47D07F524C4177400E44A22 /* UVC */ = {
-			isa = PBXGroup;
-			children = (
-				F47D080424C5091600E44A22 /* Models */,
-				F47D07F624C417A700E44A22 /* UVC Standard */,
-				F47D081824C68C0800E44A22 /* Extensions */,
-			);
-			path = UVC;
-			sourceTree = "<group>";
-		};
 		F47D07F624C417A700E44A22 /* UVC Standard */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,10 +436,9 @@
 				F47D080724C50DD700E44A22 /* CameraInformation.swift */,
 				F47D080B24C50F7B00E44A22 /* USBDevice.swift */,
 				F47D081424C551D400E44A22 /* UVCDescriptor.swift */,
-				F47D081324C54C1E00E44A22 /* USBHeaders.h */,
 				F47D080024C5078200E44A22 /* UVCDevice.swift */,
 				F47D082424C6935600E44A22 /* UVCDeviceProperties.swift */,
-				F47D081924C68CB100E44A22 /* Controls */,
+				F4508AC52A43DE40003C44F1 /* UVCErrors.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -511,7 +558,35 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		F4508AC72A43E477003C44F1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		F4508ACB2A43E477003C44F1 /* UVC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4508AD52A43E477003C44F1 /* Build configuration list for PBXNativeTarget "UVC" */;
+			buildPhases = (
+				F4508AC72A43E477003C44F1 /* Headers */,
+				F4508AC82A43E477003C44F1 /* Sources */,
+				F4508AC92A43E477003C44F1 /* Frameworks */,
+				F4508ACA2A43E477003C44F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UVC;
+			productName = UVC;
+			productReference = F4508ACC2A43E477003C44F1 /* UVC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		F47D07C324C4104300E44A22 /* CameraController */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F47D07E524C4104600E44A22 /* Build configuration list for PBXNativeTarget "CameraController" */;
@@ -521,11 +596,13 @@
 				F47D07C224C4104300E44A22 /* Resources */,
 				F47D07FF24C5017200E44A22 /* ShellScript */,
 				F4D4C6F924CBE82D00581E05 /* CopyFiles */,
+				F4508AD32A43E477003C44F1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				F4D4C6F824CBE81900581E05 /* PBXTargetDependency */,
+				F4508AD12A43E477003C44F1 /* PBXTargetDependency */,
 			);
 			name = CameraController;
 			packageProductDependencies = (
@@ -576,10 +653,15 @@
 		F47D07BC24C4104300E44A22 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = Itaysoft;
 				TargetAttributes = {
+					F4508ACB2A43E477003C44F1 = {
+						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
+					};
 					F47D07C324C4104300E44A22 = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -611,11 +693,19 @@
 				F47D07C324C4104300E44A22 /* CameraController */,
 				F47D07DB24C4104600E44A22 /* CameraControllerTests */,
 				F4D4C6E024CBE7A000581E05 /* Helper */,
+				F4508ACB2A43E477003C44F1 /* UVC */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F4508ACA2A43E477003C44F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F47D07C224C4104300E44A22 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -649,6 +739,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		F47D07FF24C5017200E44A22 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -667,14 +758,39 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F4508AC82A43E477003C44F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4508AE32A43E4B6003C44F1 /* UVCMultipleIntControl.swift in Sources */,
+				F4508AD92A43E48E003C44F1 /* UnsafeMutablePointer+interface.swift in Sources */,
+				F4508AE42A43E4B9003C44F1 /* UVCIntControl.swift in Sources */,
+				F4508ADC2A43E49A003C44F1 /* AVCaptureDevice+USB.swift in Sources */,
+				F4508AE52A43E4BE003C44F1 /* UVCControl.swift in Sources */,
+				F4508ADE2A43E4A3003C44F1 /* UVCProcessingUnit.swift in Sources */,
+				F4508AD82A43E48A003C44F1 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */,
+				F4508AE92A43E4CF003C44F1 /* UVCDescriptor.swift in Sources */,
+				F4508ADD2A43E4A0003C44F1 /* UVCRequestCodes.swift in Sources */,
+				F4508AE62A43E4C1003C44F1 /* UVCErrors.swift in Sources */,
+				F4508ADF2A43E4A7003C44F1 /* UVCCameraTerminal.swift in Sources */,
+				F4508ADB2A43E494003C44F1 /* String+CameraInformation.swift in Sources */,
+				F4508AE12A43E4AF003C44F1 /* UVCBitmapControl.swift in Sources */,
+				F4508AF72A43F186003C44F1 /* LibConstants.swift in Sources */,
+				F4508AE02A43E4AA003C44F1 /* UVCConstants.swift in Sources */,
+				F4508ADA2A43E491003C44F1 /* io_service_t+Interface.swift in Sources */,
+				F4508AE82A43E4C8003C44F1 /* UVCDevice.swift in Sources */,
+				F4508AE22A43E4B3003C44F1 /* UVCBoolControl.swift in Sources */,
+				F4508AFA2A43F2C0003C44F1 /* Typealiases.swift in Sources */,
+				F4508AEB2A43E4D7003C44F1 /* CameraInformation.swift in Sources */,
+				F4508AEA2A43E4D3003C44F1 /* USBDevice.swift in Sources */,
+				F4508AE72A43E4C5003C44F1 /* UVCDeviceProperties.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F47D07C024C4104300E44A22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F47D081F24C6919E00E44A22 /* UVCMultipleIntControl.swift in Sources */,
-				F47D082324C692A600E44A22 /* UVCBitmapControl.swift in Sources */,
-				F47D07FA24C4186C00E44A22 /* UVCCameraTerminal.swift in Sources */,
-				F47D081524C551D400E44A22 /* UVCDescriptor.swift in Sources */,
 				F47D07CA24C4104300E44A22 /* ContentView.swift in Sources */,
 				F4E5262D24C7DDB000125DF9 /* CaptureDevice.swift in Sources */,
 				F47D07EF24C4123600E44A22 /* DeviceManager.swift in Sources */,
@@ -682,23 +798,17 @@
 				F42D42E427A0F7CA00107DFF /* MenuBuilder.swift in Sources */,
 				F4D4C6CB24CBD27600581E05 /* WhiteBalanceView.swift in Sources */,
 				F4E5263024C7E0BC00125DF9 /* BitmapCaptureDeviceProperty.swift in Sources */,
-				F47D080C24C50F7B00E44A22 /* USBDevice.swift in Sources */,
 				F47D07C824C4104300E44A22 /* AppDelegate.swift in Sources */,
 				F4E5261F24C7BD0B00125DF9 /* CameraPreview.swift in Sources */,
 				F4D4C6DC24CBDBC600581E05 /* PreferencesView.swift in Sources */,
-				F47D07FC24C418B200E44A22 /* UVCProcessingUnit.swift in Sources */,
 				F486353124CBA574003CE0BA /* NumberCaptureDeviceProperty.swift in Sources */,
-				F47D082124C6924100E44A22 /* UVCBoolControl.swift in Sources */,
 				F4D4C6C724CBCEA800581E05 /* ImageView.swift in Sources */,
 				F4D4C6FF24CBF98300581E05 /* RefreshSettingsRate.swift in Sources */,
-				F47D07FE24C418F200E44A22 /* UVCRequestCodes.swift in Sources */,
-				F47D080324C507F800E44A22 /* AVCaptureDevice+USB.swift in Sources */,
 				F4D4C70124CBF99200581E05 /* UserSettings.swift in Sources */,
 				F42D42E227A0F68000107DFF /* NSNotificationName+Devices.swift in Sources */,
 				F47D07CD24C4104300E44A22 /* CameraController.xcdatamodeld in Sources */,
 				F4F1CCAD279860A0008C2A5D /* CustomSlider.swift in Sources */,
 				F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */,
-				F47D081D24C68F6000E44A22 /* UVCIntControl.swift in Sources */,
 				F469CF4B24DD0FC70092C7F9 /* ProfileSelector.swift in Sources */,
 				F469CF4924DD0E310092C7F9 /* Profile.swift in Sources */,
 				F4D4C6CE24CBD34300581E05 /* AdvancedView.swift in Sources */,
@@ -713,23 +823,17 @@
 				F4EA72A0296794910014D3E2 /* SliderOptionWithAuto.swift in Sources */,
 				F4D4C6D624CBD96B00581E05 /* MultipleCaptureDeviceProperty.swift in Sources */,
 				F4D4C6D024CBD3B000581E05 /* PowerLineView.swift in Sources */,
-				F47D080824C50DD700E44A22 /* CameraInformation.swift in Sources */,
 				F4D4C6D824CBDA5700581E05 /* FocusView.swift in Sources */,
 				F400B4D024DE13BF003B9602 /* DisabledBasicSettings.swift in Sources */,
 				F4E5262B24C7D97B00125DF9 /* ExposureView.swift in Sources */,
 				F45B7ABA24D545B3004C4420 /* DeviceMonitor.swift in Sources */,
-				F47D081024C54B5C00E44A22 /* UnsafeMutablePointer+interface.swift in Sources */,
-				F47D081224C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */,
 				F4D4C6D424CBD8EC00581E05 /* OrientationView.swift in Sources */,
 				F47D082524C6935600E44A22 /* UVCDeviceProperties.swift in Sources */,
 				F42D42D627A0E3D500107DFF /* StatusBarManager.swift in Sources */,
 				F469CF4524DD0A3E0092C7F9 /* DeviceSettings.swift in Sources */,
-				F47D080624C50DCE00E44A22 /* String+CameraInformation.swift in Sources */,
 				F4E5262724C7D88800125DF9 /* BasicSettings.swift in Sources */,
-				F47D080E24C54A2000E44A22 /* io_service_t+Interface.swift in Sources */,
 				F4EA729E296793D20014D3E2 /* SliderOption.swift in Sources */,
 				F4EA72A2296798190014D3E2 /* DualSliderOption.swift in Sources */,
-				F47D07F824C417B700E44A22 /* UVCConstants.swift in Sources */,
 				F4E5262524C7C2E100125DF9 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,6 +858,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F4508AD12A43E477003C44F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4508ACB2A43E477003C44F1 /* UVC */;
+			targetProxy = F4508AD02A43E477003C44F1 /* PBXContainerItemProxy */;
+		};
 		F47D07DE24C4104600E44A22 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F47D07C324C4104300E44A22 /* CameraController */;
@@ -786,6 +895,83 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F4508AD62A43E477003C44F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PY9WJ3M9MW;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Itaysoft. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emerge.UVC;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = UVC/USBHeaders.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F4508AD72A43E477003C44F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PY9WJ3M9MW;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Itaysoft. All rights reserved.";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emerge.UVC;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = UVC/USBHeaders.h;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		F47D07E324C4104600E44A22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -812,6 +998,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -819,6 +1006,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -872,6 +1060,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -879,6 +1068,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -902,12 +1092,14 @@
 		F47D07E624C4104600E44A22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CameraController/Resources/CameraController.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CameraController/Preview Content\"";
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -922,7 +1114,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.itaysoft.CameraController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = CameraController/UVC/Models/USBHeaders.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -930,12 +1121,14 @@
 		F47D07E724C4104600E44A22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CameraController/Resources/CameraController.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CameraController/Preview Content\"";
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -951,7 +1144,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.itaysoft.CameraController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = CameraController/UVC/Models/USBHeaders.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -964,6 +1156,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				INFOPLIST_FILE = CameraControllerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -986,6 +1179,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				INFOPLIST_FILE = CameraControllerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1010,6 +1204,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 7;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Helper/Preview Content\"";
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1038,6 +1233,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 7;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Helper/Preview Content\"";
 				DEVELOPMENT_TEAM = PY9WJ3M9MW;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1060,6 +1256,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F4508AD52A43E477003C44F1 /* Build configuration list for PBXNativeTarget "UVC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4508AD62A43E477003C44F1 /* Debug */,
+				F4508AD72A43E477003C44F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F47D07BF24C4104300E44A22 /* Build configuration list for PBXProject "CameraController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1116,19 +1321,6 @@
 			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		F47D07CB24C4104300E44A22 /* CameraController.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F47D07CC24C4104300E44A22 /* CameraController.xcdatamodel */,
-			);
-			currentVersion = F47D07CC24C4104300E44A22 /* CameraController.xcdatamodel */;
-			path = CameraController.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F47D07BC24C4104300E44A22 /* Project object */;
 }

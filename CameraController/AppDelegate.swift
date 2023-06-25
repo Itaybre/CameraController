@@ -11,7 +11,7 @@ import SwiftUI
 import Sparkle
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusBarManager: StatusBarManager!
 
@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return false
     }
 
-    // MARK: - Check For updated
+    // MARK: - Check For Updates
     func checkForUpdates() {
         updaterController.checkForUpdates(nil)
     }
