@@ -29,6 +29,8 @@ struct ContentView: View {
                 }
 
                 settingsView(captureDevice: $manager.selectedDevice)
+                    .frame(maxWidth: .infinity)
+                    .fixedSize(horizontal: false, vertical: true)
                 ProfileSelector()
                     .frame(maxWidth: .infinity)
                     .frame(height: 75)
