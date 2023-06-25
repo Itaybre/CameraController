@@ -10,7 +10,7 @@ import Combine
 import Foundation
 import AVFoundation
 
-class DevicesManager: ObservableObject {
+final class DevicesManager: ObservableObject {
     static let shared = DevicesManager()
 
     private let deviceMonitor = DeviceMonitor()

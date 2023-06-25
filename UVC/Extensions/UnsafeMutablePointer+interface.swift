@@ -46,9 +46,3 @@ extension UnsafeMutablePointer where Pointee == UnsafeMutablePointer<IOUSBDevice
         })
     }
 }
-
-private let kIOUSBInterfaceUserClientTypeID: CFUUID = CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,
-                                                                                     0x2d, 0x97, 0x86, 0xc6,
-                                                                                     0x9e, 0xf3, 0x11, 0xD4,
-                                                                                     0xad, 0x51, 0x00, 0x0a,
-                                                                                     0x27, 0x05, 0x28, 0x61)

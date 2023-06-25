@@ -8,31 +8,31 @@
 
 import Foundation
 
-class UVCDeviceProperties {
-    var scanningMode: UVCBoolControl
-    var exposureMode: UVCBitmapControl
-    var exposurePriority: UVCIntControl
-    var exposureTime: UVCIntControl
-    var focusAbsolute: UVCIntControl
-    var focusAuto: UVCBoolControl
-    var irisAbsolute: UVCIntControl
-    var zoomAbsolute: UVCIntControl
-    var panTiltAbsolute: UVCMultipleIntControl
-    var rollAbsolute: UVCIntControl
+public final class UVCDeviceProperties {
+    public let scanningMode: UVCBoolControl
+    public let exposureMode: UVCBitmapControl
+    public let exposurePriority: UVCIntControl
+    public let exposureTime: UVCIntControl
+    public let focusAbsolute: UVCIntControl
+    public let focusAuto: UVCBoolControl
+    public let irisAbsolute: UVCIntControl
+    public let zoomAbsolute: UVCIntControl
+    public let panTiltAbsolute: UVCMultipleIntControl
+    public let rollAbsolute: UVCIntControl
 
-    var backlightCompensation: UVCIntControl
-    var brightness: UVCIntControl
-    var contrast: UVCIntControl
-    var contrastAuto: UVCBoolControl
-    var gain: UVCIntControl
-    var powerLineFrequency: UVCIntControl
-    var hue: UVCIntControl
-    var hueAuto: UVCBoolControl
-    var saturation: UVCIntControl
-    var sharpness: UVCIntControl
-    var gamma: UVCIntControl
-    var whiteBalance: UVCIntControl
-    var whiteBalanceAuto: UVCBoolControl
+    public let backlightCompensation: UVCIntControl
+    public let brightness: UVCIntControl
+    public let contrast: UVCIntControl
+    public let contrastAuto: UVCBoolControl
+    public let gain: UVCIntControl
+    public let powerLineFrequency: UVCIntControl
+    public let hue: UVCIntControl
+    public let hueAuto: UVCBoolControl
+    public let saturation: UVCIntControl
+    public let sharpness: UVCIntControl
+    public let gamma: UVCIntControl
+    public let whiteBalance: UVCIntControl
+    public let whiteBalanceAuto: UVCBoolControl
 
     init(_ device: USBDevice) {
         let interface = device.interface
