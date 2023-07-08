@@ -57,20 +57,19 @@ class LetsMove: NSObject {
     let alertSuppressKey = "moveToApplicationsFolderAlertSuppress"
 
     let fileManager = FileManager.default
+    lazy var moveStrings = MoveStrings()
 
     // Main worker function
     func moveToApplicationsFolderIfNecessary() {
-        let moveStrings = MoveStrings()
-
         // Skip if user suppressed the alert before
-        guard UserDefaults.standard.bool(forKey: alertSuppressKey) == false else { return }
+        guard !UserDefaults.standard.bool(forKey: alertSuppressKey) else { return }
 
         // Path of the bundle
         let bundlePath = Bundle.main.bundlePath
         let bundleNameURL = URL(string: bundlePath)
 
         // Skip if the application is already in some Applications folder
-        guard isInApplicationsFolder(bundleNameURL!) == false else { return }
+        guard !isInApplicationsFolder(bundleNameURL!) else { return }
 
         // Since we are good to go, get the preferred installation directory.
         let (applicationsDirectory, installToUserApplications) = preferredInstallLocation()
@@ -83,14 +82,53 @@ class LetsMove: NSObject {
         let isFileExists =  fileManager.fileExists(atPath: destinationURL.absoluteString)
         let isWritableFileDst = fileManager.isWritableFile(atPath: destinationURL.absoluteString)
 
-        let isNeedAuthorization = isWritableFileSrc == false || (isFileExists == true && isWritableFileDst == false)
+        let isNeedAuthorization = !isWritableFileSrc || (isFileExists && !isWritableFileDst)
 
         // Setup the alert
+        let alert = createAlert(bundleNameURL, installToUserApplications, isNeedAuthorization)
+
+        // Activate app -- work-around for focus issues related to "scary file from internet" OS dialog.
+        if !NSApp.isActive {
+            NSApp.activate(ignoringOtherApps: true)
+        }
+
+        if alert.runModal() == .alertFirstButtonReturn {
+            print("INFO -- Moving myself to the Applications folder")
+
+            if isNeedAuthorization {
+                if !authorizedInstall(srcPath: bundlePath, dstPath: destinationURL.absoluteString) {
+                    print("ERROR -- Could not copy myself to /Applications with authorization")
+                    return
+                }
+            } else if !moveBundle(bundlePath, destinationURL, applicationsDirectory, bundleName, moveStrings) {
+                return
+            }
+            // Trash the original app. It's okay if this fails.
+            // NOTE: This final delete does not work if the source bundle is in a network mounted volume.
+            //       Calling rm or file manager's delete method doesn't work either. It's unlikely to happen
+            //       but it'd be great if someone could fix this.
+            if !deleteOrTrash(path: bundlePath) {
+                print("WARNING -- Could not delete application after moving it to Applications folder")
+            }
+
+            // Relaunch.
+            print("relaunch")
+            relaunch(destinationPath: destinationURL.absoluteString)
+            exit(0)
+        } else if alert.suppressionButton!.state == .on {
+            // Save the alert suppress preference if checked
+            UserDefaults.standard.set(true, forKey: alertSuppressKey)
+        }
+    }
+
+    private func createAlert(_ bundleNameURL: URL?,
+                             _ installToUserApplications: Bool,
+                             _ isNeedAuthorization: Bool) -> NSAlert {
         let alert = NSAlert()
         alert.messageText = installToUserApplications ? moveStrings.questionTitleHome : moveStrings.questionTitle
         var informativeText = moveStrings.questionMessage
 
-        if isNeedAuthorization == true {
+        if isNeedAuthorization {
             informativeText += " " + moveStrings.infoNeedsPassword
         } else if isInDownloadsFolder(bundleNameURL!) {
             // Don't mention this stuff if we need authentication. The informative text is
@@ -110,73 +148,46 @@ class LetsMove: NSObject {
         // Setup suppression button
         alert.showsSuppressionButton = true
 
-        if useSmallAlertSuppressCheckbox == true {
-            if let cell = alert.suppressionButton?.cell {
-                cell.font = NSFont(name: "HelveticaNeue", size: 10)
-            }
+        if useSmallAlertSuppressCheckbox,
+           let cell = alert.suppressionButton?.cell {
+            cell.font = NSFont(name: "HelveticaNeue", size: 10)
         }
 
-        // Activate app -- work-around for focus issues related to "scary file from internet" OS dialog.
-        if NSApp.isActive == false {
-            NSApp.activate(ignoringOtherApps: true)
-        }
+        return alert
+    }
 
-        if alert.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn {
-            print("INFO -- Moving myself to the Applications folder")
+    private func moveBundle(_ bundlePath: String,
+                            _ destinationURL: URL,
+                            _ applicationsDirectory: URL?,
+                            _ bundleName: String,
+                            _ moveStrings: LetsMove.MoveStrings) -> Bool {
+        // If a copy already exists in the Applications folder, put it in the Trash
+        if fileManager.fileExists(atPath: destinationURL.absoluteString) {
 
-            // Move
-            if isNeedAuthorization == true {
-                if authorizedInstall(srcPath: bundlePath, dstPath: destinationURL.absoluteString) == false {
-                    print("ERROR -- Could not copy myself to /Applications with authorization")
-                    // failureAlert()
-                    return
-                }
+            // But first, make sure that it's not running
+            if isApplicationAtPathRunning(path: destinationURL.absoluteString) {
+                // Give the running app focus and terminate myself
+                print("INFO -- Switching to an already running version")
+                Process.launchedProcess(launchPath: "/usr/bin/open", arguments:
+                                            [destinationURL.absoluteString]).waitUntilExit()
+                exit(0)
             } else {
-                // If a copy already exists in the Applications folder, put it in the Trash
-                if fileManager.fileExists(atPath: destinationURL.absoluteString) {
-
-                    // But first, make sure that it's not running
-                    if isApplicationAtPathRunning(path: destinationURL.absoluteString) == true {
-                        // Give the running app focus and terminate myself
-                        print("INFO -- Switching to an already running version")
-                        Process.launchedProcess(launchPath: "/usr/bin/open", arguments:
-                                                    [destinationURL.absoluteString]).waitUntilExit()
-                        exit(0)
-                    } else {
-                        let path = applicationsDirectory!.appendingPathComponent(bundleName).absoluteString
-                        if trash(path: path) == false {
-
-                            let alert = NSAlert()
-                            alert.messageText = moveStrings.couldNotMove
-                            alert.runModal()
-                            return
-                        }
-                    }
-                }
-
-                if copyBundle(srcPath: bundlePath, dstPath: destinationURL.absoluteString) == false {
-                    print("Could not copy myself to \(destinationURL.absoluteString)")
-                    return
+                let path = applicationsDirectory!.appendingPathComponent(bundleName).absoluteString
+                if !trash(path: path) {
+                    let alert = NSAlert()
+                    alert.messageText = moveStrings.couldNotMove
+                    alert.runModal()
+                    return false
                 }
             }
-
-            // Trash the original app. It's okay if this fails.
-            // NOTE: This final delete does not work if the source bundle is in a network mounted volume.
-            //       Calling rm or file manager's delete method doesn't work either. It's unlikely to happen
-            //       but it'd be great if someone could fix this.
-            if deleteOrTrash(path: bundlePath) == false {
-                print("WARNING -- Could not delete application after moving it to Applications folder")
-            }
-
-            // Relaunch.
-            print("relaunch")
-            relaunch(destinationPath: destinationURL.absoluteString)
-            exit(0)
-
-        } else if alert.suppressionButton!.state == .on {
-            // Save the alert suppress preference if checked
-            UserDefaults.standard.set(true, forKey: alertSuppressKey)
         }
+
+        if !copyBundle(srcPath: bundlePath, dstPath: destinationURL.absoluteString) {
+            print("Could not copy myself to \(destinationURL.absoluteString)")
+            return false
+        }
+
+        return true
     }
 
     // Return the preferred install location.
@@ -193,7 +204,7 @@ class LetsMove: NSObject {
 
             if fileManager.fileExists(atPath: userDir, isDirectory: &directory ) {
                 let contents = (try? fileManager.contentsOfDirectory(atPath: userDir)) ?? []
-                if contents.contains(where: { $0.hasSuffix(".app") })  == true {
+                if contents.contains(where: { $0.hasSuffix(".app") }) {
                     appDir = URL(fileURLWithPath: userDir)
                     isUserDir = true
                 }
@@ -212,10 +223,8 @@ class LetsMove: NSObject {
     func isInFolder(_ path: URL, _ folder: FileManager.SearchPathDirectory, _ alternativeName: String? = nil) -> Bool {
         let allFolders = NSSearchPathForDirectoriesInDomains(folder, .allDomainsMask, true)
         let pathstr = path.path
-        for folder in allFolders {
-            if pathstr.hasPrefix(folder) == true {
-                return true
-            }
+        for folder in allFolders where pathstr.hasPrefix(folder) {
+            return true
         }
 
         if let alt = alternativeName {
@@ -247,7 +256,7 @@ class LetsMove: NSObject {
         // Use the new API on 10.6 or higher to determine if the app is already running
         for runningApplication in NSWorkspace.shared.runningApplications {
             let executablePath = runningApplication.executableURL!.path
-            if executablePath.hasPrefix(path) == true {
+            if executablePath.hasPrefix(path) {
                 return true
             }
         }
@@ -283,7 +292,7 @@ class LetsMove: NSObject {
     func authorizedInstall(srcPath: String, dstPath: String) -> Bool {
         // Make sure that the destination path is an app bundle. We're essentially running 'sudo rm -rf'
         // so we really don't want to mess this up.
-        guard dstPath.hasSuffix(".app") == true else { return false }
+        guard dstPath.hasSuffix(".app") else { return false }
 
         // Do some more checks
         if dstPath.trimmingCharacters(in: CharacterSet.whitespaces) == "" { return false }
