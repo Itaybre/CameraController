@@ -40,9 +40,19 @@ final class UserSettings: ObservableObject {
         }
     }
 
-    @Published var hideCameraPreview: Bool {
+    var hideCameraPreview: Bool {
+        cameraPreviewSize == .disabled
+    }
+
+    @Published var cameraPreviewSize: PreviewSizeSettings {
         didSet {
-            UserDefaults.standard.set(hideCameraPreview, forKey: "hideCameraPreview")
+            UserDefaults.standard.set(cameraPreviewSize.rawValue, forKey: "cameraPreviewSize")
+        }
+    }
+
+    @Published var checkForUpdatesOnStartup: Bool {
+        didSet {
+            UserDefaults.standard.set(checkForUpdatesOnStartup, forKey: "checkForUpdatesOnStartup")
         }
     }
 
@@ -51,6 +61,9 @@ final class UserSettings: ObservableObject {
         readRate = RefreshSettingsRate(rawValue: UserDefaults.standard.double(forKey: "readRate")) ?? .disabled
         writeRate = RefreshSettingsRate(rawValue: UserDefaults.standard.double(forKey: "writeRate")) ?? .disabled
         lastSelectedDevice = UserDefaults.standard.string(forKey: "lastDevice")
-        hideCameraPreview = UserDefaults.standard.bool(forKey: "hideCameraPreview")
+        cameraPreviewSize = PreviewSizeSettings(
+            rawValue: UserDefaults.standard.double(forKey: "cameraPreviewSize")
+        ) ?? .small
+        checkForUpdatesOnStartup = UserDefaults.standard.bool(forKey: "checkForUpdatesOnStartup")
     }
 }
