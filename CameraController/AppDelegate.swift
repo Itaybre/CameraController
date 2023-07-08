@@ -13,7 +13,7 @@ import Sparkle
 @NSApplicationMain
 final class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var statusBarManager: StatusBarManager!
+    var statusBarManager: StatusBarManager = StatusBarManager()
 
     private let updaterController = SPUStandardUpdaterController(
         startingUpdater: true,
@@ -24,9 +24,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         LetsMove.shared.moveToApplicationsFolderIfNecessary()
 
-        statusBarManager = StatusBarManager()
-        WindowManager.shared.showWindow()
-        NSApp.activate(ignoringOtherApps: true)
+        if UserSettings.shared.checkForUpdatesOnStartup {
+            checkForUpdates()
+        }
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
