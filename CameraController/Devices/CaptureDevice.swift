@@ -49,7 +49,6 @@ final class CaptureDevice: Hashable, ObservableObject {
             controller.exposureTime.update()
             controller.whiteBalance.update()
             controller.focusAbsolute.update()
-            controller.objectWillChange.send()
         }
     }
 

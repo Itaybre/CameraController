@@ -17,18 +17,21 @@ struct ContentView: View {
 
     var body: some View {
         HStack {
-            VStack {
+            VStack(spacing: 0) {
                 cameraPreview()
+                    .animation(nil)
 
                 TabSelectorView(selectedIndex: $currentSection)
+                    .padding(.vertical, Constants.Style.padding)
+                    .animation(nil)
 
                 settingsView()
-                    .frame(width: settings.cameraPreviewSize.getWidth() - Constants.Style.padding * 2)
             }.onAppear {
                 DevicesManager.shared.startMonitoring()
             }.onDisappear {
                 DevicesManager.shared.stopMonitoring()
             }
+            .frame(width: settings.cameraPreviewSize.getWidth() - Constants.Style.padding * 2)
         }
         .fixedSize()
         .background(
@@ -48,6 +51,7 @@ struct ContentView: View {
                     width: settings.cameraPreviewSize.getWidth(),
                     height: settings.cameraPreviewSize.getHeight()
                 )
+                .scaleEffect(CGSize(width: settings.mirrorPreview ? -1 : 1, height: 1))
         } else {
             Image("video.slash")
                 .frame(

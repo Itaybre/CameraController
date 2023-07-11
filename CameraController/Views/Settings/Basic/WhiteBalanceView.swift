@@ -9,11 +9,20 @@
 import SwiftUI
 
 struct WhiteBalanceView: View {
-    @ObservedObject var controller: DeviceController
+    @ObservedObject var whiteBalanceAuto: BoolCaptureDeviceProperty
+    @ObservedObject var whiteBalance: NumberCaptureDeviceProperty
+
+    init(controller: DeviceController) {
+        self.whiteBalanceAuto = controller.whiteBalanceAuto
+        self.whiteBalance = controller.whiteBalance
+    }
 
     var body: some View {
-        GroupBox(label: Text("White Balance")) {
-            SliderOptionWithAuto(valueProperty: $controller.whiteBalance, autoProperty: $controller.whiteBalanceAuto)
-        }
+        GenericControl(value: $whiteBalance.sliderValue,
+                       step: whiteBalance.resolution,
+                       range: whiteBalance.minimum...whiteBalance.maximum,
+                       title: "White Balance",
+                       imageName: "slider.horizontal.3",
+                       auto: $whiteBalanceAuto.isEnabled)
     }
 }

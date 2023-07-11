@@ -42,7 +42,9 @@ struct TabSelectorView: View {
             HStack(spacing: ViewConstants.itemSpacing) {
                 ForEach(optionsImages, id: \.text) { option in
                     Button {
-                        self.changeSelectedIndex(option.index)
+                        withAnimation {
+                            self.changeSelectedIndex(option.index)
+                        }
                     } label: {
                         VStack {
                             Image(systemName: option.image)
@@ -56,6 +58,7 @@ struct TabSelectorView: View {
                         .foregroundColor(colorForOption(option.index))
                     }
                     .buttonStyle(.borderless)
+                    .animation(nil)
                 }
             }
         }
@@ -108,7 +111,6 @@ struct TabSelectorView: View {
 }
 
 struct TabSelectorView_Previews: PreviewProvider {
-
     static var previews: some View {
         StatefulPreviewWrapper(Int?(0)) { value in
             VStack(spacing: 20.0) {

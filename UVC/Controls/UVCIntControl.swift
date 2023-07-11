@@ -40,8 +40,8 @@ public final class UVCIntControl: UVCControl {
             updateMinimum()
             updateDefault()
             updateMaximum()
-            updateCurrent()
             updateResolution()
+            _current = getCurrent()
 
             if minimum > maximum {
                 minimum = 0
@@ -51,8 +51,8 @@ public final class UVCIntControl: UVCControl {
         }
     }
 
-    public func updateCurrent() {
-        _current = getDataFor(type: .getCurrent, length: uvcSize)
+    public func getCurrent() -> Int {
+        return getDataFor(type: .getCurrent, length: uvcSize)
     }
 
     func updateMinimum() {

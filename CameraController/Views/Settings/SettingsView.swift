@@ -13,24 +13,18 @@ struct SettingsView: View {
     @Binding var currentSection: Int?
 
     var body: some View {
-        VStack {
-            if currentSection == nil {
-                Spacer()
-                    .frame(height: Constants.Style.padding)
-            } else {
-                contentView()
-                    .frame(maxWidth: .infinity)
-                    .padding(.all, Constants.Style.padding)
-            }
-        }
-        .transition(.opacity.animation(.easeOut(duration: 0.25)))
-        .animation(nil)
-        .id(currentSection)
+        contentView()
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, Constants.Style.padding)
+//            .transition(.opacity.animation(.easeOut(duration: 0.25)))
+            .id(currentSection)
     }
 
     @ViewBuilder
-    fileprivate func contentView() -> some View {
-        if currentSection == 3 {
+    private func contentView() -> some View {
+        if currentSection == nil {
+            EmptyView()
+        } else if currentSection == 3 {
             PreferencesView()
         } else if let controller = captureDevice?.controller {
             if currentSection == 0 {

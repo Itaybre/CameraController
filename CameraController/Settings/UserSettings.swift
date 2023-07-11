@@ -56,6 +56,12 @@ final class UserSettings: ObservableObject {
         }
     }
 
+    @Published var mirrorPreview: Bool {
+        didSet {
+            UserDefaults.standard.set(mirrorPreview, forKey: "mirrorPreview")
+        }
+    }
+
     private init() {
         openAtLogin = UserDefaults.standard.bool(forKey: "login")
         readRate = RefreshSettingsRate(rawValue: UserDefaults.standard.double(forKey: "readRate")) ?? .disabled
@@ -65,5 +71,6 @@ final class UserSettings: ObservableObject {
             rawValue: UserDefaults.standard.double(forKey: "cameraPreviewSize")
         ) ?? .small
         checkForUpdatesOnStartup = UserDefaults.standard.bool(forKey: "checkForUpdatesOnStartup")
+        mirrorPreview = UserDefaults.standard.bool(forKey: "mirrorPreview")
     }
 }

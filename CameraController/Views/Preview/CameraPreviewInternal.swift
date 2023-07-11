@@ -27,13 +27,13 @@ final class CameraPreviewInternal: NSView {
         Task {
             configureDevice(device)
             // lock configuration to keep device.activeFormat
-            do {
-                try captureDevice?.lockForConfiguration()
+           do {
+               try captureDevice?.lockForConfiguration()
                 captureSession.startRunning()
-                captureDevice?.unlockForConfiguration()
-            } catch {
+               captureDevice?.unlockForConfiguration()
+           } catch {
                 // Handle error.
-            }
+           }
         }
 
         NotificationCenter.default.addObserver(self,
