@@ -29,6 +29,7 @@
 		F42D42DD27A0F0DC00107DFF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42D42DC27A0F0DB00107DFF /* Security.framework */; platformFilter = maccatalyst; };
 		F42D42DF27A0F0EE00107DFF /* MoveApplication.strings in Resources */ = {isa = PBXBuildFile; fileRef = F42D42DE27A0F0EE00107DFF /* MoveApplication.strings */; };
 		F42D42E227A0F68000107DFF /* NSNotificationName+Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D42E127A0F68000107DFF /* NSNotificationName+Devices.swift */; };
+		F44150732A882D760021ADB5 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44150722A882D760021ADB5 /* ProfileRow.swift */; };
 		F4508AD22A43E477003C44F1 /* UVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4508ACC2A43E477003C44F1 /* UVC.framework */; };
 		F4508AD42A43E477003C44F1 /* UVC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4508ACC2A43E477003C44F1 /* UVC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4508AD82A43E48A003C44F1 /* IOUSBConfigurationDescriptorPtr+UVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D081124C54BDD00E44A22 /* IOUSBConfigurationDescriptorPtr+UVC.swift */; };
@@ -178,6 +179,7 @@
 		F42D42DC27A0F0DB00107DFF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F42D42DE27A0F0EE00107DFF /* MoveApplication.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MoveApplication.strings; sourceTree = "<group>"; };
 		F42D42E127A0F68000107DFF /* NSNotificationName+Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotificationName+Devices.swift"; sourceTree = "<group>"; };
+		F44150722A882D760021ADB5 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 		F4508AC52A43DE40003C44F1 /* UVCErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UVCErrors.swift; sourceTree = "<group>"; };
 		F4508ACC2A43E477003C44F1 /* UVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4508AF62A43F186003C44F1 /* LibConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibConstants.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				F46C257A2A493FBD00FF9100 /* ProfilesView.swift */,
+				F44150722A882D760021ADB5 /* ProfileRow.swift */,
 				F469CF4A24DD0FC70092C7F9 /* ProfileSelector.swift */,
 			);
 			path = Profile;
@@ -922,6 +925,7 @@
 				F4D1714A2A3EBC740039E353 /* PreviewSizeSettings.swift in Sources */,
 				F42D42D827A0E92100107DFF /* WindowManager.swift in Sources */,
 				F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */,
+				F44150732A882D760021ADB5 /* ProfileRow.swift in Sources */,
 				F4E5262124C7BDD400125DF9 /* CameraPreviewInternal.swift in Sources */,
 				F4D4C6D224CBD83100581E05 /* BacklightView.swift in Sources */,
 				F424603D2A5A678C009108C2 /* HueView.swift in Sources */,

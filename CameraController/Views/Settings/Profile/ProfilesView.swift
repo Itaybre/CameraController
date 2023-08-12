@@ -9,9 +9,49 @@
 import SwiftUI
 
 struct ProfilesView: View {
+    @ObservedObject var profileManager = ProfileManager.shared
+
+    @State private var isAddingProfile = false
+    @State private var profileName = ""
+
     var body: some View {
-        VStack(alignment: .leading) {
-            ProfileSelector()
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: Constants.Style.controlsSpacing) {
+                ProfileRow(name: "Camera Default", profile: .defaultProfile)
+                Divider()
+                ForEach(profileManager.profiles, id: \.self) { profile in
+                    ProfileRow(name: profile.name, profile: .custom(profile))
+                }
+            }
+            .padding(.top, 2)
+            .padding(.bottom, Constants.Style.topSpacing)
+
+            Button("Save Current Profile") {
+                isAddingProfile.toggle()
+            }
+            .alert("Save Profile", isPresented: $isAddingProfile) {
+                TextField("Name", text: $profileName)
+                Button("Save", action: {
+                    addNewProfile()
+                    isAddingProfile = false
+                })
+                Button("Cancel", role: .cancel) { }
+            } message: {
+                Text("Please enter the name for your profile")
+            }
+        }
+        .frame(maxHeight: 300)
+    }
+
+    private func addNewProfile() {
+        guard let device = DevicesManager.shared.selectedDevice,
+            let controller = device.controller else {
+            return
+        }
+
+        withAnimation {
+            profileManager.saveProfile(profileName, controller.getSettings())
+            profileName = ""
         }
     }
 }
