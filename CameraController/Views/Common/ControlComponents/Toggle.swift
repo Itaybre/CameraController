@@ -18,6 +18,7 @@ struct Toggle: View {
     }
 }
 
+#if DEBUG
 struct Toggle_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
@@ -26,3 +27,4 @@ struct Toggle_Previews: PreviewProvider {
         }
     }
 }
+#endif

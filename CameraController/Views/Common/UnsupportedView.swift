@@ -24,8 +24,10 @@ struct UnsupportedView: View {
     }
 }
 
+#if DEBUG
 struct UnsupportedView_Previews: PreviewProvider {
     static var previews: some View {
         UnsupportedView()
     }
 }
+#endif

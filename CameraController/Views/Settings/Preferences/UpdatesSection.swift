@@ -41,8 +41,10 @@ struct UpdatesSection: View {
     }
 }
 
+#if DEBUG
 struct UpdatesSection_Previews: PreviewProvider {
     static var previews: some View {
         UpdatesSection()
     }
 }
+#endif

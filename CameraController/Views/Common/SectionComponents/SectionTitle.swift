@@ -31,6 +31,7 @@ struct SectionTitle<Content: View>: View {
     }
 }
 
+#if DEBUG
 struct SectionTitle_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
@@ -44,3 +45,4 @@ struct SectionTitle_Previews: PreviewProvider {
         }
     }
 }
+#endif

@@ -33,6 +33,7 @@ struct SectionView<Content: View>: View {
     }
 }
 
+#if DEBUG
 struct SectionView_Previews: PreviewProvider {
     static var previews: some View {
         SectionView {
@@ -49,3 +50,4 @@ struct SectionView_Previews: PreviewProvider {
         .padding()
     }
 }
+#endif

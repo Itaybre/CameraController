@@ -88,6 +88,7 @@ struct Slider: View {
     }
 }
 
+#if DEBUG
 struct NewSliderView_Previews: PreviewProvider {
     static var previews: some View {
         StatefulPreviewWrapper(Float(40.0)) { value in
@@ -115,3 +116,4 @@ struct NewSliderView_Previews: PreviewProvider {
         }
     }
 }
+#endif

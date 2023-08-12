@@ -22,9 +22,11 @@ struct AutoBadge: View {
     }
 }
 
+#if DEBUG
 struct AutoBadge_Previews: PreviewProvider {
     static var previews: some View {
         AutoBadge()
             .padding(.all)
     }
 }
+#endif

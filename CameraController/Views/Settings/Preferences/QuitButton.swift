@@ -27,8 +27,10 @@ struct QuitButton: View {
     }
 }
 
+#if DEBUG
 struct QuitButton_Previews: PreviewProvider {
     static var previews: some View {
         QuitButton()
     }
 }
+#endif
