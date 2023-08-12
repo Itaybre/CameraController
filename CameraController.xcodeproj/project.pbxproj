@@ -60,7 +60,6 @@
 		F469CF4524DD0A3E0092C7F9 /* DeviceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */; };
 		F469CF4724DD0D9F0092C7F9 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */; };
 		F469CF4924DD0E310092C7F9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4824DD0E310092C7F9 /* Profile.swift */; };
-		F469CF4B24DD0FC70092C7F9 /* ProfileSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469CF4A24DD0FC70092C7F9 /* ProfileSelector.swift */; };
 		F46C25752A4937ED00FF9100 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C25742A4937ED00FF9100 /* VisualEffectView.swift */; };
 		F46C25782A49386D00FF9100 /* UnsupportedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C25772A49386D00FF9100 /* UnsupportedView.swift */; };
 		F46C257B2A493FBD00FF9100 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C257A2A493FBD00FF9100 /* ProfilesView.swift */; };
@@ -190,7 +189,6 @@
 		F469CF4424DD0A3E0092C7F9 /* DeviceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSettings.swift; sourceTree = "<group>"; };
 		F469CF4624DD0D9F0092C7F9 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		F469CF4824DD0E310092C7F9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		F469CF4A24DD0FC70092C7F9 /* ProfileSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelector.swift; sourceTree = "<group>"; };
 		F46C25742A4937ED00FF9100 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		F46C25772A49386D00FF9100 /* UnsupportedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsupportedView.swift; sourceTree = "<group>"; };
 		F46C257A2A493FBD00FF9100 /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
@@ -366,7 +364,6 @@
 			children = (
 				F46C257A2A493FBD00FF9100 /* ProfilesView.swift */,
 				F44150722A882D760021ADB5 /* ProfileRow.swift */,
-				F469CF4A24DD0FC70092C7F9 /* ProfileSelector.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -912,7 +909,6 @@
 				F4D4C70124CBF99200581E05 /* UserSettings.swift in Sources */,
 				F42D42E227A0F68000107DFF /* NSNotificationName+Devices.swift in Sources */,
 				F4D4C6C924CBD26600581E05 /* BoolCaptureDeviceProperty.swift in Sources */,
-				F469CF4B24DD0FC70092C7F9 /* ProfileSelector.swift in Sources */,
 				F424603F2A5A6C14009108C2 /* PreviewSection.swift in Sources */,
 				F469CF4924DD0E310092C7F9 /* Profile.swift in Sources */,
 				F46C25752A4937ED00FF9100 /* VisualEffectView.swift in Sources */,
