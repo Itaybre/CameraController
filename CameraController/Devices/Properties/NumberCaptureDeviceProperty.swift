@@ -30,14 +30,10 @@ final class NumberCaptureDeviceProperty: SliderCapableProperty, ObservableObject
         }
         set {
             if sliderValue != newValue {
-
                 internalValue = newValue
-
                 Task {
                     control.current = Int(newValue)
                 }
-            } else {
-                print("Ignored")
             }
         }
     }
