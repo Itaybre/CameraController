@@ -31,7 +31,6 @@ Control your cameras settings without using the software provided (or not) by th
 
 <div align="center">
     <img src="./.github/Basic.png" width="299" alt="basic screenshot"/>
-    <img src="./.github/Advanced.png" width="299" alt="advanced screenshot"/>
     <img src="./.github/Preferences.png" width="299" alt="preferences screenshot"/>
 </div>
 
