@@ -31,5 +31,6 @@ struct Constants {
         static let smallCornerRadius = 4.0
         static let padding = 5.0
         static let controlsSpacing = 8.0
+        static let topSpacing = 2.0
     }
 }

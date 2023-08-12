@@ -16,7 +16,8 @@ struct SettingsView: View {
         contentView()
             .frame(maxWidth: .infinity)
             .padding(.horizontal, Constants.Style.padding)
-//            .transition(.opacity.animation(.easeOut(duration: 0.25)))
+            .padding(.bottom, Constants.Style.padding)
+            .transition(.opacity.animation(.easeOut(duration: 0.25)))
             .id(currentSection)
     }
 

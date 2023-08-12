@@ -17,10 +17,9 @@ struct PreferencesView: View {
             ReadWriteSection()
             UpdatesSection()
             QuitButton()
-
-            Spacer()
-                .frame(height: 8)
         }
+        .padding(.top, 2)
+        .padding(.bottom, Constants.Style.topSpacing)
     }
 }
 

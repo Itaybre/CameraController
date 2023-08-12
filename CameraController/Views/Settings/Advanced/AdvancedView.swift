@@ -37,10 +37,9 @@ struct AdvancedView: View {
                 if controller.focusAbsolute.isCapable {
                     FocusView(controller: controller)
                 }
-
-                Spacer()
-                    .frame(height: 8)
             }
+            .padding(.top, 2)
+            .padding(.bottom, Constants.Style.topSpacing)
         }
         .frame(maxHeight: 300)
     }

@@ -41,10 +41,9 @@ struct BasicSettings: View {
                 if controller.whiteBalance.isCapable {
                     WhiteBalanceView(controller: controller)
                 }
-
-                Spacer()
-                    .frame(height: 8)
             }
+            .padding(.top, 2)
+            .padding(.bottom, Constants.Style.topSpacing)
         }
         .frame(maxHeight: 300)
     }
