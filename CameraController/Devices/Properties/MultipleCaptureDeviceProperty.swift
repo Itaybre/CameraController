@@ -9,8 +9,11 @@
 import Foundation
 import UVC
 
-final class MultipleCaptureDeviceProperty {
+final class MultipleCaptureDeviceProperty: ObservableObject {
     private let control: UVCMultipleIntControl
+
+    @Published private var intervalValue1: Float
+    @Published private var intervalValue2: Float
 
     var sliderValue1: Float {
         get {
@@ -18,6 +21,8 @@ final class MultipleCaptureDeviceProperty {
         }
         set {
             if sliderValue1 != newValue {
+                intervalValue1 = newValue
+
                 Task {
                     control.current1 = Int(newValue)
                 }
@@ -31,6 +36,8 @@ final class MultipleCaptureDeviceProperty {
         }
         set {
             if sliderValue2 != newValue {
+                intervalValue2 = newValue
+
                 Task {
                     control.current2 = Int(newValue)
                 }
@@ -59,6 +66,8 @@ final class MultipleCaptureDeviceProperty {
         resolution2 = Float(control.resolution2)
         defaultValue1 = Float(control.defaultValue1)
         defaultValue2 = Float(control.defaultValue2)
+        intervalValue1 = Float(control.defaultValue1)
+        intervalValue2 = Float(control.defaultValue2)
         sliderValue1 = Float(control.current1)
         sliderValue2 = Float(control.current2)
     }

@@ -7,10 +7,22 @@
 //
 
 import Foundation
+import Combine
 import UVC
 
-final class NumberCaptureDeviceProperty {
+protocol SliderCapableProperty {
+    var sliderValue: Float { get set }
+    var isCapable: Bool { get }
+    var minimum: Float { get }
+    var maximum: Float { get }
+    var resolution: Float { get }
+    var defaultValue: Float { get }
+}
+
+final class NumberCaptureDeviceProperty: SliderCapableProperty, ObservableObject {
     private let control: UVCIntControl
+
+    @Published private var internalValue: Float
 
     var sliderValue: Float {
         get {
@@ -18,6 +30,7 @@ final class NumberCaptureDeviceProperty {
         }
         set {
             if sliderValue != newValue {
+                internalValue = newValue
                 Task {
                     control.current = Int(newValue)
                 }
@@ -34,6 +47,7 @@ final class NumberCaptureDeviceProperty {
     init(_ control: UVCIntControl) {
         self.control = control
         isCapable = control.isCapable
+        internalValue = Float(control.defaultValue)
         minimum = Float(control.minimum)
         maximum = Float(control.maximum)
         resolution = Float(control.resolution)
@@ -46,7 +60,8 @@ final class NumberCaptureDeviceProperty {
     }
 
     func update() {
-        control.updateCurrent()
+        let newValue = control.getCurrent()
+        sliderValue = Float(newValue)
     }
 
     func write() {

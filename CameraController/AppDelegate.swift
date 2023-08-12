@@ -13,7 +13,7 @@ import Sparkle
 @NSApplicationMain
 final class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var window: NSWindow!
+    var statusBarManager: StatusBarManager = StatusBarManager()
 
     private let updaterController = SPUStandardUpdaterController(
         startingUpdater: true,
@@ -22,21 +22,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     )
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let contentView = ContentView()
+        LetsMove.shared.moveToApplicationsFolderIfNecessary()
 
-        // Create the window and set the content view. 
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        window.center()
-        window.setFrameAutosaveName("Main Window")
-        window.contentView = NSHostingView(rootView: contentView)
-        window.makeKeyAndOrderFront(nil)
+        if UserSettings.shared.checkForUpdatesOnStartup {
+            checkForUpdates()
+        }
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return true
+        return false
     }
 
     // MARK: - Check For Updates

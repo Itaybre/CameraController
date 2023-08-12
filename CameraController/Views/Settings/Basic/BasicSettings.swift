@@ -12,10 +12,39 @@ struct BasicSettings: View {
     @ObservedObject var controller: DeviceController
 
     var body: some View {
-        VStack {
-            ExposureView(controller: controller)
-            ImageView(controller: controller)
-            WhiteBalanceView(controller: controller)
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: Constants.Style.controlsSpacing) {
+                if controller.exposureTime.isCapable {
+                    ExposureView(controller: controller)
+                }
+
+                if controller.brightness.isCapable {
+                    BrightnessView(controller: controller)
+                }
+
+                if controller.contrast.isCapable {
+                    ContrastView(controller: controller)
+                }
+
+                if controller.saturation.isCapable {
+                    SaturationView(controller: controller)
+                }
+
+                if controller.sharpness.isCapable {
+                    SharpnessView(controller: controller)
+                }
+
+                if controller.hue.isCapable && controller.hue.maximum > 0 {
+                    HueView(controller: controller)
+                }
+
+                if controller.whiteBalance.isCapable {
+                    WhiteBalanceView(controller: controller)
+                }
+            }
+            .padding(.top, 2)
+            .padding(.bottom, Constants.Style.topSpacing)
         }
+        .frame(maxHeight: 300)
     }
 }

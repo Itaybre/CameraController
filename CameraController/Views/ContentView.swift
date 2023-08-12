@@ -13,50 +13,61 @@ import AVFoundation
 struct ContentView: View {
     @ObservedObject var manager = DevicesManager.shared
     @ObservedObject var settings = UserSettings.shared
+    @State var currentSection: Int?
 
     var body: some View {
         HStack {
-            VStack {
-                Picker(selection: $manager.selectedDevice, label: Text("Camera")) {
-                    Text("None").tag(nil as CaptureDevice?)
-                    ForEach(manager.devices, id: \.self) { device in
-                        Text(device.name).tag(device as CaptureDevice?)
-                    }
-                }
+            VStack(spacing: 0) {
+                cameraPreview()
+                    .animation(nil)
 
-                if !settings.hideCameraPreview {
-                    cameraPreview(captureDevice: $manager.selectedDevice)
-                }
+                TabSelectorView(selectedIndex: $currentSection)
+                    .padding(.vertical, Constants.Style.padding)
+                    .animation(nil)
 
-                settingsView(captureDevice: $manager.selectedDevice)
-                ProfileSelector()
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 75)
+                settingsView()
             }.onAppear {
                 DevicesManager.shared.startMonitoring()
             }.onDisappear {
                 DevicesManager.shared.stopMonitoring()
             }
-        }.padding(.all, 10.0).frame(width: 450)
+            .frame(width: settings.cameraPreviewSize.getWidth() - Constants.Style.padding * 2)
+        }
+        .fixedSize()
+        .background(
+            VisualEffectView(material: .hudWindow,
+                             blendingMode: .behindWindow,
+                             state: .active)
+        )
     }
 
-    func cameraPreview(captureDevice: Binding<CaptureDevice?>) -> AnyView {
-        if captureDevice.wrappedValue != nil {
-            return AnyView(CameraPreview(captureDevice: captureDevice)
-                .frame(width: 400, height: 225))
+    @ViewBuilder
+    func cameraPreview() -> some View {
+        if settings.hideCameraPreview {
+            EmptyView()
+        } else if $manager.selectedDevice.wrappedValue != nil {
+            CameraPreview(captureDevice: $manager.selectedDevice)
+                .frame(
+                    width: settings.cameraPreviewSize.getWidth(),
+                    height: settings.cameraPreviewSize.getHeight()
+                )
+                .scaleEffect(CGSize(width: settings.mirrorPreview ? -1 : 1, height: 1))
         } else {
-            return AnyView(Image("video.slash")
-                .frame(width: 400, height: 225)
-                .background(Color.gray))
+            Image("video.slash")
+                .frame(
+                    width: settings.cameraPreviewSize.getWidth(),
+                    height: settings.cameraPreviewSize.getHeight()
+                )
+                .background(Color.gray)
         }
     }
 
-    func settingsView(captureDevice: Binding<CaptureDevice?>) -> some View {
-        if captureDevice.wrappedValue != nil {
-            return AnyView(SettingsView(captureDevice: captureDevice))
-        } else {
-            return AnyView(EmptyView())
-        }
+    @ViewBuilder
+    func settingsView() -> some View {
+        SettingsView(
+            captureDevice: $manager.selectedDevice,
+            currentSection: $currentSection
+        )
     }
 }
 

@@ -9,84 +9,17 @@
 import SwiftUI
 
 struct PreferencesView: View {
-    @ObservedObject var settings = UserSettings.shared
-
     var body: some View {
-        VStack(alignment: .leading) {
-            applicationSettings()
-            readSettings()
-            writeSettings()
-            updatesSettings()
+        VStack(spacing: Constants.Style.controlsSpacing) {
+            ApplicationSection()
+            CameraSection()
+            PreviewSection()
+            ReadWriteSection()
+            UpdatesSection()
+            QuitButton()
         }
-    }
-
-    private func applicationSettings() -> some View {
-        return GroupBox(label: Text("Application")) {
-            HStack {
-                VStack(alignment: .leading) {
-                    Toggle(isOn: $settings.openAtLogin) {
-                        Text("Open at login")
-                    }
-                }
-                Spacer()
-            }
-            HStack {
-                VStack(alignment: .leading) {
-                    Toggle(isOn: $settings.hideCameraPreview) {
-                        Text("Hide camera preview")
-                    }
-                }
-                Spacer()
-            }
-        }
-    }
-
-    private func readSettings() -> some View {
-        return GroupBox(label: Text("Read Settings")) {
-            HStack {
-                VStack(alignment: .leading) {
-                    Picker(selection: $settings.readRate, label: Text("")) {
-                        Text("Disabled").tag(RefreshSettingsRate.disabled)
-                        Text("Every 0.5 Seconds").tag(RefreshSettingsRate.halfSecond)
-                        Text("Every 1 Second").tag(RefreshSettingsRate.oneSecond)
-                        Text("Every 2 Second").tag(RefreshSettingsRate.twoSeconds)
-                    }
-                }
-                Spacer()
-            }
-        }
-    }
-
-    private func writeSettings() -> some View {
-        GroupBox(label: Text("Push Settings")) {
-            HStack {
-                VStack(alignment: .leading) {
-                    Picker(selection: $settings.writeRate, label: Text("")) {
-                        Text("Disabled").tag(RefreshSettingsRate.disabled)
-                        Text("Every 0.5 Seconds").tag(RefreshSettingsRate.halfSecond)
-                        Text("Every 1 Second").tag(RefreshSettingsRate.oneSecond)
-                        Text("Every 2 Second").tag(RefreshSettingsRate.twoSeconds)
-                    }
-                }
-                Spacer()
-            }
-        }
-    }
-
-    private func updatesSettings() -> some View {
-        HStack {
-            Spacer()
-            Button("Check for updates") {
-                guard let delegate = NSApplication.shared.delegate as? AppDelegate else {
-                    return
-                }
-                delegate.checkForUpdates()
-            }
-            Button("Quit") {
-                NSApplication.shared.terminate(nil)
-            }
-            Spacer()
-        }
+        .padding(.top, 2)
+        .padding(.bottom, Constants.Style.topSpacing)
     }
 }
 

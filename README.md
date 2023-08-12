@@ -60,7 +60,6 @@ I would like to thank [Emerge Tools](https://www.emergetools.com/) for sponsorin
 
 ## ToDo
 
-- Add MenuBar for easily configure camera
 - Apply latest settings on startup
 - Add more Unit Tests
 - Support for some vendor specific capabilities (like Logitech LED control)

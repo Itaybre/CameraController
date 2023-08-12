@@ -12,7 +12,7 @@ import Combine
 final class ProfileManager: ObservableObject {
     static let shared = ProfileManager()
 
-    private(set) var profiles: [Profile] = []
+    @Published private(set) var profiles: [Profile] = []
 
     private init() {
         if let savedProfiles = UserDefaults.standard.object(forKey: "profiles") as? Data {

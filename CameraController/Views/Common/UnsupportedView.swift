@@ -1,14 +1,14 @@
 //
-//  DisabledAdvancedView.swift
+//  UnsupportedView.swift
 //  CameraController
 //
-//  Created by Itay Brenner on 8/7/20.
-//  Copyright © 2020 Itaysoft. All rights reserved.
+//  Created by Itay Brenner on 26/6/23.
+//  Copyright © 2023 Itaysoft. All rights reserved.
 //
 
 import SwiftUI
 
-struct DisabledAdvancedView: View {
+struct UnsupportedView: View {
     var body: some View {
         VStack(spacing: 3) {
             Spacer()
@@ -24,8 +24,8 @@ struct DisabledAdvancedView: View {
     }
 }
 
-struct DisabledAdvancedView_Previews: PreviewProvider {
+struct UnsupportedView_Previews: PreviewProvider {
     static var previews: some View {
-        DisabledAdvancedView()
+        UnsupportedView()
     }
 }
