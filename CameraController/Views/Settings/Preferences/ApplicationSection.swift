@@ -26,8 +26,10 @@ struct ApplicationSection: View {
     }
 }
 
+#if DEBUG
 struct ApplicationSection_Previews: PreviewProvider {
     static var previews: some View {
         ApplicationSection()
     }
 }
+#endif

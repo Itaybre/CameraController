@@ -30,8 +30,10 @@ struct CameraSection: View {
     }
 }
 
+#if DEBUG
 struct CameraSection_Previews: PreviewProvider {
     static var previews: some View {
         CameraSection()
     }
 }
+#endif

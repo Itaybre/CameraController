@@ -110,6 +110,7 @@ struct TabSelectorView: View {
     }
 }
 
+#if DEBUG
 struct TabSelectorView_Previews: PreviewProvider {
     static var previews: some View {
         StatefulPreviewWrapper(Int?(0)) { value in
@@ -122,3 +123,4 @@ struct TabSelectorView_Previews: PreviewProvider {
         }
     }
 }
+#endif

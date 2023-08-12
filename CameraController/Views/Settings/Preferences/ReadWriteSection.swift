@@ -42,8 +42,10 @@ struct ReadWriteSection: View {
     }
 }
 
+#if DEBUG
 struct ReadWriteSection_Previews: PreviewProvider {
     static var previews: some View {
         ReadWriteSection()
     }
 }
+#endif

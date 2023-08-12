@@ -56,8 +56,10 @@ struct ProfilesView: View {
     }
 }
 
+#if DEBUG
 struct ProfilesView_Previews: PreviewProvider {
     static var previews: some View {
         ProfilesView()
     }
 }
+#endif
