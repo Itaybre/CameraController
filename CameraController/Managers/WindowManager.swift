@@ -59,4 +59,9 @@ extension WindowManager: NSPopoverDelegate {
         NotificationCenter.default.post(name: .windowClose, object: nil)
         isShowing = false
     }
+
+    func popoverDidDetach(_ popover: NSPopover) {
+        // Disable dragging, only dragging with the preview is allowed
+        popover.contentViewController?.view.window?.isMovableByWindowBackground = false
+    }
 }
