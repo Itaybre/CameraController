@@ -43,7 +43,6 @@ Download the latest `.zip` from [Releases](https://github.com/itaybre/CameraCont
 ### Homebrew
 
 ```
-brew tap homebrew/cask-drivers
 brew install --cask cameracontroller
 ```
 
