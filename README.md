@@ -46,16 +46,6 @@ Download the latest `.zip` from [Releases](https://github.com/itaybre/CameraCont
 brew install --cask cameracontroller
 ```
 
-## Sponsor
-
-<div align="center">
-    <a href="https://www.emergetools.com/">
-        <img src="./.github/Emerge_Sponsor.png" width="320" alt="basic screenshot"/>
-    </a>
-</div>
-
-I would like to thank [Emerge Tools](https://www.emergetools.com/) for sponsoring this project.
-
 ## ToDo
 
 - Apply latest settings on startup
